@@ -23,7 +23,7 @@
   
 ### 🌱 About Me
 + Beginner in tech | IT Support Professional 
-+ Transitioning to AI, Data Science & Cybersecurity
++ Transitioning to AI, Blockchain & Cybersecurity
 + Passionate about solving problems with data and code
 </p>
 
