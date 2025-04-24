@@ -78,9 +78,7 @@
 <p align="left">
   <a href="www.linkedin.com/in/shanujansuresh" target="_blank"><img src="https://img.icons8.com/color/48/linkedin.png" /></a>
   <a href="https://www.instagram.com/shanujan_29/" target="_blank"><img src="https://img.icons8.com/color/48/instagram-new--v1.png" /></a>
-  <a href="https://public.tableau.com/app/profile/shanujan.suresh/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" 
-       width="170" 
-       alt="Tableau Profile" />
+  <a href="https://t.me/@shanujan" target="_blank"><img src="https://img.icons8.com/color/48/telegram-app--v1.png" /></a>
 </a>
 </p>
 
