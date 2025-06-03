@@ -62,7 +62,7 @@
 1.  **Quantum Random Number Generator (QRNG)** ⚛️
     *   Leverages IBM Quantum computers (`ibm_sherbrooke`, `ibm_brisbane`) to generate truly unpredictable random numbers.
     *   Designed for high-security applications in cryptography, blockchain, and secure simulations.
-    *   **[View Project](https://github.com/shanujans/Quantum-Random-Number-Generator)** (Ensure your repo is public before using this link!)
+    *   **[View Project](https://github.com/shanujans/Quantum-Random-Number-Generator)**
 
 2.  **Force Screenshot Taker** 🤖  
 3.  **Loan Risk Predictor** 🌐  
