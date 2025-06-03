@@ -49,7 +49,8 @@
 
 
 ### ⚙️ Areas of Expertise:
-- IT Support  
+- IT Support
+- Visual Studio
 - Web Design  
 - Android App Development
 - IBM Watson Studio  
