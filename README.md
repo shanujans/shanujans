@@ -57,7 +57,6 @@
 
 ---
 
-## 🚀 Current Projects
 
 ## 🚀 Current Projects
 
