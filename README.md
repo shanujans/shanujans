@@ -76,7 +76,7 @@
     *   Utilizes advanced machine learning algorithms to assess and predict loan default risks.
     *   Designed to help financial institutions and lenders make data-driven decisions, minimize risk, and streamline loan approvals.
     *   Features an intuitive interface for inputting applicant data and visualizing risk assessments.
-    *   **[View Project](https://github.com/shanujans/Loan-Risk-Predictor)**
+    *   **[View Project](https://github.com/shanujans/AutoAI-Loan-Risk-Predictor)**
 
 ---
 
