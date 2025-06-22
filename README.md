@@ -59,13 +59,24 @@
 
 ## 🚀 Current Projects
 
-1.  **Quantum Random Number Generator (QRNG)** ⚛️
+## 🚀 Current Projects
+
+1.  **Quantum Random Number Generator (QRNG)** ⚛️  
     *   Leverages IBM Quantum computers (`ibm_sherbrooke`, `ibm_brisbane`) to generate truly unpredictable random numbers.
     *   Designed for high-security applications in cryptography, blockchain, and secure simulations.
     *   **[View Project](https://github.com/shanujans/Quantum-Random-Number-Generator)**
 
 2.  **Force Screenshot Taker** 🤖  
+    *   Automates the process of capturing screenshots across multiple devices and platforms.
+    *   Ideal for quality assurance, remote monitoring, and documentation tasks where consistent visual records are essential.
+    *   Supports scheduling, instant capture, and customizable triggers to suit different workflow needs.
+    *   **[View Project](https://github.com/shanujans/Force-Screenshot-Taker)**
+
 3.  **Loan Risk Predictor** 🌐  
+    *   Utilizes advanced machine learning algorithms to assess and predict loan default risks.
+    *   Designed to help financial institutions and lenders make data-driven decisions, minimize risk, and streamline loan approvals.
+    *   Features an intuitive interface for inputting applicant data and visualizing risk assessments.
+    *   **[View Project](https://github.com/shanujans/Loan-Risk-Predictor)**
 
 ---
 
