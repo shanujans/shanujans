@@ -70,7 +70,7 @@
     *   Automates the process of capturing screenshots across multiple devices and platforms.
     *   Ideal for quality assurance, remote monitoring, and documentation tasks where consistent visual records are essential.
     *   Supports scheduling, instant capture, and customizable triggers to suit different workflow needs.
-    *   **[View Project](https://github.com/shanujans/Force-Screenshot-Taker)**
+    *   **[Under Maintanance]**
 
 3.  **Loan Risk Predictor** 🌐  
     *   Utilizes advanced machine learning algorithms to assess and predict loan default risks.
