@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/shanujans">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&vCenter=true&width=435&lines=Always+learning+and+building...;Exploring+data+%26+tech;Let's+build+something+awesome!" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&vCenter=true&width=435&lines=Always+learning+and+building...;Exploring+data+%26+tech;Let's+build+impact!" alt="Typing SVG" />
   </a>
 </p>
 
@@ -15,7 +15,6 @@
 <p align="center">
   <img src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="500px" alt="programmer" />
 </p>
-
 
 ---
 
@@ -28,7 +27,6 @@
 </p>
 
 ---
-
 
 ## 🔦 Highlights
 
@@ -47,7 +45,6 @@
 
 </p>
 
-
 ### ⚙️ Areas of Expertise:
 - IT Support
 - Visual Studio
@@ -57,25 +54,16 @@
 
 ---
 
-
 ## 🚀 Current Projects
 
-1.  **Quantum Random Number Generator (QRNG)** ⚛️  
-    *   Leverages IBM Quantum computers (`ibm_sherbrooke`, `ibm_brisbane`) to generate truly unpredictable random numbers.
-    *   Designed for high-security applications in cryptography, blockchain, and secure simulations.
-    *   **[View Project](https://github.com/shanujans/Quantum-Random-Number-Generator)**
+1. **[Academic-Ally](https://github.com/shanujans/Academic-Ally)**  
+   A comprehensive platform designed to support students and educators by providing tools for academic management, scheduling, and resource sharing. The project emphasizes seamless collaboration and productivity within educational environments, integrating features like assignment tracking, peer communication, and resource libraries.
 
-2.  **Force Screenshot Taker** 🤖  
-    *   Automates the process of capturing screenshots across multiple devices and platforms.
-    *   Ideal for quality assurance, remote monitoring, and documentation tasks where consistent visual records are essential.
-    *   Supports scheduling, instant capture, and customizable triggers to suit different workflow needs.
-    *   **[Under Maintanance]**
+2. **[Binance-extension-with-Python-backend](https://github.com/shanujans/Binance-extension-with-Python-backend)**  
+   This repository offers a browser extension powered by a Python backend to interact with the Binance API. It enables users to monitor cryptocurrency prices, execute trades, and analyze market trends directly from their browser, providing a streamlined interface for digital asset management and trading automation.
 
-3.  **Loan Risk Predictor** 🌐  
-    *   Utilizes advanced machine learning algorithms to assess and predict loan default risks.
-    *   Designed to help financial institutions and lenders make data-driven decisions, minimize risk, and streamline loan approvals.
-    *   Features an intuitive interface for inputting applicant data and visualizing risk assessments.
-    *   **[View Project](https://github.com/shanujans/AutoAI-Loan-Risk-Predictor)**
+3. **[Instagram-Profile-Interaction-Tracker](https://github.com/shanujans/Instagram-Profile-Interaction-Tracker)**  
+   A data analysis tool that tracks and visualizes user interactions on Instagram profiles. The project gathers engagement metrics, such as likes, comments, and follows, offering insights into audience behavior and content reach. Ideal for social media managers and influencers seeking to optimize their Instagram strategies.
 
 ---
 
@@ -85,7 +73,6 @@
   <img src="https://github-readme-stats.vercel.app/api?username=shanujans&show_icons=true&theme=github_dark" height="180px"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&theme=github_dark" height="180px"/>
 </p>
-
 
 ---
 
