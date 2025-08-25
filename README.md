@@ -48,6 +48,7 @@
 ### ⚙️ Areas of Expertise:
 - IT Support
 - Visual Studio
+- Telegram Bot
 - Web Design  
 - Android App Development
 - IBM Watson Studio  
