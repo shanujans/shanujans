@@ -55,7 +55,7 @@
 
 ---
 
-## 🚀 Current Projects
+## 🚀 Projects
 
 1. **[Quantum Random Number Generator (QRNG)](https://github.com/shanujans/Quantum-Random-Number-Generator)** ⚛️  
    Leverages IBM Quantum computers (`ibm_sherbrooke`, `ibm_brisbane`) to generate truly unpredictable random numbers. Designed for high-security applications in cryptography, blockchain, and secure simulations.
