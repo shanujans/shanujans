@@ -13,7 +13,7 @@
 <hr>
 
 <p align="center">
-  <img src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="500px" alt="programmer" />
+  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2V6d2s1b3Q5bW1jZ2x6Z2Z0Z2J6eGJ0dDZ4ZmN1bmR2Z2Z6eGZxbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif" width="1250px" alt="Hacker Terminal" />
 </p>
 
 ---
@@ -48,10 +48,13 @@
 ### ⚙️ Areas of Expertise:
 - IT Support
 - Visual Studio
+- Google AI Studio
 - Telegram Bot
-- Web Design  
+- Web Design
+- Python Development
 - Android App Development
-- IBM Watson Studio  
+- OCI
+- IBM Cloud 
 
 ---
 
