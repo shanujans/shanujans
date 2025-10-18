@@ -13,7 +13,7 @@
 <hr>
 
 <p align="center">
-  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2V6d2s1b3Q5bW1jZ2x6Z2Z0Z2J6eGJ0dDZ4ZmN1bmR2Z2Z6eGZxbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif" width="1250px" alt="Hacker Terminal" />
+  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2V6d2s1b3Q5bW1jZ2x6Z2Z0Z2J6eGJ0dDZ4ZmN1bmR2Z2Z6eGZxbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif" width="1000" style="height: auto;" alt="Hacker Terminal" />
 </p>
 
 ---
