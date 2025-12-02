@@ -83,18 +83,14 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=shanujans&show_icons=true&theme=github_dark&hide_border=true&bg_color=0D1117" height="180px" alt="Stats" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shanujans&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" height="180px" alt="Activity Graph" />
-  <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&theme=github_dark&hide_border=true&bg_color=0D1117" height="160px" alt="Languages" />
-</p>
-
-<p align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
     <img src="https://github-profile-trophy.vercel.app/?username=shanujans&theme=gitdimmed&no-frame=true&no-bg=true&margin-w=4" alt="Trophies" />
   </a>
 </p>
-
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=shanujans&theme=github_dark" alt="Profile Details" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=shanujans&theme=github_dark" alt="Languages" />
+</p>
 
 ---
 
