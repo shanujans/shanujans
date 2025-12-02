@@ -41,7 +41,6 @@
   <img src="https://img.icons8.com/external-flat-juicy-fish/48/external-sql-coding-and-development-flat-flat-juicy-fish.png"/>
   <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/>
   <img src="https://img.icons8.com/color/48/cryptocurrency.png" alt="Crypto Trading"/>
-   <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" width="200" alt="Tableau Logo">
 
 </p>
 
@@ -52,6 +51,7 @@
 - Telegram Bot
 - Web Design
 - Python Development
+- Kaggle Notebooks
 - Android App Development
 - OCI
 - IBM Cloud 
@@ -83,9 +83,18 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=shanujans&show_icons=true&theme=github_dark" height="180px"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&theme=github_dark" height="180px"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=shanujans&show_icons=true&theme=github_dark&hide_border=true&bg_color=0D1117" height="180px" alt="Stats" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shanujans&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" height="180px" alt="Activity Graph" />
+  <br/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&theme=github_dark&hide_border=true&bg_color=0D1117" height="160px" alt="Languages" />
 </p>
+
+<p align="center">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=shanujans&theme=gitdimmed&no-frame=true&no-bg=true&margin-w=4" alt="Trophies" />
+  </a>
+</p>
+
 
 ---
 
