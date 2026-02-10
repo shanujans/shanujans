@@ -49,9 +49,9 @@
 - Visual Studio
 - Google AI Studio
 - Telegram Bot
-- Web Design
+- Web Development
 - Python Development
-- Kaggle Notebooks
+- Jupyter Notebooks
 - Android App Development
 - OCI
 - IBM Cloud 
