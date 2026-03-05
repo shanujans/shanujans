@@ -46,6 +46,7 @@
 
 ### ⚙️ Areas of Expertise:
 - IT Support
+- AI Agents
 - Visual Studio
 - Google AI Studio
 - Telegram Bot
