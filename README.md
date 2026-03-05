@@ -21,7 +21,7 @@
 <p>
   
 ### 🌱 About Me
-+ Beginner in tech | Quantum Computing Enthusiast | IT Support Professional 
++ Beginner in tech | AI Enthusiast | IT Support Professional 
 + Transitioning to AI, Blockchain & Cybersecurity
 + Passionate about solving problems with data and code
 </p>
@@ -54,6 +54,7 @@
 - Jupyter Notebooks
 - Android App Development
 - OCI
+- AWS
 - IBM Cloud 
 
 ---
