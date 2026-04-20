@@ -1,112 +1,95 @@
-<h1 align="center">🪀 Hello World! I'm Shanujan Suresh 🪀</h1>
+<h1 align="center">Hi, I'm Shanujan Suresh 👋</h1>
 
 <p align="center">
-  🐾 <strong>Beginner</strong> | 📖 <strong>Learner</strong> | 📤 <strong>Disseminator</strong>
+  <strong>IT Support Professional &nbsp;·&nbsp; AI Tools Enthusiast &nbsp;·&nbsp; Sri Lanka 🇱🇰</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/shanujans">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&center=true&vCenter=true&width=435&lines=Always+learning+and+building...;Exploring+data+%26+tech;Let's+build+impact!" alt="Typing SVG" />
+  <a href="https://shanujan.is-a.dev">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&pause=1000&color=00FF9D&center=true&vCenter=true&width=500&lines=IT+Support+%7C+4%2B+Years+Experience;AI+Tools+%7C+Live+Chatbot+Deployed;BSc+CS+%40+University+of+the+People;Always+learning%2C+always+building." alt="Typing SVG" />
   </a>
 </p>
 
-<hr>
+<p align="center">
+  <a href="https://shanujan.is-a.dev"><img src="https://img.shields.io/badge/Portfolio-shanujan.is--a.dev-00ff9d?style=for-the-badge&logo=firefox" /></a>
+  <a href="https://www.linkedin.com/in/shanujansuresh/"><img src="https://img.shields.io/badge/LinkedIn-shanujansuresh-0A66C2?style=for-the-badge&logo=linkedin" /></a>
+  <a href="https://revmatrixai.github.io"><img src="https://img.shields.io/badge/Startup-RevMatrix_AI-7700ff?style=for-the-badge&logo=rocket.chat" /></a>
+  <a href="https://t.me/Revmatrix"><img src="https://img.shields.io/badge/Telegram-@Revmatrix-26A5E4?style=for-the-badge&logo=telegram" /></a>
+</p>
+
+---
+
+## About Me
+
+I'm an IT Support professional with 4+ years of hands-on experience, currently studying **BSc Computer Science at University of the People**. I'm actively building skills in AI tools and automation.
+
+My strongest technical proof point: I independently deployed **ARIA** — a live AI chatbot on my portfolio using Google Gemini API and Cloudflare Workers. Try it at [shanujan.is-a.dev](https://shanujan.is-a.dev).
+
+I believe in being honest about my skills. My portfolio reflects exactly what I can and cannot do.
+
+---
+
+## What I Can Do Now
+
+```
+✅ IT Support & Troubleshooting     — 4+ years real experience
+✅ Google Gemini API & AI Studio    — deployed live AI chatbot (ARIA)
+✅ Cloudflare Workers               — secure API proxying in production
+✅ Git & GitHub                     — version control, CI/CD, Actions
+✅ MS Office & Documentation        — clear technical writing
+✅ Cloud Basics                     — IBM Cloud, OCI, AWS (beginner)
+📚 Python                          — beginner, using AI assistance
+📚 Manual QA Testing               — actively studying
+📚 Linux                           — basic commands only
+```
+
+---
+
+## Featured Projects
+
+| Project | Description | Stack |
+|---|---|---|
+| [ARIA Chatbot](https://shanujan.is-a.dev) | Live AI assistant on my portfolio — Gemini API + Cloudflare Workers | React, TypeScript, Cloudflare |
+| [Quantum Insight Forge](https://github.com/shanujans/Quantum-Insight-Forge) | AI app on Google AI Studio combining quantum concepts with Gemini | Google AI Studio, Gemini |
+| [Loan Risk Predictor](https://github.com/shanujans/loan-risk-prediction) | ML package published on PyPI — Decision Tree, 87.5% accuracy, CI/CD | Python, scikit-learn, PyPI |
+| [AutoAI Loan Risk](https://github.com/shanujans/AutoAI-Loan-Risk-Predictor) | IBM Watson Studio AutoAI learning project — SnapML, 77% accuracy | IBM Watson, AutoAI |
+| [Telegram File Uploader](https://github.com/shanujans/telegram-uploader) | Async Telegram bot with VirusTotal scanning (AI-assisted) | Python, AsyncIO |
+| [Student Mgmt System](https://github.com/shanujans/Skills-International-Application) | ESoft final year project — C# desktop app with SQL Server | C#, .NET, SQL Server |
+
+---
+
+## Certifications
+
+<table>
+<tr>
+<td align="center">☁️<br><b>AI in Action</b><br><sub>Google Cloud · 2026</sub></td>
+<td align="center">⚛️<br><b>Quantum Information</b><br><sub>IBM · 2025</sub></td>
+<td align="center">🧠<br><b>AI Fundamentals</b><br><sub>IBM SkillsBuild · 2025</sub></td>
+<td align="center">📊<br><b>Data Analytics</b><br><sub>Cisco · 2025</sub></td>
+</tr>
+<tr>
+<td align="center">🐧<br><b>Linux Unhatched</b><br><sub>Cisco · 2025</sub></td>
+<td align="center">🐍<br><b>Python Essentials 1</b><br><sub>Cisco · 2025</sub></td>
+<td align="center">🔐<br><b>IBM Z Day Security</b><br><sub>IBM · 2025</sub></td>
+<td align="center">🤖<br><b>Quantum Business</b><br><sub>IBM · 2025</sub></td>
+</tr>
+</table>
+
+---
+
+## GitHub Stats
 
 <p align="center">
-  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2V6d2s1b3Q5bW1jZ2x6Z2Z0Z2J6eGJ0dDZ4ZmN1bmR2Z2Z6eGZxbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif" width="1000" style="height: auto;" alt="Hacker Terminal" />
+  <img src="https://github-readme-stats.vercel.app/api?username=shanujans&show_icons=true&theme=dark&hide_border=true&bg_color=0a0a14&title_color=00ff9d&icon_color=00b3ff&text_color=ffffff" height="160" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&theme=dark&hide_border=true&bg_color=0a0a14&title_color=00ff9d&text_color=ffffff" height="160" />
 </p>
-
----
-
-<p>
-  
-### 🌱 About Me
-+ Beginner in tech | AI Enthusiast | IT Support Professional 
-+ Transitioning to AI, Blockchain & Cybersecurity
-+ Passionate about solving problems with data and code
-</p>
-
----
-
-## 🔦 Highlights
-
-### 💻 Languages & Tools I Love:
-
-<p>
-  <img src="https://img.icons8.com/color/48/python--v1.png"/>
-  <img src="https://img.icons8.com/color/48/html-5--v1.png"/>
-  <img src="https://img.icons8.com/color/48/css3.png"/>
-  <img src="https://img.icons8.com/fluency/48/jupyter.png"/>
-  <img src="https://img.icons8.com/color/48/kotlin.png"/>
-  <img src="https://img.icons8.com/external-flat-juicy-fish/48/external-sql-coding-and-development-flat-flat-juicy-fish.png"/>
-  <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/>
-  <img src="https://img.icons8.com/color/48/cryptocurrency.png" alt="Crypto Trading"/>
-
-</p>
-
-### ⚙️ Areas of Expertise:
-- IT Support
-- AI Agents
-- Visual Studio
-- Google AI Studio
-- Telegram Bot
-- Web Development
-- Python Development
-- Jupyter Notebooks
-- Android App Development
-- OCI
-- AWS
-- IBM Cloud 
-
----
-
-## 🚀 Projects
-
-1. **[Quantum Random Number Generator (QRNG)](https://github.com/shanujans/Quantum-Random-Number-Generator)** ⚛️  
-   Leverages IBM Quantum computers (`ibm_sherbrooke`, `ibm_brisbane`) to generate truly unpredictable random numbers. Designed for high-security applications in cryptography, blockchain, and secure simulations.
-
-2. **Force Screenshot Taker** 🤖  
-   Automates the process of capturing screenshots across multiple devices and platforms. Ideal for quality assurance, remote monitoring, and documentation tasks where consistent visual records are essential. Supports scheduling, instant capture, and customizable triggers to suit different workflow needs. **[Under Maintenance]**
-
-3. **[Loan Risk Predictor](https://github.com/shanujans/AutoAI-Loan-Risk-Predictor)** 🌐  
-   Utilizes advanced machine learning algorithms to assess and predict loan default risks. Designed to help financial institutions and lenders make data-driven decisions, minimize risk, and streamline loan approvals. Features an intuitive interface for inputting applicant data and visualizing risk assessments.
-
-4. **[Academic-Ally](https://github.com/shanujans/Academic-Ally)**  
-   A comprehensive platform designed to support students and educators by providing tools for academic management, scheduling, and resource sharing. The project emphasizes seamless collaboration and productivity within educational environments, integrating features like assignment tracking, peer communication, and resource libraries.
-
-5. **[Binance-extension-with-Python-backend](https://github.com/shanujans/Binance-extension-with-Python-backend)**  
-   This repository offers a browser extension powered by a Python backend to interact with the Binance API. It enables users to monitor cryptocurrency prices, execute trades, and analyze market trends directly from their browser, providing a streamlined interface for digital asset management and trading automation.
-
-6. **[Instagram-Profile-Interaction-Tracker](https://github.com/shanujans/Instagram-Profile-Interaction-Tracker)**  
-   A data analysis tool that tracks and visualizes user interactions on Instagram profiles. The project gathers engagement metrics, such as likes, comments, and follows, offering insights into audience behavior and content reach. Ideal for social media managers and influencers seeking to optimize their Instagram strategies.
-
----
-
-## 📊 GitHub Stats
 
 <p align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=shanujans&theme=gitdimmed&no-frame=true&no-bg=true&margin-w=4" alt="Trophies" />
-  </a>
-</p>
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=shanujans&theme=github_dark" alt="Profile Details" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=shanujans&theme=github_dark" alt="Languages" />
-</p>
-
----
-
-## 🌐 Find Me Online
-
-<p align="left">
-  <a href="www.linkedin.com/in/shanujansuresh" target="_blank"><img src="https://img.icons8.com/color/48/linkedin.png" /></a>
-  <a href="https://www.instagram.com/shanujan_29/" target="_blank"><img src="https://img.icons8.com/color/48/instagram-new--v1.png" /></a>
-  <a href="https://t.me/@shanujan" target="_blank"><img src="https://img.icons8.com/color/48/telegram-app--v1.png" /></a>
-</a>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=shanujans&theme=dark&hide_border=true&background=0a0a14&ring=00ff9d&fire=00b3ff&currStreakLabel=00ff9d" />
 </p>
 
 ---
 
 <p align="center">
-  <strong>🔧 Code • Analyze • Protect • Visualize • Automate • Repeat 🔧 </strong>
+  <sub>Open to IT Support · Service Desk · AI Tools · QA roles · <a href="mailto:shanujansh@gmail.com">shanujansh@gmail.com</a></sub>
 </p>
