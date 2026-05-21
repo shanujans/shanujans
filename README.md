@@ -23,7 +23,7 @@
 
 I'm an IT Support professional with 4+ years of hands-on experience, currently studying **BSc Computer Science at University of the People**. I'm actively building skills in AI tools and automation.
 
-My strongest technical proof point: I independently deployed **ARIA** — a live AI chatbot on my portfolio using Google Gemini API and Cloudflare Workers. Try it at [shanujan.is-a.dev](https://shanujan.is-a.dev).
+My strongest technical proof point: I deployed **ARIA** a live AI chatbot on my portfolio using Google Gemini API and Cloudflare Workers. Try it at [shanujan.is-a.dev](https://shanujan.is-a.dev).
 
 I believe in being honest about my skills. My portfolio reflects exactly what I can and cannot do.
 
