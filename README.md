@@ -13,8 +13,7 @@
 <p align="center">
   <a href="https://shanujan.is-a.dev"><img src="https://img.shields.io/badge/Portfolio-shanujan.is--a.dev-00ff9d?style=for-the-badge&logo=firefox" /></a>
   <a href="https://www.linkedin.com/in/shanujansuresh/"><img src="https://img.shields.io/badge/LinkedIn-shanujansuresh-0A66C2?style=for-the-badge&logo=linkedin" /></a>
-  <a href="https://revmatrixai.github.io"><img src="https://img.shields.io/badge/Startup-RevMatrix_AI-7700ff?style=for-the-badge&logo=rocket.chat" /></a>
-  <a href="https://t.me/Revmatrix"><img src="https://img.shields.io/badge/Telegram-@Revmatrix-26A5E4?style=for-the-badge&logo=telegram" /></a>
+  <a href="https://t.me/Revmatrix"><img src="https://img.shields.io/badge/Telegram-@Revmatrix-26A5E4?style=for-the-badge&logo=telegram" /></a
 </p>
 
 ---
@@ -32,7 +31,7 @@ I believe in being honest about my skills. My portfolio reflects exactly what I 
 ## What I Can Do Now
 
 ```
-✅ IT Support & Troubleshooting     — 4+ years real experience
+✅ IT Support & Troubleshooting     — 4+ years experience
 ✅ Google Gemini API & AI Studio    — deployed live AI chatbot (ARIA)
 ✅ Cloudflare Workers               — secure API proxying in production
 ✅ Git & GitHub                     — version control, CI/CD, Actions
