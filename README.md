@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://shanujan.is-a.dev">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&pause=1000&color=00FF9D&center=true&vCenter=true&width=500&lines=IT+Support+%7C+4%2B+Years+Experience;AI+Tools+%7C+Live+Chatbot+Deployed;BSc+CS+%40+University+of+the+People;Always+learning%2C+always+building." alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&pause=1000&color=00FF9D&center=true&vCenter=true&width=500&lines=IT+Support+Experience;AI+Tools+%7C+Building+AI+Agents;B.Sc+CS+%40+University+of+the+People;Always+learning%2C+always+building." alt="Typing SVG" />
   </a>
 </p>
 
