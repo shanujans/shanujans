@@ -1,4 +1,7 @@
 <h1 align="center">Hi, I'm Shanujan Suresh 👋</h1>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=shanujans&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
+</p>
 
 <p align="center">
   <strong>IT Support Professional &nbsp;·&nbsp; AI Tools Enthusiast &nbsp;·&nbsp; Sri Lanka 🇱🇰</strong>
@@ -83,8 +86,17 @@ I believe in being honest about my skills. My portfolio reflects exactly what I 
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&theme=dark&hide_border=true&bg_color=0a0a14&title_color=00ff9d&text_color=ffffff" height="160" />
 </p>
 
+
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=shanujans&theme=dark&hide_border=true&background=0a0a14&ring=00ff9d&fire=00b3ff&currStreakLabel=00ff9d" />
+</p>
+
+---
+
+### 📈 Contribution Graph
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shanujans&theme=tokyo-night&hide_border=true&area=true" alt="Contribution Graph" />
 </p>
 
 ---
