@@ -2,17 +2,12 @@
 """
 today.py
 
-Calculates live GitHub statistics (repos, contributions, commits, stars,
-followers, and total lines of code added/removed) and renders them into
-two terminal-styled SVG cards (light_mode.svg / dark_mode.svg) that can be
-embedded in a profile README using a <picture> tag so they switch with the
-viewer's GitHub theme.
+Calculates live GitHub statistics and renders them into two neofetch-style
+SVG cards (light_mode.svg / dark_mode.svg) with custom ASCII art.
 
-Requires an environment variable ACCESS_TOKEN with a GitHub Personal Access
-Token (needs at least `read:user` and `repo` scopes to read private repo
-stats; use `public_repo` only if you don't want private repos counted).
+Requires environment variable ACCESS_TOKEN with a GitHub Personal Access Token.
 
-Usage (locally):
+Usage:
     ACCESS_TOKEN=ghp_xxx GH_USERNAME=yourname python today.py
 """
 
@@ -23,7 +18,6 @@ import datetime
 from pathlib import Path
 
 import requests
-from ascii_gen import generate_ascii_fragment
 
 GITHUB_USERNAME = os.environ.get("GH_USERNAME", "shanujans")
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN")
@@ -41,13 +35,65 @@ HEADERS = {
 ROOT = Path(__file__).parent
 TEMPLATES = ROOT / "templates"
 
+ASCII_ART = [
+"********########################%%%#%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:.+@@@@@",
+"********#######################%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*.-%@@@@",
+"********#####################%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*.=@@@@@",
+"********###################%%%%%%%%###+***#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@*.=@@@@@",
+"********###################%%#*              +*%@@@@@@@@@@@@@@@@@@@@@@@@:++@@@@@",
+"********################%#%+.                   -#@@@@@@@@@@@@@@@@@@@@@@*:+@@@@@",
+"********################%+.                       =@@@@@@@@@@@@@@@@@@@@#:++@@@@@",
+"********################%%.                         +@@@@@@@@@@@@@@@@@@@::+@@@@@",
+"********##################.        ......:::.        *@@@@@@@@@@@@@@@@@@*:+@@@@@",
+"********##################     .:=+*##*######+--     *@@@@@@@@@@@@@@@@@@*:+@@@@@",
+"********#################%:   .=+**########****+-   =@@@@@@@@@@@@@@@@@@@*:+@@@@@",
+"********#################%*   :=+*#%%%%%%%%%#*+++.  #@@@@@@@@@@@@@@@@@@@*:+@@@@@",
+"********#################%%. -:.::::-*%@%#-..:-::= :@@@@@@@@@@@@@@@@@@@@*:+@@@@@",
+"********#################%%= =-:::.:.-#@#=.-.-::-+:*@@@@@@@@@@@@@@@@@@@@*:+@@@@@",
+"********###################*:+++=+-++=*%#+++-===++=**=%@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********####################=+#%%%%%#**%**#%%%%%#+=*#=%@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********################%%%+==#%@@%%**%@%*#%@@@%#==+#%@@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********################%%%*+:=*%%##+-+**=*##%%#+-+*%@@@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********################%%%#*--=+*++++++++==++*+-+#@@@@@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********################%%%*##-===-:-=++*=-:-====%@@@@@@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********################%%%##%+:--=+==-:--=+=-=-*@@@@@@@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********################%%%##%*-..-=+*++++++-:.-#@@@@@@@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********################%%%##%*=-. .:.::..:...-+*%@@@@@@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********#################%%##+#+++=:       .-+**#+%@@@@@@@@@@@@@@@@@@@@@*:*@@@@@",
+"********#################%%*::@##**+===+==+*###%@-.*%@@@@@@@@@@@@@@@@@@@*.*@@@@@",
+"********#################*=  .%@@%###**+*###%%@@@-  .=*#%@@@@@@@@@@@@@@@+.*@@@@@",
+"********###############:       *@@@@%%%###%%%@@@@%        :-+*#%@@@@@@@@+.*@@@@@",
+"********###########:.        :%@@@@@#===*%@@@@@*             .:-+*#%@@@@+.*@@@@@",
+"********########.             :%@@@%:     .+%@@@%.                  .:@@+.*@@@@@",
+"********###:.                .%@@@%*=.  .+*%@@@#                        .-*@@@@@",
+"******:.                       *@@@@@@+  +@@@@@@-                        .:@@@@@",
+"**.:::                         .%@@@@#    #@@@@#                           .@@@@",
+"**.::.                          =@@@@-    =@@@%:                           :@@@@",
+"**.::.                           *@@%.    -@@@+                             :@@@",
+"**.::                            .%@%.    :@@#                              .:@@",
+"**.:.                             -%%.    :@%.                              .:@@",
+"**.:                               =%     :%-                                .:@",
+"**..                                :     .:                                 .:@",
+"**.                                                                           :@",
+"*.                                                                            .@  ",
+]
 
-def fail(msg: str) -> None:
+
+def ascii_to_tspans(lines, x=15, y_start=30, y_step=20):
+    tspans = []
+    for i, line in enumerate(lines):
+        y = y_start + i * y_step
+        escaped = line.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        tspans.append(f'<tspan x="{x}" y="{y}">{escaped}</tspan>')
+    return "\n".join(tspans)
+
+
+def fail(msg):
     print(f"ERROR: {msg}", file=sys.stderr)
     sys.exit(1)
 
 
-def graphql(query: str, variables: dict | None = None) -> dict:
+def graphql(query, variables=None):
     resp = requests.post(
         API_URL,
         json={"query": query, "variables": variables or {}},
@@ -61,7 +107,7 @@ def graphql(query: str, variables: dict | None = None) -> dict:
     return data["data"]
 
 
-def get_user_overview() -> dict:
+def get_user_overview():
     query = """
     query($login: String!) {
       user(login: $login) {
@@ -83,10 +129,7 @@ def get_user_overview() -> dict:
     return data["user"]
 
 
-def get_lines_of_code(repo_names: list[str]) -> tuple[int, int]:
-    """Sum additions/deletions attributed to GITHUB_USERNAME across repos
-    using the /stats/contributors endpoint. GitHub computes this stat
-    asynchronously; a 202 means "still generating", so we retry briefly."""
+def get_lines_of_code(repo_names):
     total_add, total_del = 0, 0
     for full_name in repo_names:
         url = f"{REST_ROOT}/repos/{full_name}/stats/contributors"
@@ -107,7 +150,7 @@ def get_lines_of_code(repo_names: list[str]) -> tuple[int, int]:
     return total_add, total_del
 
 
-def human_age(created_at_iso: str) -> str:
+def human_age(created_at_iso):
     created = datetime.datetime.fromisoformat(created_at_iso.replace("Z", "+00:00"))
     now = datetime.datetime.now(datetime.timezone.utc)
     delta = now - created
@@ -116,11 +159,11 @@ def human_age(created_at_iso: str) -> str:
     return f"{years}y {days}d on GitHub"
 
 
-def fmt(n: int) -> str:
+def fmt(n):
     return f"{n:,}"
 
 
-def render(template_path: Path, output_path: Path, values: dict) -> None:
+def render(template_path, output_path, values):
     svg = template_path.read_text(encoding="utf-8")
     for key, val in values.items():
         svg = svg.replace("{{" + key + "}}", str(val))
@@ -128,7 +171,7 @@ def render(template_path: Path, output_path: Path, values: dict) -> None:
     print(f"Wrote {output_path}")
 
 
-def main() -> None:
+def main():
     if not ACCESS_TOKEN:
         fail("ACCESS_TOKEN environment variable is not set.")
 
@@ -140,14 +183,13 @@ def main() -> None:
     followers = user["followers"]["totalCount"]
 
     contrib = user["contributionsCollection"]
-    commits = (
-        contrib["totalCommitContributions"]
-        + contrib["restrictedContributionsCount"]
-    )
+    commits = contrib["totalCommitContributions"] + contrib["restrictedContributionsCount"]
     contributed_to = contrib["totalRepositoriesWithContributedCommits"]
 
     repo_full_names = [r["nameWithOwner"] for r in repos]
     loc_add, loc_del = get_lines_of_code(repo_full_names)
+
+    ascii_tspans = ascii_to_tspans(ASCII_ART)
 
     values = {
         "USERNAME": GITHUB_USERNAME,
@@ -162,7 +204,7 @@ def main() -> None:
         "LOC_ADD": fmt(loc_add),
         "LOC_DEL": fmt(loc_del),
         "LOC_TOTAL": fmt(loc_add - loc_del),
-        "ASCII_ART": generate_ascii_fragment(ROOT / "shanujans.png", 48),
+        "ASCII_ART": ascii_tspans,
         "GEN_DATE": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     }
 
