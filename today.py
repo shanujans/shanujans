@@ -79,7 +79,7 @@ ASCII_ART = [
 ]
 
 
-def ascii_to_tspans(lines, x=15, y_start=30, y_step=20):
+def ascii_to_tspans(lines, x=15, y_start=30, y_step=16):
     tspans = []
     for i, line in enumerate(lines):
         y = y_start + i * y_step
