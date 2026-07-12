@@ -160,6 +160,7 @@ def main() -> None:
         "FOLLOWERS": fmt(followers),
         "LOC_ADD": fmt(loc_add),
         "LOC_DEL": fmt(loc_del),
+        "LOC_TOTAL": fmt(loc_add - loc_del),
         "GEN_DATE": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     }
 

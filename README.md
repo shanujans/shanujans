@@ -6,6 +6,16 @@
 
 [![Profile Views](https://komarev.com/ghpvc/?username=shanujans&style=for-the-badge&color=6366f1)](https://github.com/shanujans)
 
+<p align="center">
+  <a href="https://github.com/shanujans">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shanujans/shanujans/main/dark_mode.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shanujans/shanujans/main/light_mode.svg">
+      <img alt="Shanujan's GitHub neofetch card" src="https://raw.githubusercontent.com/shanujans/shanujans/main/light_mode.svg">
+    </picture>
+  </a>
+</p>
+
 ---
 
 ## 🧑‍💻 About Me
@@ -75,12 +85,6 @@ I believe in being **honest about my skills**. No inflated claims, no buzzword p
 ---
 
 ## 📊 GitHub Stats
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shanujans/shanujans/main/dark_mode.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shanujans/shanujans/main/light_mode.svg">
-  <img alt="Shanujan's GitHub stats" src="https://raw.githubusercontent.com/shanujans/shanujans/main/light_mode.svg">
-</picture>
 
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6366f1)](https://github.com/shanujans)
 
