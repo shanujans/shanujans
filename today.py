@@ -23,6 +23,7 @@ import datetime
 from pathlib import Path
 
 import requests
+from ascii_gen import generate_ascii_fragment
 
 GITHUB_USERNAME = os.environ.get("GH_USERNAME", "shanujans")
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN")
@@ -161,6 +162,7 @@ def main() -> None:
         "LOC_ADD": fmt(loc_add),
         "LOC_DEL": fmt(loc_del),
         "LOC_TOTAL": fmt(loc_add - loc_del),
+        "ASCII_ART": generate_ascii_fragment(ROOT / "shanujans.png", 48),
         "GEN_DATE": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     }
 
