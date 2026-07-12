@@ -11,6 +11,9 @@
 <p align="center">
   <a href="https://github.com/shanujans"><img alt="Profile Views" src="https://komarev.com/ghpvc/?username=shanujans&style=for-the-badge&color=6366f1"></a>
   <a href="mailto:shanujansh@gmail.com"><img alt="Open to Work" src="https://img.shields.io/badge/%E2%9C%85_Open_to-IT_Support_%C2%B7_QA_%C2%B7_AI_Tools-22c55e?style=for-the-badge"></a>
+  <a href="mailto:shanujansh@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Gmail-shanujansh@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"></a>
+  <a href="https://shanujan.is-a.dev"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-shanujan.is--a.dev-6366f1?style=for-the-badge&logo=googlechrome&logoColor=white"></a>
+  <a href="https://www.linkedin.com/in/shanujansuresh/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-shanujansuresh-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 </p>
 
 ---
