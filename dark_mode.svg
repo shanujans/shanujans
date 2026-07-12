@@ -49,16 +49,16 @@
 
     <text class="line l3" y="118"><tspan x="24" class="prompt">&#10095;</tspan><tspan x="42" class="cmd">./github-stats.sh --user shanujans</tspan></text>
 
-    <text class="line l4" y="148"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">GitHub age</tspan><tspan x="220" class="value">calculating…</tspan></text>
-    <text class="line l5" y="172"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Repositories</tspan><tspan x="220" class="value">—</tspan></text>
-    <text class="line l6" y="196"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Contributed to</tspan><tspan x="220" class="value">—</tspan></text>
-    <text class="line l7" y="220"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Total commits</tspan><tspan x="220" class="value">—</tspan></text>
-    <text class="line l8" y="244"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Stars earned</tspan><tspan x="220" class="value">—</tspan></text>
-    <text class="line l9" y="268"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Followers</tspan><tspan x="220" class="value">—</tspan></text>
-    <text class="line l10" y="292"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Lines added</tspan><tspan x="220" class="value-green">+—</tspan></text>
-    <text class="line l11" y="316"><tspan x="24" class="tree">&#9492;&#9472;</tspan><tspan x="46" class="label">Lines removed</tspan><tspan x="220" class="value-red">-—</tspan></text>
+    <text class="line l4" y="148"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">GitHub age</tspan><tspan x="220" class="value">1y 86d on GitHub</tspan></text>
+    <text class="line l5" y="172"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Repositories</tspan><tspan x="220" class="value">25</tspan></text>
+    <text class="line l6" y="196"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Contributed to</tspan><tspan x="220" class="value">30</tspan></text>
+    <text class="line l7" y="220"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Total commits</tspan><tspan x="220" class="value">557</tspan></text>
+    <text class="line l8" y="244"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Stars earned</tspan><tspan x="220" class="value">8</tspan></text>
+    <text class="line l9" y="268"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Followers</tspan><tspan x="220" class="value">5</tspan></text>
+    <text class="line l10" y="292"><tspan x="24" class="tree">&#9500;&#9472;</tspan><tspan x="46" class="label">Lines added</tspan><tspan x="220" class="value-green">+4,177,448</tspan></text>
+    <text class="line l11" y="316"><tspan x="24" class="tree">&#9492;&#9472;</tspan><tspan x="46" class="label">Lines removed</tspan><tspan x="220" class="value-red">-3,844,382</tspan></text>
 
-    <text class="line l11 comment" x="24" y="350">// last synced pending first Action run</text>
+    <text class="line l11 comment" x="24" y="350">// last synced 2026-07-12 00:45 UTC</text>
     <text class="line l11" y="374"><tspan x="24" class="prompt">&#10095;</tspan><tspan x="42" class="cursor cmd">&#9615;</tspan></text>
   </g>
 </svg>
