@@ -1,0 +1,63 @@
+name: Refresh terminal SVGs
+
+on:
+  schedule:
+    # Every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: terminal-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Render terminal SVGs from terminal_data.json + GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          mkdir -p /tmp/repo
+          cp -r scripts /tmp/build/
+          mkdir -p /tmp/build/fonts
+          cp scripts/fonts/*.woff2 /tmp/build/fonts/
+          # Generator writes to /tmp/repo/assets
+          python /tmp/build/generate_live.py
+
+      - name: Show live values to log
+        run: |
+          echo "==== regenerated asset count ===="
+          ls /tmp/repo/assets/*.svg | wc -l
+          echo "==== sample link serialization ===="
+          grep -c 'xlink:href' /tmp/repo/assets/terminal-connect.svg
+          echo "==== last synced stamp ===="
+          grep -o 'last synced [^<]*' /tmp/repo/assets/terminal-stats.svg
+
+      - name: Commit refreshed SVGs to 'terminal' branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp /tmp/repo/assets/*.svg assets/
+          git add assets/*.svg
+          if git diff --staged --quiet; then
+            echo "no SVG changes; skipping commit"
+          else
+            git commit -m "chore: refresh terminal SVGs [skip ci]"
+            git push origin HEAD:terminal
+          fi

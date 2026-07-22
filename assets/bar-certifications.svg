@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="459" height="69" viewBox="0 0 459 69">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="459" height="69" viewBox="0 0 459 69">
   <defs>
     <style>
       @font-face {
@@ -17,6 +17,8 @@
         font-variant-ligatures: none;
         font-feature-settings: "liga" 0, "calt" 0;
       }
+      a { text-decoration: none; cursor: pointer; }
+      a:hover text { fill: #CA7938; }
     </style>
   </defs>
   <rect x="0" y="0" width="459" height="69" fill="#0D1117"/>

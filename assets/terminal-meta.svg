@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="431" height="69" viewBox="0 0 431 69">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="634" height="258" viewBox="0 0 634 258">
   <defs>
     <style>
       @font-face {
@@ -21,6 +21,14 @@
       a:hover text { fill: #CA7938; }
     </style>
   </defs>
-  <rect x="0" y="0" width="431" height="69" fill="#0D1117"/>
-  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">$</tspan><tspan fill="#5299D2"> which -a --tools</tspan><tspan fill="#5C6773">   # Tools I Work With</tspan></text>
+  <rect x="0" y="0" width="634" height="258" fill="#0D1117"/>
+  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#E6EDF3">shanujansh@github -</tspan><tspan fill="#A0B3BC">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
+  <text x="22" y="47" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. OS:</tspan><tspan fill="#5C6773"> ....... </tspan><tspan fill="#5299D2">Windows, Android, Linux (basic)</tspan></text>
+  <text x="22" y="68" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Uptime:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#3FB950">1y 3m 6d on GitHub</tspan></text>
+  <text x="22" y="89" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Host:</tspan><tspan fill="#5C6773"> ..... </tspan><tspan fill="#5299D2">Sri Lanka</tspan></text>
+  <text x="22" y="110" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Kernel:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#5299D2">IT Support Professional (4+ yrs)</tspan></text>
+  <text x="22" y="131" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Shell:</tspan><tspan fill="#5C6773"> .... </tspan><tspan fill="#5299D2">BSc CS @ Univ. of the People</tspan></text>
+  <text x="22" y="152" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. IDE:</tspan><tspan fill="#5C6773"> ...... </tspan><tspan fill="#5299D2">VS Code, AI Studio, Git, OpenCode</tspan></text>
+  <text x="22" y="194" font-style="italic" fill="#5C6773" xml:space="preserve">// uptime live from GitHub `created_at` (2025-04-16T17:58:08Z)</text>
+  <text x="22" y="215" font-weight="700" fill="#CA7938">&gt;<tspan fill="#A0B3BC">_</tspan></text>
 </svg>
