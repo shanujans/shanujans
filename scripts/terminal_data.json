@@ -114,6 +114,10 @@
 
   "github_target_user": "shanujans",
 
+  "_inline_cards_help": "Cards whose SVGs contain clickable hotspots. These must be INLINED in README.md (not loaded as <img>) so the <a xlink:href> hyperlinks actually navigate on click. Without this, clicking inside a card opens the .svg file itself.",
+
+  "inline_cards": ["hero", "projects", "certifications", "connect"],
+
   "last_known_loc": {
     "lines":  338640,
     "additions": 4184343,

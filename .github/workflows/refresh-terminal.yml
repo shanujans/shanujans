@@ -37,7 +37,8 @@ jobs:
           cp -r scripts /tmp/build/
           mkdir -p /tmp/build/fonts
           cp scripts/fonts/*.woff2 /tmp/build/fonts/
-          # Generator writes to /tmp/repo/assets
+          # Generator writes SVGs to /tmp/repo/assets AND then calls write_readme.py
+          # to assemble README.md with clickable cards inlined as DOM SVG.
           python /tmp/build/generate_live.py
 
       - name: Show live values to log
