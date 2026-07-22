@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="699" height="510" viewBox="0 0 699 510">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="699" height="510" viewBox="0 0 699 510">
   <defs>
     <style>
       @font-face {
@@ -17,6 +17,8 @@
         font-variant-ligatures: none;
         font-feature-settings: "liga" 0, "calt" 0;
       }
+      a { text-decoration: none; cursor: pointer; }
+      a:hover text { fill: #CA7938; }
     </style>
   </defs>
   <rect x="0" y="0" width="699" height="510" fill="#0D1117"/>
@@ -36,7 +38,7 @@
   <text x="22" y="341" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Python:</tspan><tspan fill="#5C6773"> ......................... </tspan><tspan fill="#5299D2">beginner, using AI assistance</tspan></text>
   <text x="22" y="362" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Manual QA Testing:</tspan><tspan fill="#5C6773"> .............. </tspan><tspan fill="#5299D2">actively studying</tspan></text>
   <text x="22" y="383" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Linux:</tspan><tspan fill="#5C6773"> .......................... </tspan><tspan fill="#5299D2">basic commands only</tspan></text>
-  <text x="22" y="404" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Cloud (AWS / OCI / IBM):</tspan><tspan fill="#5C6773"> ........ </tspan><tspan fill="#5299D2">fundamentals</tspan></text>
+  <text x="22" y="404" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Cloud (AWS/OCI/IBM):</tspan><tspan fill="#5C6773"> ............ </tspan><tspan fill="#5299D2">fundamentals</tspan></text>
   <text x="22" y="446" font-style="italic" fill="#5C6773" xml:space="preserve">// honest about skills -- no inflated claims, ever</text>
   <text x="22" y="467" font-weight="700" fill="#CA7938">&gt;<tspan fill="#A0B3BC">_</tspan></text>
 </svg>

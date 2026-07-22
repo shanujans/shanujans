@@ -1,1 +1,4 @@
 requests>=2.31.0
+brotli>=1.0.9
+fonttools[woff]>=4.50.0
+pyfiglet>=1.0.2

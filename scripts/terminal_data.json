@@ -1,0 +1,124 @@
+{
+  "_comment_meta": "Single source of truth. Edit values here, then re-run `python scripts/generate_live.py`. Last-served live data (Repos/Commits/etc.) override these only when GitHub API is reachable.",
+
+  "username": "shanujansh@github",
+  "name": "Shanujan Suresh",
+  "display_name_figlet": "SHANUJAN SURESH",
+  "tagline": "IT Support Professional . AI Tools Enthusiast . Sri Lanka",
+  "whoami": "Building with AI tools & honest engineering -- no inflated claims.",
+  "status": "open to IT Support / QA / AI Tools roles",
+
+  "host": "Sri Lanka",
+  "kernel": "IT Support Professional (4+ yrs)",
+  "shell": "BSc CS @ Univ. of the People",
+  "ide": "VS Code, AI Studio, Git, OpenCode",
+  "os": "Windows, Android, Linux (basic)",
+  "uptime_seed_iso": "2024-09-08T00:00:00Z",
+  "_uptime_note": "If you don't want GH-API-style live uptime, this seed date is used as fallback so the bar still renders something meaningful.",
+
+  "languages_programming": "Python, TypeScript",
+  "languages_markup":     "HTML, CSS, JSON, YAML",
+  "languages_real":       "English, Tamil",
+
+  "focus_ai":         "Gemini API, AI Studio",
+  "focus_automation": "Cloudflare Workers, Actions",
+  "focus_qa":         "Manual Testing (learning)",
+  "focus_cloud":      "AWS (basic), OCI (basic)",
+
+  "skills_confident": [
+    ["IT Support & Troubleshooting", "4+ yrs hands-on experience"],
+    ["Gemini API & AI Studio",       "live chatbot in production"],
+    ["Cloudflare Workers",           "secure API proxying"],
+    ["Git & GitHub",                 "version control, CI/CD, Actions"],
+    ["MS Office & Docs",             "clear technical writing"]
+  ],
+  "skills_learning": [
+    ["Python",             "beginner, using AI assistance"],
+    ["Manual QA Testing",  "actively studying"],
+    ["Linux",              "basic commands only"],
+    ["Cloud (AWS/OCI/IBM)","fundamentals"]
+  ],
+
+  "tools": [
+    ["Version Control", "Git, GitHub, GitHub Actions"],
+    ["Cloud & Edge",    "Cloudflare Workers, AWS (basic), OCI (basic)"],
+    ["Languages",       "Python, TypeScript, C#"],
+    ["AI / ML",         "Gemini API, AI Studio, scikit-learn"],
+    ["Databases",       "SQL Server"],
+    ["OS",              "Windows, Linux (basic)"]
+  ],
+
+  "projects": [
+    {
+      "title":   "01. ARIA Chatbot",
+      "desc":    "Live AI assistant on my portfolio",
+      "stack":   "React, TypeScript, Cloudflare Workers",
+      "status":  "live in production",
+      "status_color": "GREEN",
+      "url":     "https://shanujan.is-a.dev"
+    },
+    {
+      "title":   "02. Loan Risk Predictor",
+      "desc":    "ML package published on PyPI",
+      "stack":   "Python, scikit-learn",
+      "status":  "87.5% accuracy, CI/CD to PyPI",
+      "url":     "https://github.com/shanujans/loan-risk-prediction"
+    },
+    {
+      "title":   "03. Quantum Insight Forge",
+      "desc":    "AI app on Google AI Studio",
+      "stack":   "Gemini API, AI Studio",
+      "status":  "quantum concepts + Gemini model",
+      "url":     "https://github.com/shanujans/Quantum-Insight-Forge"
+    },
+    {
+      "title":   "04. AutoAI Loan Risk",
+      "desc":    "IBM Watson Studio learning project",
+      "stack":   "IBM Watson, SnapML",
+      "status":  "77% accuracy (AutoAI experiment)",
+      "url":     "https://github.com/shanujans/AutoAI-Loan-Risk-Predictor"
+    },
+    {
+      "title":   "05. Telegram File Uploader",
+      "desc":    "Async bot with VirusTotal scanning (AI-assisted)",
+      "stack":   "Python, AsyncIO",
+      "url":     "https://github.com/shanujans/telegram-uploader"
+    },
+    {
+      "title":   "06. Student Management System",
+      "desc":    "ESoft final year project",
+      "stack":   "C#, SQL Server",
+      "url":     "https://github.com/shanujans/Skills-International-Application"
+    }
+  ],
+
+  "_cert_verification_help": "Replace each `verify_url` placeholder with the real Issuer verification URL. Issuer examples: IBM -> https://www.credly.com/ or https://www.youracclaim.com/ ; Cisco -> https://www.credly.com/ ; Google Cloud -> https://www.credly.com/ or https://cloud.google.com/training/",
+
+  "certifications": [
+    { "name": "Quantum Information",            "issuer": "IBM (2025)",            "verify_url": "https://www.credly.com/users/shanujans/TODO-IBM-1" },
+    { "name": "Quantum Business Foundations",  "issuer": "IBM (2025)",            "verify_url": "https://www.credly.com/users/shanujans/TODO-IBM-2" },
+    { "name": "AI Fundamentals",               "issuer": "IBM SkillsBuild (2025)","verify_url": "https://www.credly.com/users/shanujans/TODO-IBM-3" },
+    { "name": "IBM Z Day Security",            "issuer": "IBM (2025)",            "verify_url": "https://www.credly.com/users/shanujans/TODO-IBM-4" },
+    { "name": "Data Analytics Essentials",     "issuer": "Cisco (2025)",          "verify_url": "https://www.credly.com/users/shanujans/TODO-CISCO-1" },
+    { "name": "Python Essentials 1",           "issuer": "Cisco (2025)",          "verify_url": "https://www.credly.com/users/shanujans/TODO-CISCO-2" },
+    { "name": "Linux Unhatched",               "issuer": "Cisco (2025)",          "verify_url": "https://www.credly.com/users/shanujans/TODO-CISCO-3" },
+    { "name": "AI in Action",                  "issuer": "Google Cloud (2026)",   "verify_url": "https://www.credly.com/users/shanujans/TODO-GCP-1"  }
+  ],
+
+  "contact": {
+    "email":    { "display": "shanujansh@gmail.com",      "url": "mailto:shanujansh@gmail.com" },
+    "portfolio":{ "display": "shanujan.is-a.dev",         "url": "https://shanujan.is-a.dev"  },
+    "github":   { "display": "github.com/shanujans",      "url": "https://github.com/shanujans" },
+    "linkedin": { "display": "linkedin.com/in/shanujansuresh", "url": "https://www.linkedin.com/in/shanujansuresh/" }
+  },
+
+  "github_target_user": "shanujans",
+
+  "last_known_loc": {
+    "lines":  338640,
+    "additions": 4184343,
+    "deletions": 3845703
+  },
+
+  "_loc_note": "Lines/Additions/Deletions are estimated via `cloc` running locally and committed here. The GitHub Action can refresh them if you give it `CLOC_REFRESH=true`."
+}

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="717" height="405" viewBox="0 0 717 405">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="717" height="405" viewBox="0 0 717 405">
   <defs>
     <style>
       @font-face {
@@ -17,6 +17,8 @@
         font-variant-ligatures: none;
         font-feature-settings: "liga" 0, "calt" 0;
       }
+      a { text-decoration: none; cursor: pointer; }
+      a:hover text { fill: #CA7938; }
     </style>
   </defs>
   <rect x="0" y="0" width="717" height="405" fill="#0D1117"/>
@@ -29,9 +31,9 @@
   <text x="22" y="173" font-weight="700" fill="#CA7938" xml:space="preserve">$ whoami</text>
   <text x="22" y="194" font-weight="400" fill="#5299D2" xml:space="preserve">Building with AI tools &amp; honest engineering -- no inflated claims.</text>
   <text x="22" y="236" xml:space="preserve"><tspan font-weight="700" fill="#A0B3BC">- Connect -</tspan><tspan fill="#5C6773">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
-  <text x="22" y="257" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Portfolio:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#5299D2">shanujan.is-a.dev</tspan></text>
-  <text x="22" y="278" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Email:</tspan><tspan fill="#5C6773"> ....... </tspan><tspan fill="#5299D2">shanujansh@gmail.com</tspan></text>
+  <text x="22" y="257" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Portfolio:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://shanujan.is-a.dev" target="_blank">shanujan.is-a.dev</a></tspan></tspan></text>
+  <text x="22" y="278" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Email:</tspan><tspan fill="#5C6773"> ....... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="mailto:shanujansh@gmail.com" target="_blank">shanujansh@gmail.com</a></tspan></tspan></text>
   <text x="22" y="299" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Status:</tspan><tspan fill="#5C6773"> ...... </tspan><tspan fill="#5299D2">open to IT Support / QA / AI Tools roles</tspan></text>
-  <text x="22" y="341" font-style="italic" fill="#5C6773" xml:space="preserve">// live profile-view counter below</text>
+  <text x="22" y="341" font-style="italic" fill="#5C6773" xml:space="preserve">// last synced 2026-07-22 11:22 UTC</text>
   <text x="22" y="362" font-weight="700" fill="#CA7938">&gt;<tspan fill="#A0B3BC">_</tspan></text>
 </svg>

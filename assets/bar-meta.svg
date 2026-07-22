@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="431" height="69" viewBox="0 0 431 69">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="302" height="69" viewBox="0 0 302 69">
   <defs>
     <style>
       @font-face {
@@ -21,6 +21,6 @@
       a:hover text { fill: #CA7938; }
     </style>
   </defs>
-  <rect x="0" y="0" width="431" height="69" fill="#0D1117"/>
-  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">$</tspan><tspan fill="#5299D2"> which -a --tools</tspan><tspan fill="#5C6773">   # Tools I Work With</tspan></text>
+  <rect x="0" y="0" width="302" height="69" fill="#0D1117"/>
+  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">$</tspan><tspan fill="#5299D2"> uname -a</tspan><tspan fill="#5C6773">   # System Meta</tspan></text>
 </svg>

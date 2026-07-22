@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="616" height="279" viewBox="0 0 616 279">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="524" height="279" viewBox="0 0 524 279">
   <defs>
     <style>
       @font-face {
@@ -17,16 +17,18 @@
         font-variant-ligatures: none;
         font-feature-settings: "liga" 0, "calt" 0;
       }
+      a { text-decoration: none; cursor: pointer; }
+      a:hover text { fill: #CA7938; }
     </style>
   </defs>
-  <rect x="0" y="0" width="616" height="279" fill="#0D1117"/>
-  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#E6EDF3">shanujansh@github -</tspan><tspan fill="#A0B3BC">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
-  <text x="22" y="47" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Open to:</tspan><tspan fill="#5C6773"> ..... </tspan><tspan fill="#5299D2">IT Support, Service Desk, AI Tools, QA Roles</tspan></text>
-  <text x="22" y="89" xml:space="preserve"><tspan font-weight="700" fill="#A0B3BC">- Reach Me -</tspan><tspan fill="#5C6773">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
-  <text x="22" y="110" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Email:</tspan><tspan fill="#5C6773"> ....... </tspan><tspan fill="#5299D2">shanujansh@gmail.com</tspan></text>
-  <text x="22" y="131" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Portfolio:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#5299D2">shanujan.is-a.dev</tspan></text>
-  <text x="22" y="152" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. GitHub:</tspan><tspan fill="#5C6773"> ...... </tspan><tspan fill="#5299D2">github.com/shanujans</tspan></text>
-  <text x="22" y="173" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. LinkedIn:</tspan><tspan fill="#5C6773"> .... </tspan><tspan fill="#5299D2">linkedin.com/in/shanujansuresh</tspan></text>
+  <rect x="0" y="0" width="524" height="279" fill="#0D1117"/>
+  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#E6EDF3">shanujansh@github -</tspan><tspan fill="#A0B3BC">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
+  <text x="22" y="47" font-weight="700" xml:space="preserve"><tspan><a xlink:href="mailto:shanujansh@gmail.com?subject=IT%20Support%20opportunity" target="_blank"><tspan fill="#A0B3BC">Open to:</tspan></a></tspan></text>
+  <text x="22" y="89" xml:space="preserve"><tspan font-weight="700" fill="#A0B3BC">- Reach Me -</tspan><tspan fill="#5C6773">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
+  <text x="22" y="110" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Email:</tspan><tspan fill="#5C6773"> ....... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="mailto:shanujansh@gmail.com" target="_blank">shanujansh@gmail.com</a></tspan></tspan></text>
+  <text x="22" y="131" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Portfolio:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://shanujan.is-a.dev" target="_blank">shanujan.is-a.dev</a></tspan></tspan></text>
+  <text x="22" y="152" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. GitHub:</tspan><tspan fill="#5C6773"> ...... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://github.com/shanujans" target="_blank">github.com/shanujans</a></tspan></tspan></text>
+  <text x="22" y="173" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. LinkedIn:</tspan><tspan fill="#5C6773"> .... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.linkedin.com/in/shanujansuresh/" target="_blank">linkedin.com/in/shanujansuresh</a></tspan></tspan></text>
   <text x="22" y="215" font-style="italic" fill="#5C6773" xml:space="preserve">// thanks for stopping by -- let's build something</text>
   <text x="22" y="236" font-weight="700" fill="#CA7938">&gt;<tspan fill="#A0B3BC">_</tspan></text>
 </svg>
