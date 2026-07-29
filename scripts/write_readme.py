@@ -1,14 +1,12 @@
 """
 write_readme.py
 
-Generates README.md with:
-- Hero: <picture> from main branch (dark/light mode)
-- Inline SVGs for cards needing clickable links (projects, certifications, connect)
-- <img> tags for other cards (preserves embedded fonts)
-- Terminal-style: left-aligned, compact, consistent widths
+Generates README.md with ALL cards as <img> tags.
+GitHub Markdown only renders SVGs via <img src="..."> - raw <svg> elements are shown as text.
+Note: Internal SVG links (xlink:href) don't work on GitHub; only the hero wraps in <a>.
 """
 
-import json, html, re
+import json, html
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -18,26 +16,7 @@ ASSETS = REPO / "assets"
 with open(ROOT / "terminal_data.json", encoding="utf-8") as f:
     DATA = json.load(f)
 
-INLINE_CARDS = set(DATA.get("inline_cards", ["hero", "projects", "certifications", "connect"]))
-CARD_WIDTH = 720  # consistent width for all terminal cards
-
-def read_svg(slug):
-    path = ASSETS / f"terminal-{slug}.svg"
-    return path.read_text(encoding="utf-8") if path.exists() else ""
-
-def strip_font_styles(svg):
-    """Remove @font-face defs so GitHub doesn't strip them; fallback to system monospace."""
-    return re.sub(r'<defs>.*?</defs>', '', svg, flags=re.DOTALL)
-
-def inline_card(slug, alt):
-    svg = read_svg(slug)
-    if not svg:
-        return f'<!-- terminal-{slug}.svg not found -->'
-    # GitHub strips <style> from inline SVGs -> raw @font-face shows.
-    # Remove <defs> entirely; rely on system monospace fallback in terminal_card.py
-    svg = re.sub(r'<defs>.*?</defs>', '', svg, flags=re.DOTALL)
-    svg = svg.replace('<svg ', f'<svg width="{CARD_WIDTH}" ')
-    return f'<p align="left">{svg}</p>'
+CARD_WIDTH = 720
 
 def img_card(slug, alt):
     return f'<p align="left"><img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/></p>'
@@ -67,10 +46,9 @@ def widget_card(slug, alt):
         )
     return img_card(slug, alt)
 
-# Build README
 parts = []
 
-# Hero - from main branch with dark/light mode
+# Hero - neofetch from main branch
 parts.append(
     '<p align="center">\n'
     '  <a href="https://github.com/shanujans">\n'
@@ -89,28 +67,25 @@ parts.append(
 )
 parts.append('<hr/>')
 
-# Sections: (bar_slug, card_slug, card_alt, use_inline)
 sections = [
-    ("projects",  "projects",  "Featured Projects",    True),   # inline: clickable titles
-    ("opensource","opensource","Open Source Contributions", False), # img
-    ("certifications","certifications","Certifications", True),   # inline: clickable verify links
-    ("stats",     "stats",     "GitHub Stats",         False),  # external widget
-    ("activity",  "activity",  "Contribution Activity", False), # external widget
-    ("snake",     "snake",     "Contribution Snake",   False),  # external widget
-    ("connect",   "connect",   "Contact",              True),   # inline: clickable links
+    ("projects",      "projects",      "Featured Projects",      "img"),
+    ("opensource",    "opensource",    "Open Source Contributions", "img"),
+    ("certifications","certifications","Certifications",         "img"),
+    ("stats",         "stats",         "GitHub Stats",           "widget"),
+    ("activity",      "activity",      "Contribution Activity",  "widget"),
+    ("snake",         "snake",         "Contribution Snake",     "widget"),
+    ("connect",       "connect",       "Contact",                "img"),
 ]
 
-for bar_slug, card_slug, alt, use_inline in sections:
+for bar_slug, card_slug, alt, kind in sections:
     parts.append(img_bar(bar_slug, f"$ {bar_slug}"))
-    if use_inline and card_slug in INLINE_CARDS:
-        parts.append(inline_card(card_slug, alt))
-    elif card_slug in ("stats", "activity", "snake"):
+    if kind == "widget":
         parts.append(widget_card(card_slug, alt))
     else:
         parts.append(img_card(card_slug, alt))
     parts.append('<hr/>')
 
-# Footer links
+# Footer
 parts.append(
     '<p align="left">'
     '<a href="mailto:shanujansh@gmail.com">Email</a> &middot; '
@@ -121,12 +96,10 @@ parts.append(
 )
 
 readme_md = "\n\n".join(parts) + "\n"
-
 readme_path = REPO / "README.md"
 readme_path.write_text(readme_md, encoding="utf-8")
 
 size_kb = readme_path.stat().st_size / 1024
-inline_count = sum(1 for _, _, _, inline in sections if inline)
+img_count = readme_md.count('<img src="assets/')
 print(f"Wrote {readme_path}  ({size_kb:.1f} KB)")
-print(f"  inline SVG cards : {inline_count}")
-print(f"  <img> cards      : {len(sections) - inline_count}")
+print(f"  asset <img> tags: {img_count}")
