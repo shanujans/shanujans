@@ -33,6 +33,9 @@ def inline_card(slug, alt):
     svg = read_svg(slug)
     if not svg:
         return f'<!-- terminal-{slug}.svg not found -->'
+    # GitHub strips <style> from inline SVGs -> raw @font-face shows.
+    # Remove <defs> entirely; rely on system monospace fallback in terminal_card.py
+    svg = re.sub(r'<defs>.*?</defs>', '', svg, flags=re.DOTALL)
     svg = svg.replace('<svg ', f'<svg width="{CARD_WIDTH}" ')
     return f'<p align="left">{svg}</p>'
 
