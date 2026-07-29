@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="376" height="69" viewBox="0 0 376 69">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="398" height="71" viewBox="0 0 398 71">
   <defs>
     <style>
       @font-face {
@@ -13,7 +13,7 @@
       }
       text {
         font-family: 'FiraCodeSubset', 'Fira Code', 'Cascadia Code', Consolas, monospace;
-        font-size: 15px;
+        font-size: 16px;
         font-variant-ligatures: none;
         font-feature-settings: "liga" 0, "calt" 0;
       }
@@ -21,6 +21,6 @@
       a:hover text { fill: #CA7938; }
     </style>
   </defs>
-  <rect x="0" y="0" width="376" height="69" fill="#0D1117"/>
+  <rect x="0" y="0" width="398" height="71" fill="#0D1117"/>
   <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">$</tspan><tspan fill="#5299D2"> cat contact.md</tspan><tspan fill="#5C6773">   # Let's Connect</tspan></text>
 </svg>

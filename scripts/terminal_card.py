@@ -8,8 +8,8 @@ DIM     = "#5C6773"
 GREEN   = "#3FB950"
 WHITE   = "#E6EDF3"
 
-FONT_SIZE = 15
-LINE_H    = 21
+FONT_SIZE = 16
+LINE_H    = 23
 PAD_X     = 22
 PAD_TOP   = 26
 PAD_BOTTOM = 22
