@@ -337,12 +337,12 @@ CARDS = [
 print("== RENDERING ==")
 for slug, fn, _ in CARDS:
     out = ASSETS / f"terminal-{slug}.svg"
-    build_card(DATA["username"], fn(), str(out), min_width_chars=95)
+    build_card(DATA["username"], fn(), str(out), min_width_chars=100)
     print(f"  wrote {out}")
 
 for slug, cmd, label in BARS:
     out = ASSETS / f"bar-{slug}.svg"
-    build_card(None, [("cmdheader", cmd, label)], str(out), min_width_chars=95, with_header=False)
+    build_card(None, [("cmdheader", cmd, label)], str(out), min_width_chars=100, with_header=False)
     print(f"  wrote {out}")
 
 print(f"\nDone. {len(CARDS)} cards + {len(BARS)} bars regenerated.")
