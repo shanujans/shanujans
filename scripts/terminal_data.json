@@ -50,59 +50,68 @@
 
   "projects": [
     {
-      "title":   "01. ARIA Chatbot",
-      "desc":    "Live AI assistant on my portfolio",
-      "stack":   "React, TypeScript, Cloudflare Workers",
-      "status":  "live in production",
-      "status_color": "GREEN",
-      "url":     "https://shanujan.is-a.dev"
-    },
-    {
-      "title":   "02. Loan Risk Predictor",
+      "title":   "01. Loan Risk Predictor",
       "desc":    "ML package published on PyPI",
       "stack":   "Python, scikit-learn",
       "status":  "87.5% accuracy, CI/CD to PyPI",
       "url":     "https://github.com/shanujans/loan-risk-prediction"
     },
     {
-      "title":   "03. Quantum Insight Forge",
-      "desc":    "AI app on Google AI Studio",
-      "stack":   "Gemini API, AI Studio",
-      "status":  "quantum concepts + Gemini model",
-      "url":     "https://github.com/shanujans/Quantum-Insight-Forge"
-    },
-    {
-      "title":   "04. AutoAI Loan Risk",
-      "desc":    "IBM Watson Studio learning project",
-      "stack":   "IBM Watson, SnapML",
-      "status":  "77% accuracy (AutoAI experiment)",
-      "url":     "https://github.com/shanujans/AutoAI-Loan-Risk-Predictor"
-    },
-    {
-      "title":   "05. Telegram File Uploader",
-      "desc":    "Async bot with VirusTotal scanning (AI-assisted)",
-      "stack":   "Python, AsyncIO",
-      "url":     "https://github.com/shanujans/telegram-uploader"
-    },
-    {
-      "title":   "06. Student Management System",
+      "title":   "02. Student Management System",
       "desc":    "ESoft final year project",
       "stack":   "C#, SQL Server",
       "url":     "https://github.com/shanujans/Skills-International-Application"
+    },
+    {
+      "title":   "03. Tara",
+      "desc":    "AI-powered task automation",
+      "stack":   "Python, FastAPI",
+      "url":     "https://github.com/shanujans/tara"
+    },
+    {
+      "title":   "04. RepoAlpha",
+      "desc":    "Repository analytics dashboard",
+      "stack":   "TypeScript, React",
+      "url":     "https://github.com/shanujans/repoalpha"
+    },
+    {
+      "title":   "05. Q-Optima",
+      "desc":    "Quantum optimization simulator",
+      "stack":   "Python, Qiskit",
+      "url":     "https://github.com/shanujans/q-optima"
+    }
+  ],
+
+  "opensource": [
+    {
+      "repo":    "affaan-m/ECC",
+      "desc":    "Error Correction Codes implementation",
+      "url":     "https://github.com/affaan-m/ECC"
+    },
+    {
+      "repo":    "BuilderIO/skills",
+      "desc":    "Developer skills framework",
+      "url":     "https://github.com/BuilderIO/skills"
+    },
+    {
+      "repo":    "band-ai/codeband",
+      "desc":    "AI-powered code analysis tool",
+      "url":     "https://github.com/band-ai/codeband"
     }
   ],
 
   "_cert_verification_help": "Replace each `verify_url` placeholder with the real Issuer verification URL. Issuer examples: IBM -> https://www.credly.com/ or https://www.youracclaim.com/ ; Cisco -> https://www.credly.com/ ; Google Cloud -> https://www.credly.com/ or https://cloud.google.com/training/",
 
   "certifications": [
-    { "name": "Quantum Information",            "issuer": "IBM (2025)",            "verify_url": "https://www.credly.com/users/shanujans/TODO-IBM-1" },
-    { "name": "Quantum Business Foundations",  "issuer": "IBM (2025)",            "verify_url": "https://www.credly.com/users/shanujans/TODO-IBM-2" },
-    { "name": "AI Fundamentals",               "issuer": "IBM SkillsBuild (2025)","verify_url": "https://www.credly.com/users/shanujans/TODO-IBM-3" },
-    { "name": "IBM Z Day Security",            "issuer": "IBM (2025)",            "verify_url": "https://www.credly.com/users/shanujans/TODO-IBM-4" },
-    { "name": "Data Analytics Essentials",     "issuer": "Cisco (2025)",          "verify_url": "https://www.credly.com/users/shanujans/TODO-CISCO-1" },
-    { "name": "Python Essentials 1",           "issuer": "Cisco (2025)",          "verify_url": "https://www.credly.com/users/shanujans/TODO-CISCO-2" },
-    { "name": "Linux Unhatched",               "issuer": "Cisco (2025)",          "verify_url": "https://www.credly.com/users/shanujans/TODO-CISCO-3" },
-    { "name": "AI in Action",                  "issuer": "Google Cloud (2026)",   "verify_url": "https://www.credly.com/users/shanujans/TODO-GCP-1"  }
+    { "name": "Basic Quantum Information",                "issuer": "IBM (2025)",             "verify_url": "https://www.credly.com/badges/c911bf84-f13a-40e5-a884-932180cd345a" },
+    { "name": "AI Fundamentals",                          "issuer": "IBM SkillsBuild (2025)", "verify_url": "https://www.credly.com/badges/7ff4f457-58d0-462b-ba96-e223717fa5b5" },
+    { "name": "IBM Z Day Security",                       "issuer": "IBM (2025)",             "verify_url": "https://www.credly.com/badges/60c84da7-2e35-4fd5-ae33-cfbe6f2018d8" },
+    { "name": "Data Analytics Essentials",                "issuer": "Cisco (2025)",           "verify_url": "https://www.credly.com/badges/f74b8f67-d6f8-4df8-8d0c-6c7a9d9c1b07" },
+    { "name": "Python Essentials 1",                      "issuer": "Cisco (2025)",           "verify_url": "https://www.credly.com/badges/69476385-e08c-4279-b5da-56d22f54a520" },
+    { "name": "Linux Unhatched",                          "issuer": "Cisco (2025)",           "verify_url": "https://www.credly.com/badges/47dbfbba-8fdb-4d33-af8d-7bd1083fee8b" },
+    { "name": "AI in Action",                             "issuer": "Google Cloud (2026)",    "verify_url": "TODO" },
+    { "name": "AI Agent Olympics Hackathon",              "issuer": "lablab.ai (2026)",       "verify_url": "https://lablab.ai/u/@shanujan/ai-hackathons/milan-ai-week-hackathon/certificate" },
+    { "name": "MCP: Advanced Topics",                     "issuer": "Anthropic (2026)",       "verify_url": "https://verify.skilljar.com/c/ahyjbhzjvwt5" }
   ],
 
   "contact": {

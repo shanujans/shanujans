@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="588" height="300" viewBox="0 0 588 300">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="579" height="321" viewBox="0 0 579 321">
   <defs>
     <style>
       @font-face {
@@ -21,16 +21,17 @@
       a:hover text { fill: #CA7938; }
     </style>
   </defs>
-  <rect x="0" y="0" width="588" height="300" fill="#0D1117"/>
-  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#E6EDF3">shanujansh@github -</tspan><tspan fill="#A0B3BC">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
-  <text x="22" y="47" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Quantum Information:</tspan><tspan fill="#5C6773"> ............ </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/users/shanujans/TODO-IBM-1" target="_blank">IBM (2025)</a></tspan></tspan></text>
-  <text x="22" y="68" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Quantum Business Foundations:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/users/shanujans/TODO-IBM-2" target="_blank">IBM (2025)</a></tspan></tspan></text>
-  <text x="22" y="89" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. AI Fundamentals:</tspan><tspan fill="#5C6773"> ................ </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/users/shanujans/TODO-IBM-3" target="_blank">IBM SkillsBuild (2025)</a></tspan></tspan></text>
-  <text x="22" y="110" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. IBM Z Day Security:</tspan><tspan fill="#5C6773"> ............. </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/users/shanujans/TODO-IBM-4" target="_blank">IBM (2025)</a></tspan></tspan></text>
-  <text x="22" y="131" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Data Analytics Essentials:</tspan><tspan fill="#5C6773"> ...... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/users/shanujans/TODO-CISCO-1" target="_blank">Cisco (2025)</a></tspan></tspan></text>
-  <text x="22" y="152" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Python Essentials 1:</tspan><tspan fill="#5C6773"> ............ </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/users/shanujans/TODO-CISCO-2" target="_blank">Cisco (2025)</a></tspan></tspan></text>
-  <text x="22" y="173" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Linux Unhatched:</tspan><tspan fill="#5C6773"> ................ </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/users/shanujans/TODO-CISCO-3" target="_blank">Cisco (2025)</a></tspan></tspan></text>
-  <text x="22" y="194" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. AI in Action:</tspan><tspan fill="#5C6773"> ................... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/users/shanujans/TODO-GCP-1" target="_blank">Google Cloud (2026)</a></tspan></tspan></text>
-  <text x="22" y="236" font-style="italic" fill="#5C6773" xml:space="preserve">// 8 certifications -- 4 IBM, 3 Cisco, 1 Google Cloud</text>
-  <text x="22" y="257" font-weight="700" fill="#CA7938">&gt;<tspan fill="#A0B3BC">_</tspan></text>
+  <rect x="0" y="0" width="579" height="321" fill="#0D1117"/>
+  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#E6EDF3">shanujansh@github -</tspan><tspan fill="#A0B3BC">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
+  <text x="22" y="47" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Basic Quantum Information:</tspan><tspan fill="#5C6773"> ..... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/badges/c911bf84-f13a-40e5-a884-932180cd345a" target="_blank">IBM (2025)</a></tspan></tspan></text>
+  <text x="22" y="68" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. AI Fundamentals:</tspan><tspan fill="#5C6773"> ............... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/badges/7ff4f457-58d0-462b-ba96-e223717fa5b5" target="_blank">IBM SkillsBuild (2025)</a></tspan></tspan></text>
+  <text x="22" y="89" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. IBM Z Day Security:</tspan><tspan fill="#5C6773"> ............ </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/badges/60c84da7-2e35-4fd5-ae33-cfbe6f2018d8" target="_blank">IBM (2025)</a></tspan></tspan></text>
+  <text x="22" y="110" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Data Analytics Essentials:</tspan><tspan fill="#5C6773"> ..... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/badges/f74b8f67-d6f8-4df8-8d0c-6c7a9d9c1b07" target="_blank">Cisco (2025)</a></tspan></tspan></text>
+  <text x="22" y="131" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Python Essentials 1:</tspan><tspan fill="#5C6773"> ........... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/badges/69476385-e08c-4279-b5da-56d22f54a520" target="_blank">Cisco (2025)</a></tspan></tspan></text>
+  <text x="22" y="152" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. Linux Unhatched:</tspan><tspan fill="#5C6773"> ............... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://www.credly.com/badges/47dbfbba-8fdb-4d33-af8d-7bd1083fee8b" target="_blank">Cisco (2025)</a></tspan></tspan></text>
+  <text x="22" y="173" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. AI in Action:</tspan><tspan fill="#5C6773"> .................. </tspan><tspan fill="#5299D2"><tspan><a xlink:href="TODO" target="_blank">Google Cloud (2026)</a></tspan></tspan></text>
+  <text x="22" y="194" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. AI Agent Olympics Hackathon:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://lablab.ai/u/@shanujan/ai-hackathons/milan-ai-week-hackathon/certificate" target="_blank">lablab.ai (2026)</a></tspan></tspan></text>
+  <text x="22" y="215" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. MCP: Advanced Topics:</tspan><tspan fill="#5C6773"> .......... </tspan><tspan fill="#5299D2"><tspan><a xlink:href="https://verify.skilljar.com/c/ahyjbhzjvwt5" target="_blank">Anthropic (2026)</a></tspan></tspan></text>
+  <text x="22" y="257" font-style="italic" fill="#5C6773" xml:space="preserve">// 8 certifications -- 4 IBM, 3 Cisco, 1 Google Cloud</text>
+  <text x="22" y="278" font-weight="700" fill="#CA7938">&gt;<tspan fill="#A0B3BC">_</tspan></text>
 </svg>

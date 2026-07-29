@@ -32,8 +32,6 @@
 
 <p align="center"><img src="assets/terminal-certifications.svg" alt="Certifications" width="588"/></p>
 
-<sub>Replace the placeholder <code>verify_url</code> values for each cert in <code>scripts/terminal_data.json</code> with your real Issuer verification URLs (Credly / IBM SkillsBuild / Cisco NetAcad etc.) to make the rows link to your credential pages.</sub>
-
 <hr/>
 
 <p align="center"><a href="https://github.com/shanujans"><img src="https://github-readme-stats.vercel.app/api?username=shanujans&show_icons=true&hide_border=true&bg_color=0d1117&title_color=ca7938&icon_color=5299d2&text_color=a0b3bc"></a><a href="https://github.com/shanujans"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&hide_border=true&bg_color=0d1117&title_color=ca7938&text_color=a0b3bc"></a></p>
@@ -51,13 +49,6 @@
 <img src="assets/bar-snake.svg" alt="$ ./snake --eat contributions"/>
 
 <p align="center"><img src="https://raw.githubusercontent.com/shanujans/shanujans/output/github-contribution-grid-snake.svg" alt="snake"/></p>
-
-<sub>To recolor the snake itself, add these query params to your `Platane/snk` workflow output line:</sub>
-
-```yaml
-outputs: |
-  dist/github-contribution-grid-snake.svg?color_snake=%23ca7938&color_dots=%230d1117,%231b2b3a,%232f5a86,%235299d2,%23ca7938
-```
 
 <hr/>
 

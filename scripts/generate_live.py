@@ -280,7 +280,21 @@ def card_projects():
             items.append(("field2",  "status", p["status"], color))
         items.append(("blank",))
     items += [
-        ("comment", "// tap a title below to open the project"),
+        ("comment", "// tap a title to open the project"),
+        ("prompt",),
+    ]
+    return items
+
+
+def card_opensource():
+    items = []
+    for p in DATA["opensource"]:
+        items.append(("section", f"- {p['repo']} -"))
+        items.append(("linkplain", p["repo"], p["url"]))
+        items.append(("field", "desc", p["desc"]))
+        items.append(("blank",))
+    items += [
+        ("comment", "// contributions to open source projects"),
         ("prompt",),
     ]
     return items
@@ -335,6 +349,7 @@ BARS = [
     ("focus",          "focus --areas",          "Focus Areas"),
     ("tools",          "which -a --tools",       "Tools I Work With"),
     ("projects",       "ls ./projects --featured", "Featured Projects"),
+    ("opensource",     "git contrib --oss",      "Open Source Contributions"),
     ("certifications", "cat certifications.log", "Certifications"),
     ("stats",          "gh stats --user shanujans", "GitHub Stats"),
     ("activity",       "gh activity --graph",    "Contribution Activity"),
@@ -353,6 +368,7 @@ CARDS = [
     ("about",          card_about, ()),
     ("tools",          card_tools, ()),
     ("projects",       card_projects, ()),
+    ("opensource",     card_opensource, ()),
     ("certifications", card_certifications, ()),
     ("stats",          card_stats, ()),
     ("connect",        card_connect, ()),
