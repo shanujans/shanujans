@@ -373,7 +373,7 @@ print(f"\nDone. {len(CARDS)} cards + {len(BARS)} bars regenerated.")
 print(f"Last synced stamp on outputs: {LIVE['last_synced']}")
 
 # ----------------------------------------------------------------- README --
-print("\n== WRITING README.md (inlining clickable SVGs) ==")
+print("\n== WRITING README.md (using <img> tags for all cards) ==")
 import subprocess, sys
 write_readme = ROOT / "write_readme.py"
 if write_readme.exists():

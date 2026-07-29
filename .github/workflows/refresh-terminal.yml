@@ -50,15 +50,16 @@ jobs:
           echo "==== last synced stamp ===="
           grep -o 'last synced [^<]*' /tmp/repo/assets/terminal-stats.svg
 
-      - name: Commit refreshed SVGs to 'terminal' branch
+      - name: Commit refreshed SVGs and README to 'terminal' branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           cp /tmp/repo/assets/*.svg assets/
-          git add assets/*.svg
+          cp /tmp/repo/README.md README.md
+          git add assets/*.svg README.md
           if git diff --staged --quiet; then
-            echo "no SVG changes; skipping commit"
+            echo "no changes; skipping commit"
           else
-            git commit -m "chore: refresh terminal SVGs [skip ci]"
+            git commit -m "chore: refresh terminal SVGs and README [skip ci]"
             git push origin HEAD:terminal
           fi

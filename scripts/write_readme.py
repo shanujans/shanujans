@@ -2,13 +2,10 @@
 write_readme.py
 
 Reads the freshly-generated SVGs from /tmp/repo/assets and emits README.md
-with clickable cards INLINED as live DOM <svg>...</svg> blocks (so
-<a xlink:href> hotspots actually fire) and non-clickable cards kept as
-<img src="assets/...svg"> references.
+with ALL cards as <img src="assets/...svg"> references.
 
-Why: GitHub renders <img src="*.svg"> as a flat image; clicks on hotspots
-inside it go to the .svg file itself. Inlining the SVG in the README turns
-each hotspot into a real <a> tag that the browser follows.
+Note: GitHub strips <style> from inline SVGs in READMEs, causing font CSS
+to dump as raw text. Using <img> tags ensures SVGs render correctly.
 """
 
 import json, html
@@ -21,33 +18,14 @@ ASSETS = REPO / "assets"
 with open(ROOT / "terminal_data.json", encoding="utf-8") as f:
     DATA = json.load(f)
 
-# Cards that contain clickable hotspots -> inline these as DOM SVG
-INLINE_CARDS = set(DATA.get("inline_cards", ["hero", "projects", "certifications", "connect"]))
 
-
-def svg_inline(slug):
-    """Read the .svg and return the full <svg ...>...</svg> block, ready to embed."""
-    p = ASSETS / f"terminal-{slug}.svg"
-    if not p.exists():
-        raise FileNotFoundError(f"missing asset: {p} -- run generate_live.py first")
-    return p.read_text(encoding="utf-8").strip()
-
-
-def img_card(slug, alt):
-    return f'<img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}"/>'
+def img_card(slug, alt, width=None):
+    width_attr = f' width="{width}"' if width else ""
+    return f'<img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}"{width_attr}/>'
 
 
 def img_bar(slug, alt):
     return f'<img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}"/>'
-
-
-def centered_inline(svg_text, max_width_px=None):
-    """Wrap an inline-SVG block in a centered paragraph. Optionally constrain width."""
-    style = ""
-    if max_width_px:
-        style = f' style="max-width:{max_width_px}px;width:100%;height:auto"'
-    inner = svg_text
-    return f'<p align="center"{style}>{inner}</p>'
 
 
 def centered_img(img_tag):
@@ -57,8 +35,8 @@ def centered_img(img_tag):
 # Build README
 parts = []
 
-# Hero (inline)
-parts.append(centered_inline(svg_inline("hero"), max_width_px=900))
+# Hero
+parts.append(centered_img(img_card("hero", "shanujansh@github", 717)))
 parts.append(
     '<p align="center">'
     '<img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>'
@@ -93,15 +71,15 @@ parts.append(centered_img(img_card("tools", "Tools I Work With")))
 
 parts.append('<hr/>')
 
-# Projects (inline - project titles are clickable)
+# Projects
 parts.append(img_bar("projects", "$ ls ./projects --featured"))
-parts.append(centered_inline(svg_inline("projects"), max_width_px=900))
+parts.append(centered_img(img_card("projects", "Featured Projects", 625)))
 
 parts.append('<hr/>')
 
-# Certifications (inline - cert rows are clickable)
+# Certifications
 parts.append(img_bar("certifications", "$ cat certifications.log"))
-parts.append(centered_inline(svg_inline("certifications"), max_width_px=900))
+parts.append(centered_img(img_card("certifications", "Certifications", 588)))
 parts.append(
     '<sub>Replace the placeholder <code>verify_url</code> values for each cert in '
     '<code>scripts/terminal_data.json</code> with your real Issuer verification URLs '
@@ -111,7 +89,7 @@ parts.append(
 
 parts.append('<hr/>')
 
-# Stats (imagemap - stats card is non-clickable)
+# Stats (stats card is non-clickable)
 parts.append(img_bar("stats", "$ gh stats --user shanujans"))
 parts.append(centered_img(img_card("stats", "GitHub Stats")))
 parts.append(
@@ -167,15 +145,15 @@ parts.append(
 
 parts.append('<hr/>')
 
-# Connect (inline - email/portfolio/github/linkedin are clickable)
+# Connect
 parts.append(img_bar("connect", "$ cat contact.md"))
-parts.append(centered_inline(svg_inline("connect"), max_width_px=900))
+parts.append(centered_img(img_card("connect", "Contact", 524)))
 
 parts.append(
     '<p align="center">'
-    '📬 <a href="mailto:shanujansh@gmail.com">Email</a> · '
-    '<a href="https://shanujan.is-a.dev">Portfolio</a> · '
-    '<a href="https://github.com/shanujans">GitHub</a> · '
+    '<a href="mailto:shanujansh@gmail.com">Email</a> &middot; '
+    '<a href="https://shanujan.is-a.dev">Portfolio</a> &middot; '
+    '<a href="https://github.com/shanujans">GitHub</a> &middot; '
     '<a href="https://www.linkedin.com/in/shanujansuresh/">LinkedIn</a>'
     '</p>'
 )
@@ -186,16 +164,8 @@ readme_md = "\n\n".join(parts) + "\n"
 readme_path = REPO / "README.md"
 readme_path.write_text(readme_md, encoding="utf-8")
 
-# Quick stats
 size_kb = readme_path.stat().st_size / 1024
-inline_chars = readme_md.count("<svg ")
 img_count = readme_md.count('<img src="assets/')
-hit = readme_md.count('xlink:href')
 
 print(f"Wrote {readme_path}  ({size_kb:.1f} KB)")
-print(f"  inline <svg> blocks: {inline_chars}")
 print(f"  asset <img> tags   : {img_count}")
-print(f"  xlink:href hotspots: {hit}")
-
-INLINE_SET = sorted(INLINE_CARDS)
-print(f"  inline-cards list  : {INLINE_SET}")
