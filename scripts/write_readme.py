@@ -80,7 +80,7 @@ sections = [
     ("projects",      "projects",      "Featured Projects",      "img"),
     ("opensource",    "opensource",    "Open Source Contributions", "img"),
     ("certifications","certifications","Certifications",         "img"),
-    ("stats",         "stats",         "GitHub Stats",           "widget"),
+    ("stats",         "stats",         "GitHub Stats",           "img"),
     ("activity",      "activity",      "Contribution Activity",  "widget"),
     ("snake",         "snake",         "Contribution Snake",     "widget"),
     ("connect",       "connect",       "Contact",                "img"),

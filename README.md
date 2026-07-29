@@ -32,7 +32,7 @@
 
 <p align="left"><img src="assets/bar-stats.svg" alt="$ stats" width="100%"/></p>
 
-<p align="left"><a href="https://github.com/shanujans"><img src="https://github-readme-stats.vercel.app/api?username=shanujans&show_icons=true&hide_border=true&bg_color=0d1117&title_color=ca7938&icon_color=5299d2&text_color=a0b3bc" alt="GitHub Stats"/></a><a href="https://github.com/shanujans"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&hide_border=true&bg_color=0d1117&title_color=ca7938&text_color=a0b3bc" alt="Top Languages"/></a></p>
+<p align="left"><img src="assets/terminal-stats.svg" alt="GitHub Stats" width="100%"/></p>
 
 <hr/>
 

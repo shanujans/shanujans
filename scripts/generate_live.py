@@ -280,10 +280,12 @@ def card_stats():
     repos_str    = f"{LIVE['public_repos']} {{Contributed: {LIVE['contributed_to']}}}"
     commits_str  = f"{LIVE['commits_total']}"
     loc_str      = f"{LIVE['lines_loc']:,} ( {LIVE['additions_loc']:,}++, {LIVE['deletions_loc']:,}-- )"
+    langs_str    = f"{DATA['languages_programming']} / {DATA['languages_markup']}"
     return [
         ("field", "Repos",       repos_str),
         ("field", "Commits",     commits_str),
-        ("field", "Lines of Code", loc_str),
+        ("field", "Lines",       loc_str),
+        ("field2","Top Langs",   langs_str, GREEN),
         ("blank",),
         ("comment", f"// last synced {LIVE['last_synced']}"),
         ("prompt",),
