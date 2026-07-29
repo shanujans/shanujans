@@ -236,15 +236,15 @@ def card_projects():
     items = []
     for p in DATA["projects"]:
         items.append(("section", f"- {p['title']} -"))
-        items.append(("linkplain", p["title"].split(". ", 1)[-1], p["url"]))
         items.append(("field",    "desc",   p["desc"]))
         items.append(("field",    "stack",  p["stack"]))
         if p.get("status"):
-            color = GREEN if p.get("status_color") == "GREEN" else BLUE
+            color = GREEN if ("Live" in p["status"] or "PyPI" in p["status"] or "Active" in p["status"]) else BLUE
             items.append(("field2",  "status", p["status"], color))
+        items.append(("linkfield", "url",    p["url"], p["url"]))
         items.append(("blank",))
     items += [
-        ("comment", "// tap a title to open the project"),
+        ("comment", "// click any project URL to view the repository"),
         ("prompt",),
     ]
     return items
@@ -254,8 +254,8 @@ def card_opensource():
     items = []
     for p in DATA["opensource"]:
         items.append(("section", f"- {p['repo']} -"))
-        items.append(("linkplain", p["repo"], p["url"]))
         items.append(("field", "desc", p["desc"]))
+        items.append(("linkfield", "url", p["url"], p["url"]))
         items.append(("blank",))
     items += [
         ("comment", "// contributions to open source projects"),
@@ -337,12 +337,12 @@ CARDS = [
 print("== RENDERING ==")
 for slug, fn, _ in CARDS:
     out = ASSETS / f"terminal-{slug}.svg"
-    build_card(DATA["username"], fn(), str(out))
+    build_card(DATA["username"], fn(), str(out), min_width_chars=95)
     print(f"  wrote {out}")
 
 for slug, cmd, label in BARS:
     out = ASSETS / f"bar-{slug}.svg"
-    build_card(None, [("cmdheader", cmd, label)], str(out), with_header=False)
+    build_card(None, [("cmdheader", cmd, label)], str(out), min_width_chars=95, with_header=False)
     print(f"  wrote {out}")
 
 print(f"\nDone. {len(CARDS)} cards + {len(BARS)} bars regenerated.")

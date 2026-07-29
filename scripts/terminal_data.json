@@ -79,17 +79,17 @@
   "opensource": [
     {
       "repo":    "affaan-m/ECC",
-      "desc":    "Error Correction Codes implementation",
+      "desc":    "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url":     "https://github.com/affaan-m/ECC"
     },
     {
       "repo":    "BuilderIO/skills",
-      "desc":    "Developer skills framework",
+      "desc":    "Skills for coding agents.",
       "url":     "https://github.com/BuilderIO/skills"
     },
     {
       "repo":    "band-ai/codeband",
-      "desc":    "AI-powered code analysis tool",
+      "desc":    "A coding tool to orchestrate multiple coding agents.",
       "url":     "https://github.com/band-ai/codeband"
     }
   ],

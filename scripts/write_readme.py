@@ -16,13 +16,13 @@ ASSETS = REPO / "assets"
 with open(ROOT / "terminal_data.json", encoding="utf-8") as f:
     DATA = json.load(f)
 
-CARD_WIDTH = 900
+CARD_WIDTH = "100%"
 
 def img_card(slug, alt):
     return f'<p align="left"><img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/></p>'
 
 def img_bar(slug, alt):
-    return f'<p align="left"><img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}"/></p>'
+    return f'<p align="left"><img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/></p>'
 
 def widget_card(slug, alt):
     if slug == "stats":
