@@ -14,8 +14,6 @@
 
 <img src="assets/bar-about.svg" alt="$ whoami"/>
 
-<p align="center"><img src="assets/fastfetch.png" alt="shanujansh@github fastfetch" width="880"/></p>
-
 <p align="center"><img src="assets/terminal-about.svg" alt="About &amp; Skills"/></p>
 
 <img src="assets/bar-tools.svg" alt="$ which -a --tools"/>
