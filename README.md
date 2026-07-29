@@ -14,19 +14,19 @@
 
 <p align="left"><img src="assets/bar-projects.svg" alt="$ projects"/></p>
 
-<p align="left"><img src="assets/terminal-projects.svg" alt="Featured Projects" width="720"/></p>
+<p align="left"><img src="assets/terminal-projects.svg" alt="Featured Projects" width="900"/></p>
 
 <hr/>
 
 <p align="left"><img src="assets/bar-opensource.svg" alt="$ opensource"/></p>
 
-<p align="left"><img src="assets/terminal-opensource.svg" alt="Open Source Contributions" width="720"/></p>
+<p align="left"><img src="assets/terminal-opensource.svg" alt="Open Source Contributions" width="900"/></p>
 
 <hr/>
 
 <p align="left"><img src="assets/bar-certifications.svg" alt="$ certifications"/></p>
 
-<p align="left"><img src="assets/terminal-certifications.svg" alt="Certifications" width="720"/></p>
+<p align="left"><img src="assets/terminal-certifications.svg" alt="Certifications" width="900"/></p>
 
 <hr/>
 
@@ -44,13 +44,13 @@
 
 <p align="left"><img src="assets/bar-snake.svg" alt="$ snake"/></p>
 
-<p align="left"><a href="https://github.com/shanujans"><img src="https://github-readme-activity-graph.vercel.app/graph?username=shanujans&hide_border=true&bg_color=0d1117&color=a0b3bc&line=ca7938&point=5299d2&area=true&area_color=5299d2" alt="Activity Graph"/></a></p>
+<p align="left"><a href="https://github.com/shanujans"><img src="https://raw.githubusercontent.com/shanujans/shanujans/output/github-contribution-grid-snake.svg" alt="snake"/></a></p>
 
 <hr/>
 
 <p align="left"><img src="assets/bar-connect.svg" alt="$ connect"/></p>
 
-<p align="left"><img src="assets/terminal-connect.svg" alt="Contact" width="720"/></p>
+<p align="left"><img src="assets/terminal-connect.svg" alt="Contact" width="900"/></p>
 
 <hr/>
 

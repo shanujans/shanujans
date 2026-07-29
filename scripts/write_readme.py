@@ -16,7 +16,7 @@ ASSETS = REPO / "assets"
 with open(ROOT / "terminal_data.json", encoding="utf-8") as f:
     DATA = json.load(f)
 
-CARD_WIDTH = 720
+CARD_WIDTH = 900
 
 def img_card(slug, alt):
     return f'<p align="left"><img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/></p>'
@@ -41,7 +41,9 @@ def widget_card(slug, alt):
     if slug == "snake":
         return (
             '<p align="left">'
-            '<a href="https://github.com/shanujans"><img src="https://github-readme-activity-graph.vercel.app/graph?username=shanujans&hide_border=true&bg_color=0d1117&color=a0b3bc&line=ca7938&point=5299d2&area=true&area_color=5299d2" alt="Activity Graph"/></a>'
+            '<a href="https://github.com/shanujans">'
+            '<img src="https://raw.githubusercontent.com/shanujans/shanujans/output/github-contribution-grid-snake.svg" alt="snake"/>'
+            '</a>'
             '</p>'
         )
     return img_card(slug, alt)
