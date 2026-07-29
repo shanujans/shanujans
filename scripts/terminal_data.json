@@ -1,7 +1,7 @@
 {
   "_comment_meta": "Single source of truth. Edit values here, then re-run `python scripts/generate_live.py`. Last-served live data (Repos/Commits/etc.) override these only when GitHub API is reachable.",
 
-  "username": "shanujansh@github",
+  "username": "shanujans@github",
   "name": "Shanujan Suresh",
   "display_name_figlet": "SHANUJAN SURESH",
   "tagline": "IT Support Professional . AI Tools Enthusiast . Sri Lanka",
@@ -9,10 +9,10 @@
   "status": "open to IT Support / QA / AI Tools roles",
 
   "host": "Sri Lanka",
-  "kernel": "IT Support Professional (4+ yrs)",
-  "shell": "BSc CS @ Univ. of the People",
+  "kernel": "IT Support Professional",
+  "shell": "BSc CS @ UOPEOPLE",
   "ide": "VS Code, AI Studio, Git, OpenCode",
-  "os": "Windows, Android, Linux (basic)",
+  "os": "Windows, Linux (basic)",
   "uptime_seed_iso": "2024-09-08T00:00:00Z",
   "_uptime_note": "If you don't want GH-API-style live uptime, this seed date is used as fallback so the bar still renders something meaningful.",
 
@@ -21,12 +21,12 @@
   "languages_real":       "English, Tamil",
 
   "focus_ai":         "Gemini API, AI Studio",
-  "focus_automation": "Cloudflare Workers, Actions",
+  "focus_automation": "Cloudflare Workers, GitHub Actions",
   "focus_qa":         "Manual Testing (learning)",
   "focus_cloud":      "AWS (basic), OCI (basic)",
 
   "skills_confident": [
-    ["IT Support & Troubleshooting", "4+ yrs hands-on experience"],
+    ["IT Support & Troubleshooting", "hands-on experience"],
     ["Gemini API & AI Studio",       "live chatbot in production"],
     ["Cloudflare Workers",           "secure API proxying"],
     ["Git & GitHub",                 "version control, CI/CD, Actions"],
@@ -34,50 +34,44 @@
   ],
   "skills_learning": [
     ["Python",             "beginner, using AI assistance"],
-    ["Manual QA Testing",  "actively studying"],
     ["Linux",              "basic commands only"],
     ["Cloud (AWS/OCI/IBM)","fundamentals"]
-  ],
-
-  "tools": [
-    ["Version Control", "Git, GitHub, GitHub Actions"],
-    ["Cloud & Edge",    "Cloudflare Workers, AWS (basic), OCI (basic)"],
-    ["Languages",       "Python, TypeScript, C#"],
-    ["AI / ML",         "Gemini API, AI Studio, scikit-learn"],
-    ["Databases",       "SQL Server"],
-    ["OS",              "Windows, Linux (basic)"]
   ],
 
   "projects": [
     {
       "title":   "01. Loan Risk Predictor",
-      "desc":    "ML package published on PyPI",
-      "stack":   "Python, scikit-learn",
-      "status":  "87.5% accuracy, CI/CD to PyPI",
+      "desc":    "Complete Python package for predicting loan default risk using DecisionTreeClassifier. Built from Kaggle notebook with src-layout, pyproject.toml, full CI/CD.",
+      "stack":   "Python 3.7+, Pandas, Scikit-learn, Numpy, Setuptools & Build, GitHub Actions",
+      "status":  "Published on PyPI — pip install loan-risk-predictor. ~87.5% accuracy, CLI & library usage",
       "url":     "https://github.com/shanujans/loan-risk-prediction"
     },
     {
       "title":   "02. Student Management System",
-      "desc":    "ESoft final year project",
-      "stack":   "C#, SQL Server",
+      "desc":    "Desktop app for student registrations, course enrollments, user auth at Skills International. Secure login, full CRUD, responsive WinForms UI, SQL Server, PDF generation.",
+      "stack":   "C# .NET Framework, Windows Forms, SQL Server 2019, SSMS 21, Visual Studio 2022",
+      "status":  "Active repo (Skills-International-Application) — 7 commits, updated Sep 3, 2025",
       "url":     "https://github.com/shanujans/Skills-International-Application"
     },
     {
       "title":   "03. Tara",
-      "desc":    "AI-powered task automation",
-      "stack":   "Python, FastAPI",
+      "desc":    "Multilingual voice-enabled AI Retail Agent for Kapruka.lk. Cuts 7-min checkout to 2-min conversation in Sinhala, Tamil, Singlish, Tanglish, English. AI product ranking, NL checkout, voice mode (STT+TTS), vision search, PDF invoices.",
+      "stack":   "Next.js 16.2.7, TypeScript (strict), Tailwind CSS v4, Three.js r184, Vercel",
+      "status":  "Live demo available",
       "url":     "https://github.com/shanujans/tara"
     },
     {
       "title":   "04. RepoAlpha",
-      "desc":    "Repository analytics dashboard",
-      "stack":   "TypeScript, React",
+      "desc":    "AI-powered open-source M&A intelligence platform tracking corporate developer adoption & investment signals. Scrapes GitHub stargazers, uses Llama 3.3 for hype scores & commercial summaries, assigns BUY/HOLD/SELL ratings. Bloomberg Terminal-style dashboard.",
+      "stack":   "Bright Data (Web Unlocker), AI/ML API (Llama 3.3), Speechmatics (TTS), LangChain, Supabase (PostgreSQL + pgvector), Streamlit, FastAPI, GitHub Actions",
+      "status":  "Built for Bright Data AI Agents Hackathon 2026. Live demo available",
       "url":     "https://github.com/shanujans/repoalpha"
     },
     {
       "title":   "05. Q-Optima",
-      "desc":    "Quantum optimization simulator",
-      "stack":   "Python, Qiskit",
+      "desc":    "Multi-cloud autonomous AI agent solving NP-Hard logistics optimization via Quantum Computing. Voice instruction + route map -> quantum-optimized delivery route with real-time weather, traffic, carbon data. Whisper STT + Gemini vision + Qiskit QAOA.",
+      "stack":   "Next.js 14, FastAPI + LangGraph, Python 3.11, Speechmatics/Whisper (STT), Google Gemini 2.5 (vision), IBM Quantum/Qiskit (QAOA), Open-Meteo, TomTom, Climatiq, Telegram Bot API, Supabase",
+      "status":  "Built for Milan AI Week 2026 (AI Agent Olympics). Total cost: $0.00. Live demo available",
       "url":     "https://github.com/shanujans/q-optima"
     }
   ],

@@ -22,7 +22,7 @@
     </style>
   </defs>
   <rect x="0" y="0" width="505" height="363" fill="#0D1117"/>
-  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#E6EDF3">shanujansh@github -</tspan><tspan fill="#A0B3BC">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
+  <text x="22" y="26" xml:space="preserve"><tspan font-weight="700" fill="#E6EDF3">shanujans@github -</tspan><tspan fill="#A0B3BC">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
   <text x="22" y="47" xml:space="preserve"><tspan font-weight="700" fill="#A0B3BC">- affaan-m/ECC -</tspan><tspan fill="#5C6773">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
   <text x="22" y="68" xml:space="preserve"><tspan><a xlink:href="https://github.com/affaan-m/ECC" target="_blank"><tspan fill="#5299D2">affaan-m/ECC</tspan></a></tspan></text>
   <text x="22" y="89" xml:space="preserve"><tspan font-weight="700" fill="#CA7938">. desc:</tspan><tspan fill="#5C6773"> ... </tspan><tspan fill="#5299D2">Error Correction Codes implementation</tspan></text>

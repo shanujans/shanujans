@@ -232,42 +232,6 @@ def card_focus():
     ]
 
 
-def card_about():
-    items = [
-        ("field", "Name",       DATA["name"]),
-        ("field", "Location",   "Sri Lanka"),
-        ("field", "Role",       DATA["kernel"]),
-        ("field", "Education",  DATA["shell"]),
-        ("field", "Philosophy", '"Connecting dots others dont see."'),
-        ("blank",),
-        ("section", "- Skills.Confident -"),
-    ]
-    for label, value in DATA["skills_confident"]:
-        items.append(("field", label, value))
-    items.append(("blank",))
-    items.append(("section", "- Skills.Learning -"))
-    for label, value in DATA["skills_learning"]:
-        items.append(("field", label, value))
-    items += [
-        ("blank",),
-        ("comment", "// honest about skills -- no inflated claims, ever"),
-        ("prompt",),
-    ]
-    return items
-
-
-def card_tools():
-    items = []
-    for label, value in DATA["tools"]:
-        items.append(("field", label, value))
-    items += [
-        ("blank",),
-        ("comment", "// some projects below were AI-assisted -- I can explain & modify every line"),
-        ("prompt",),
-    ]
-    return items
-
-
 def card_projects():
     items = []
     for p in DATA["projects"]:
@@ -343,11 +307,9 @@ def card_connect():
 
 
 BARS = [
-    ("about",          "whoami",                 "About Me"),
     ("meta",           "uname -a",               "System Meta"),
     ("languages",      "which -a --languages",   "Languages"),
     ("focus",          "focus --areas",          "Focus Areas"),
-    ("tools",          "which -a --tools",       "Tools I Work With"),
     ("projects",       "ls ./projects --featured", "Featured Projects"),
     ("opensource",     "git contrib --oss",      "Open Source Contributions"),
     ("certifications", "cat certifications.log", "Certifications"),
@@ -365,8 +327,6 @@ CARDS = [
     ("meta",           card_meta, ()),
     ("languages",      card_languages, ()),
     ("focus",          card_focus, ()),
-    ("about",          card_about, ()),
-    ("tools",          card_tools, ()),
     ("projects",       card_projects, ()),
     ("opensource",     card_opensource, ()),
     ("certifications", card_certifications, ()),

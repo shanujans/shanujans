@@ -12,19 +12,15 @@
 
 <hr/>
 
-<img src="assets/bar-about.svg" alt="$ whoami"/>
-
-<p align="center"><img src="assets/terminal-about.svg" alt="About &amp; Skills"/></p>
-
-<img src="assets/bar-tools.svg" alt="$ which -a --tools"/>
-
-<p align="center"><img src="assets/terminal-tools.svg" alt="Tools I Work With"/></p>
-
-<hr/>
-
 <img src="assets/bar-projects.svg" alt="$ ls ./projects --featured"/>
 
 <p align="center"><img src="assets/terminal-projects.svg" alt="Featured Projects" width="625"/></p>
+
+<hr/>
+
+<img src="assets/bar-opensource.svg" alt="$ git contrib --oss"/>
+
+<p align="center"><img src="assets/terminal-opensource.svg" alt="Open Source Contributions" width="625"/></p>
 
 <hr/>
 
@@ -51,5 +47,9 @@
 <p align="center"><img src="https://raw.githubusercontent.com/shanujans/shanujans/output/github-contribution-grid-snake.svg" alt="snake"/></p>
 
 <hr/>
+
+<img src="assets/bar-connect.svg" alt="$ cat contact.md"/>
+
+<p align="center"><img src="assets/terminal-connect.svg" alt="Contact" width="524"/></p>
 
 <p align="center"><a href="mailto:shanujansh@gmail.com">Email</a> &middot; <a href="https://shanujan.is-a.dev">Portfolio</a> &middot; <a href="https://github.com/shanujans">GitHub</a> &middot; <a href="https://www.linkedin.com/in/shanujansuresh/">LinkedIn</a></p>

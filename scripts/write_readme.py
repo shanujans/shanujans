@@ -54,16 +54,6 @@ parts.append(
 )
 parts.append('<hr/>')
 
-# About
-parts.append(img_bar("about", "$ whoami"))
-parts.append(centered_img(img_card("about", "About & Skills")))
-
-# Tools
-parts.append(img_bar("tools", "$ which -a --tools"))
-parts.append(centered_img(img_card("tools", "Tools I Work With")))
-
-parts.append('<hr/>')
-
 # Projects
 parts.append(img_bar("projects", "$ ls ./projects --featured"))
 parts.append(centered_img(img_card("projects", "Featured Projects", 625)))
