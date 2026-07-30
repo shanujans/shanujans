@@ -19,10 +19,10 @@ with open(ROOT / "terminal_data.json", encoding="utf-8") as f:
 CARD_WIDTH = "100%"
 
 def img_card(slug, alt):
-    return f'<p align="left"><img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/></p>'
+    return f'<img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/>'
 
 def img_bar(slug, alt):
-    return f'<p align="left"><img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/></p>'
+    return f'<img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/>'
 
 def widget_card(slug, alt):
     if slug == "stats":
@@ -34,24 +34,18 @@ def widget_card(slug, alt):
         )
     if slug == "activity":
         return (
-            '<p align="left">\n'
-            '  <a href="https://github.com/shanujans">\n'
-            '    <img src="https://github-readme-activity-graph.vercel.app/graph?username=shanujans&theme=react-dark&bg_color=0d1117&color=ca7938&line=5299d2&point=ffffff" alt="Shanujan\'s Contribution Graph" width="100%"/>\n'
-            '  </a>\n'
-            '</p>\n'
-            '<p align="left">\n'
-            '  <a href="https://github.com/shanujans">\n'
-            '    <img src="https://streak-stats.demolab.com?user=shanujans&hide_border=true&background=0d1117&border=0d1117&ring=ca7938&fire=5299d2&currStreakNum=ffffff&currStreakLabel=ca7938&sideNums=a0b3bc&sideLabels=a0b3bc&dates=5c6773" alt="Streak Stats"/>\n'
-            '  </a>\n'
-            '</p>'
+            '<a href="https://github.com/shanujans">\n'
+            '  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shanujans&theme=react-dark&bg_color=0d1117&color=ca7938&line=5299d2&point=ffffff" alt="Shanujan\'s Contribution Graph" width="100%"/>\n'
+            '</a>\n'
+            '<a href="https://github.com/shanujans">\n'
+            '  <img src="https://streak-stats.demolab.com?user=shanujans&hide_border=true&background=0d1117&border=0d1117&ring=ca7938&fire=5299d2&currStreakNum=ffffff&currStreakLabel=ca7938&sideNums=a0b3bc&sideLabels=a0b3bc&dates=5c6773" alt="Streak Stats"/>\n'
+            '</a>'
         )
     if slug == "snake":
         return (
-            '<p align="left">'
             '<a href="https://github.com/shanujans">'
             '<img src="https://raw.githubusercontent.com/shanujans/shanujans/output/github-contribution-grid-snake.svg" alt="snake"/>'
             '</a>'
-            '</p>'
         )
     return img_card(slug, alt)
 
@@ -104,7 +98,7 @@ parts.append(
     '</p>'
 )
 
-readme_md = "\n\n".join(parts) + "\n"
+readme_md = "\n".join(parts) + "\n"
 readme_path = REPO / "README.md"
 readme_path.write_text(readme_md, encoding="utf-8")
 
