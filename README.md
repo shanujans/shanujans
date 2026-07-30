@@ -1,7 +1,12 @@
-<div>
-<img src="assets/bar-neofetch.svg" alt="$ neofetch" width="100%" style="display:block"/>
-<img src="assets/terminal-neofetch.svg" alt="System Info" width="100%" style="display:block"/>
-</div>
+<p align="center">
+  <a href="https://github.com/shanujans">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shanujans/shanujans/main/dark_mode.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shanujans/shanujans/main/light_mode.svg">
+      <img alt="Shanujan's GitHub neofetch card" src="https://raw.githubusercontent.com/shanujans/shanujans/main/light_mode.svg">
+    </picture>
+  </a>
+</p>
 <hr/>
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>

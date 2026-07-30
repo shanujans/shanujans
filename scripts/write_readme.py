@@ -75,9 +75,17 @@ def connect_html():
 
 parts = []
 
-# Hero - neofetch card (generated)
+# Hero - neofetch card from main branch (dark_mode.svg / light_mode.svg)
 parts.append(
-    f'<div>\n{img_bar("neofetch", "$ neofetch")}\n{img_card("neofetch", "System Info")}\n</div>'
+    '<p align="center">\n'
+    '  <a href="https://github.com/shanujans">\n'
+    '    <picture>\n'
+    '      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shanujans/shanujans/main/dark_mode.svg">\n'
+    '      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shanujans/shanujans/main/light_mode.svg">\n'
+    '      <img alt="Shanujan\'s GitHub neofetch card" src="https://raw.githubusercontent.com/shanujans/shanujans/main/light_mode.svg">\n'
+    '    </picture>\n'
+    '  </a>\n'
+    '</p>'
 )
 parts.append('<hr/>')
 
