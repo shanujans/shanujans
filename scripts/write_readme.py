@@ -34,6 +34,21 @@ def widget_card(slug, alt):
         )
     return img_card(slug, alt)
 
+def connect_html():
+    c = DATA["contact"]
+    return (
+        '<pre style="background-color:#0d1117;color:#e6edf3;font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,\'Liberation Mono\',monospace;font-size:15px;line-height:1.6;padding:22px;border-radius:6px;margin:0;overflow-x:auto;">'
+        '<span style="color:#e6edf3;font-weight:bold;">shanujans@github</span> <span style="color:#a0b3bc;">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>\n\n'
+        '<span style="color:#a0b3bc;font-weight:bold;">- Reach Me -</span> <span style="color:#5c6773;">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>\n'
+        f'<span style="color:#ca7938;font-weight:bold;">. Email:</span> <span style="color:#5c6773;">.......</span> <a href="{c["email"]["url"]}" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">{c["email"]["display"]}</span></a>\n'
+        f'<span style="color:#ca7938;font-weight:bold;">. Portfolio:</span> <span style="color:#5c6773;">...</span> <a href="{c["portfolio"]["url"]}" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">{c["portfolio"]["display"]}</span></a>\n'
+        f'<span style="color:#ca7938;font-weight:bold;">. GitHub:</span> <span style="color:#5c6773;">......</span> <a href="{c["github"]["url"]}" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">{c["github"]["display"]}</span></a>\n'
+        f'<span style="color:#ca7938;font-weight:bold;">. LinkedIn:</span> <span style="color:#5c6773;">....</span> <a href="{c["linkedin"]["url"]}" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">{c["linkedin"]["display"]}</span></a>\n\n'
+        '<span style="color:#5c6773;font-style:italic;">// thanks for stopping by -- let\'s build something</span>\n'
+        '<span style="color:#ca7938;font-weight:bold;">&gt;</span><span style="color:#a0b3bc;">_</span>'
+        '</pre>'
+    )
+
 parts = []
 
 # Hero - neofetch card from main branch
@@ -73,17 +88,7 @@ for bar_slug, card_slug, alt, kind in sections:
         parts.append(f'<div>\n{img_bar(bar_slug, f"$ {bar_slug}")}\n{img_card(card_slug, alt)}\n</div>')
     parts.append('<hr/>')
 
-c = DATA["contact"]
-footer_links = (
-    f'<p align="center" style="margin-top:8px;">\n'
-    f'  <a href="{c["email"]["url"]}">Email</a> &bull; '
-    f'  <a href="{c["portfolio"]["url"]}">Portfolio</a> &bull; '
-    f'  <a href="{c["github"]["url"]}">GitHub</a> &bull; '
-    f'  <a href="{c["linkedin"]["url"]}">LinkedIn</a>\n'
-    f'</p>'
-)
-
-parts.append(f'<div>\n{img_bar("connect", "$ connect")}\n{img_card("connect", "Let\'s Connect")}\n{footer_links}\n</div>')
+parts.append(f'<div>\n{img_bar("connect", "$ connect")}\n{connect_html()}\n</div>')
 parts.append('<hr/>')
 
 readme_md = "\n".join(parts) + "\n"

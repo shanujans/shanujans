@@ -295,8 +295,6 @@ def card_stats():
 def card_connect():
     c = DATA["contact"]
     return [
-        ("linkplain2", "Open to:", "mailto:shanujansh@gmail.com?subject=IT%20Support%20opportunity", GREY, True),
-        ("blank",),
         ("section", "- Reach Me -"),
         ("linkfield", "Email",     c["email"]["display"],     c["email"]["url"]),
         ("linkfield", "Portfolio", c["portfolio"]["display"], c["portfolio"]["url"]),
