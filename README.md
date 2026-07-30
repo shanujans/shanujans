@@ -7,7 +7,14 @@
     </picture>
   </a>
 </p>
-<p align="center"><img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/></p>
+<div style="background:#0D1117;padding:10px 22px;font-family:'Courier New',Consolas,monospace;font-size:16px;color:#E6EDF3">
+  <span style="color:#CA7938;font-weight:700;">$</span>
+  <span style="color:#5299D2;"> cat visitors.log</span>
+  <span style="color:#5C6773;"> ................... # Profile Views</span>
+</div>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>
+</p>
 <hr/>
 <div>
 <img src="assets/bar-projects.svg" alt="$ projects" width="100%" style="display:block"/>
@@ -46,7 +53,18 @@
 <hr/>
 <div>
 <img src="assets/bar-connect.svg" alt="$ connect" width="100%" style="display:block"/>
-<img src="assets/terminal-connect.svg" alt="Contact" width="100%" style="display:block"/>
+<div style="background:#0D1117;padding:26px 22px 22px;font-family:'Courier New',Consolas,monospace;font-size:16px;line-height:1.8;color:#E6EDF3">
+  <div><span style="font-weight:700;color:#E6EDF3">shanujans@github</span><span style="color:#A0B3BC;">~~~~~~~~~~~~~~~~~~~~~~~~</span></div>
+  <br/>
+  <div><span style="color:#A0B3BC;font-weight:700;">- Reach Me -</span><span style="color:#5C6773;">~~~~~~~~~~~~</span></div>
+  <br/>
+  <div><span style="color:#CA7938;font-weight:700;">. Email:</span><span style="color:#5C6773;"> ....... </span><a href="mailto:shanujansh@gmail.com" style="color:#5299D2;text-decoration:none;">shanujansh@gmail.com</a></div>
+  <div><span style="color:#CA7938;font-weight:700;">. Portfolio:</span><span style="color:#5C6773;"> ... </span><a href="https://shanujan.is-a.dev" style="color:#5299D2;text-decoration:none;">shanujan.is-a.dev</a></div>
+  <div><span style="color:#CA7938;font-weight:700;">. GitHub:</span><span style="color:#5C6773;"> ..... </span><a href="https://github.com/shanujans" style="color:#5299D2;text-decoration:none;">github.com/shanujans</a></div>
+  <div><span style="color:#CA7938;font-weight:700;">. LinkedIn:</span><span style="color:#5C6773;"> ... </span><a href="https://www.linkedin.com/in/shanujansuresh/" style="color:#5299D2;text-decoration:none;">linkedin.com/in/shanujansuresh</a></div>
+  <br/>
+  <div style="color:#5C6773;font-style:italic;">// thanks for stopping by -- let's build something</div>
+  <div><span style="color:#CA7938;font-weight:700;">&gt;</span><span style="color:#A0B3BC;">_</span></div>
+</div>
 </div>
 <hr/>
-<p align="left"><a href="mailto:shanujansh@gmail.com">Email</a> &middot; <a href="https://shanujan.is-a.dev">Portfolio</a> &middot; <a href="https://github.com/shanujans">GitHub</a> &middot; <a href="https://www.linkedin.com/in/shanujansuresh/">LinkedIn</a></p>

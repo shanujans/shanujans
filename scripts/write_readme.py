@@ -1,11 +1,3 @@
-"""
-write_readme.py
-
-Generates README.md with ALL cards as <img> tags.
-GitHub Markdown only renders SVGs via <img src="..."> - raw <svg> elements are shown as text.
-Note: Internal SVG links (xlink:href) don't work on GitHub; only the hero wraps in <a>.
-"""
-
 import json, html
 from pathlib import Path
 
@@ -24,14 +16,25 @@ def img_card(slug, alt):
 def img_bar(slug, alt):
     return f'<img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}" style="display:block"/>'
 
+def connect_terminal():
+    c = DATA["contact"]
+    return (
+        '<div style="background:#0D1117;padding:26px 22px 22px;font-family:\'Courier New\',Consolas,monospace;font-size:16px;line-height:1.8;color:#E6EDF3">\n'
+        '  <div><span style="font-weight:700;color:#E6EDF3">shanujans@github</span><span style="color:#A0B3BC;">~~~~~~~~~~~~~~~~~~~~~~~~</span></div>\n'
+        '  <br/>\n'
+        '  <div><span style="color:#A0B3BC;font-weight:700;">- Reach Me -</span><span style="color:#5C6773;">~~~~~~~~~~~~</span></div>\n'
+        '  <br/>\n'
+        f'  <div><span style="color:#CA7938;font-weight:700;">. Email:</span><span style="color:#5C6773;"> ....... </span><a href="{c["email"]["url"]}" style="color:#5299D2;text-decoration:none;">{c["email"]["display"]}</a></div>\n'
+        f'  <div><span style="color:#CA7938;font-weight:700;">. Portfolio:</span><span style="color:#5C6773;"> ... </span><a href="{c["portfolio"]["url"]}" style="color:#5299D2;text-decoration:none;">{c["portfolio"]["display"]}</a></div>\n'
+        f'  <div><span style="color:#CA7938;font-weight:700;">. GitHub:</span><span style="color:#5C6773;"> ..... </span><a href="{c["github"]["url"]}" style="color:#5299D2;text-decoration:none;">{c["github"]["display"]}</a></div>\n'
+        f'  <div><span style="color:#CA7938;font-weight:700;">. LinkedIn:</span><span style="color:#5C6773;"> ... </span><a href="{c["linkedin"]["url"]}" style="color:#5299D2;text-decoration:none;">{c["linkedin"]["display"]}</a></div>\n'
+        '  <br/>\n'
+        '  <div style="color:#5C6773;font-style:italic;">// thanks for stopping by -- let\'s build something</div>\n'
+        '  <div><span style="color:#CA7938;font-weight:700;">&gt;</span><span style="color:#A0B3BC;">_</span></div>\n'
+        '</div>'
+    )
+
 def widget_card(slug, alt):
-    if slug == "stats":
-        return (
-            '<p align="left">'
-            '<a href="https://github.com/shanujans"><img src="https://github-readme-stats.vercel.app/api?username=shanujans&show_icons=true&hide_border=true&bg_color=0d1117&title_color=ca7938&icon_color=5299d2&text_color=a0b3bc" alt="GitHub Stats"/></a>'
-            '<a href="https://github.com/shanujans"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shanujans&layout=compact&hide_border=true&bg_color=0d1117&title_color=ca7938&text_color=a0b3bc" alt="Top Languages"/></a>'
-            '</p>'
-        )
     if slug == "activity":
         return (
             '<a href="https://github.com/shanujans">\n'
@@ -51,7 +54,6 @@ def widget_card(slug, alt):
 
 parts = []
 
-# Hero - neofetch from main branch
 parts.append(
     '<p align="center">\n'
     '  <a href="https://github.com/shanujans">\n'
@@ -64,20 +66,24 @@ parts.append(
     '</p>'
 )
 parts.append(
-    '<p align="center">'
-    '<img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>'
+    '<div style="background:#0D1117;padding:10px 22px;font-family:\'Courier New\',Consolas,monospace;font-size:16px;color:#E6EDF3">\n'
+    '  <span style="color:#CA7938;font-weight:700;">$</span>\n'
+    '  <span style="color:#5299D2;"> cat visitors.log</span>\n'
+    '  <span style="color:#5C6773;"> ................... # Profile Views</span>\n'
+    '</div>\n'
+    '<p align="center">\n'
+    '  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>\n'
     '</p>'
 )
 parts.append('<hr/>')
 
 sections = [
-    ("projects",      "projects",      "Featured Projects",      "img"),
-    ("opensource",    "opensource",    "Open Source Contributions", "img"),
-    ("certifications","certifications","Certifications",         "img"),
-    ("stats",         "stats",         "GitHub Stats",           "img"),
-    ("activity",      "activity",      "Contribution Activity",  "widget"),
-    ("snake",         "snake",         "Contribution Snake",     "widget"),
-    ("connect",       "connect",       "Contact",                "img"),
+    ("projects",      "projects",      "Featured Projects",           "img"),
+    ("opensource",    "opensource",    "Open Source Contributions",   "img"),
+    ("certifications","certifications","Certifications",              "img"),
+    ("stats",         "stats",         "GitHub Stats",                "img"),
+    ("activity",      "activity",      "Contribution Activity",       "widget"),
+    ("snake",         "snake",         "Contribution Snake",          "widget"),
 ]
 
 for bar_slug, card_slug, alt, kind in sections:
@@ -87,15 +93,8 @@ for bar_slug, card_slug, alt, kind in sections:
         parts.append(f'<div>\n{img_bar(bar_slug, f"$ {bar_slug}")}\n{img_card(card_slug, alt)}\n</div>')
     parts.append('<hr/>')
 
-# Footer
-parts.append(
-    '<p align="left">'
-    '<a href="mailto:shanujansh@gmail.com">Email</a> &middot; '
-    '<a href="https://shanujan.is-a.dev">Portfolio</a> &middot; '
-    '<a href="https://github.com/shanujans">GitHub</a> &middot; '
-    '<a href="https://www.linkedin.com/in/shanujansuresh/">LinkedIn</a>'
-    '</p>'
-)
+parts.append(f'<div>\n{img_bar("connect", "$ connect")}\n{connect_terminal()}\n</div>')
+parts.append('<hr/>')
 
 readme_md = "\n".join(parts) + "\n"
 readme_path = REPO / "README.md"
