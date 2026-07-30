@@ -8,36 +8,90 @@ ASSETS = REPO / "assets"
 with open(ROOT / "terminal_data.json", encoding="utf-8") as f:
     DATA = json.load(f)
 
-CARD_WIDTH = "100%"
+CARD_W = 1028
+BG = "#0D1117"
+ORANGE = "#CA7938"
+BLUE = "#5299D2"
+GREY = "#A0B3BC"
+DIM = "#5C6773"
+GREEN = "#3FB950"
+WHITE = "#E6EDF3"
+FONT = "'Fira Code','Cascadia Code',Consolas,monospace"
+FONT_SZ = 16
+LINE_H = 23
+PAD_X = 22
+PAD_TOP = 26
+
+def esc(s):
+    return html.escape(s, quote=False)
+
+def line_y(idx):
+    return PAD_TOP + idx * LINE_H
 
 def img_card(slug, alt):
-    return f'<img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}" style="display:block"/>'
+    return f'<img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="100%" style="display:block"/>'
 
 def img_bar(slug, alt):
-    return f'<img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}" style="display:block"/>'
+    return f'<img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="100%" style="display:block"/>'
 
-def connect_terminal():
-    c = DATA["contact"]
-    style = (
-        'background:#0D1117;padding:26px 22px 22px;'
-        'font-family:\'Fira Code\',\'Cascadia Code\',Consolas,monospace;'
-        'font-size:16px;line-height:23px;color:#E6EDF3'
-    )
+def make_svg(lines, h):
+    text_block = "\n".join(lines)
     return (
-        f'<div style="{style}">\n'
-        '  <div><span style="font-weight:700;color:#E6EDF3">shanujans@github</span><span style="color:#A0B3BC;">~~~~~~~~~~~~~~~~~~~~~~~~</span></div>\n'
-        '  <br/>\n'
-        '  <div><span style="color:#A0B3BC;font-weight:700;">- Reach Me -</span><span style="color:#5C6773;">~~~~~~~~~~~~</span></div>\n'
-        '  <br/>\n'
-        f'  <div><span style="color:#CA7938;font-weight:700;">. Email:</span><span style="color:#5C6773;"> ....... </span><a href="{c["email"]["url"]}" style="color:#5299D2;text-decoration:none;">{c["email"]["display"]}</a></div>\n'
-        f'  <div><span style="color:#CA7938;font-weight:700;">. Portfolio:</span><span style="color:#5C6773;"> ... </span><a href="{c["portfolio"]["url"]}" style="color:#5299D2;text-decoration:none;">{c["portfolio"]["display"]}</a></div>\n'
-        f'  <div><span style="color:#CA7938;font-weight:700;">. GitHub:</span><span style="color:#5C6773;"> ..... </span><a href="{c["github"]["url"]}" style="color:#5299D2;text-decoration:none;">{c["github"]["display"]}</a></div>\n'
-        f'  <div><span style="color:#CA7938;font-weight:700;">. LinkedIn:</span><span style="color:#5C6773;"> ... </span><a href="{c["linkedin"]["url"]}" style="color:#5299D2;text-decoration:none;">{c["linkedin"]["display"]}</a></div>\n'
-        '  <br/>\n'
-        '  <div style="color:#5C6773;font-style:italic;">// thanks for stopping by -- let\'s build something</div>\n'
-        '  <div><span style="color:#CA7938;font-weight:700;">&gt;</span><span style="color:#A0B3BC;">_</span></div>\n'
-        '</div>'
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {CARD_W} {h}" width="100%" style="display:block">\n'
+        f'<rect width="100%" height="100%" fill="{BG}"/>\n'
+        f'{text_block}\n'
+        f'</svg>'
     )
+
+def profile_views_svg():
+    lines = [
+        f'<text x="{PAD_X}" y="{line_y(0)}" font-family="{FONT}" font-size="{FONT_SZ}" font-style="italic" fill="{DIM}">// profile views</text>',
+        f'<text x="{PAD_X}" y="{line_y(1)}" font-family="{FONT}" font-size="{FONT_SZ}" fill="{ORANGE}" font-weight="700">&gt;</text>',
+        f'<text x="{PAD_X + 14}" y="{line_y(1)}" font-family="{FONT}" font-size="{FONT_SZ}" fill="{BLUE}"> cat visitors.log</text>',
+        f'<text x="260" y="{line_y(1)}" font-family="{FONT}" font-size="{FONT_SZ}" fill="{DIM}">.................... # Views</text>',
+    ]
+    h = PAD_TOP + LINE_H * 3 + 16
+    svg = make_svg(lines, h)
+    badge = '<img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views" style="display:block;margin-top:4px"/>'
+    return f'<div style="background:{BG};padding:0;line-height:0">{svg}{badge}</div>'
+
+def connect_svg():
+    c = DATA["contact"]
+    entries = [
+        ("Email",    c["email"]["url"],    c["email"]["display"]),
+        ("Portfolio",c["portfolio"]["url"],c["portfolio"]["display"]),
+        ("GitHub",   c["github"]["url"],   c["github"]["display"]),
+        ("LinkedIn", c["linkedin"]["url"], c["linkedin"]["display"]),
+    ]
+    max_label = max(len(f". {e[0]}:") for e in entries)
+    target_col = max_label + 3
+
+    lines = [
+        f'<text x="{PAD_X}" y="{line_y(0)}" font-family="{FONT}" font-size="{FONT_SZ}" fill="{WHITE}" font-weight="700">shanujans@github<tspan fill="{GREY}">~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>',
+        f'<text x="{PAD_X}" y="{line_y(2)}" font-family="{FONT}" font-size="{FONT_SZ}" fill="{GREY}" font-weight="700">- Reach Me -<tspan fill="{DIM}">~~~~~~~~~~~~</tspan></text>',
+    ]
+    for i, (label, url, display) in enumerate(entries):
+        idx = 4 + i
+        prefix = f". {label}:"
+        dots_n = max(3, target_col - len(prefix))
+        dots = "." * dots_n
+        lines.append(
+            f'<text x="{PAD_X}" y="{line_y(idx)}" font-family="{FONT}" font-size="{FONT_SZ}" xml:space="preserve">'
+            f'<tspan fill="{ORANGE}" font-weight="700">{esc(prefix)}</tspan>'
+            f'<tspan fill="{DIM}"> {esc(dots)} </tspan>'
+            f'<a href="{esc(url)}" target="_blank"><tspan fill="{BLUE}">{esc(display)}</tspan></a>'
+            f'</text>'
+        )
+    comment_idx = 4 + len(entries)
+    lines.append(
+        f'<text x="{PAD_X}" y="{line_y(comment_idx)}" font-family="{FONT}" font-size="{FONT_SZ}" font-style="italic" fill="{DIM}">// thanks for stopping by -- let\'s build something</text>'
+    )
+    prompt_idx = comment_idx + 1
+    lines.append(
+        f'<text x="{PAD_X}" y="{line_y(prompt_idx)}" font-family="{FONT}" font-size="{FONT_SZ}" fill="{ORANGE}" font-weight="700">&gt;<tspan fill="{GREY}">_</tspan></text>'
+    )
+    h = PAD_TOP + (prompt_idx + 1) * LINE_H
+    return make_svg(lines, h)
 
 def widget_card(slug, alt):
     if slug == "activity":
@@ -70,13 +124,7 @@ parts.append(
     '  </a>\n'
     '</p>'
 )
-parts.append(
-    '<div style="background:#0D1117;padding:26px 22px 22px;font-family:\'Fira Code\',\'Cascadia Code\',Consolas,monospace;font-size:16px;line-height:23px;color:#E6EDF3">\n'
-    '  <div style="color:#5C6773;font-style:italic;">// profile views</div>\n'
-    '  <div><span style="color:#CA7938;font-weight:700;">&gt;</span><span style="color:#5299D2;"> cat visitors.log</span><span style="color:#5C6773;"> .................... # Views</span></div>\n'
-    '  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views" style="margin:4px 0 0 0;vertical-align:top;display:block"/>\n'
-    '</div>'
-)
+parts.append(profile_views_svg())
 parts.append('<hr/>')
 
 sections = [
@@ -95,7 +143,7 @@ for bar_slug, card_slug, alt, kind in sections:
         parts.append(f'<div>\n{img_bar(bar_slug, f"$ {bar_slug}")}\n{img_card(card_slug, alt)}\n</div>')
     parts.append('<hr/>')
 
-parts.append(f'<div>\n{img_bar("connect", "$ connect")}\n{connect_terminal()}\n</div>')
+parts.append(f'<div>\n{img_bar("connect", "$ connect")}\n{connect_svg()}\n</div>')
 parts.append('<hr/>')
 
 readme_md = "\n".join(parts) + "\n"
