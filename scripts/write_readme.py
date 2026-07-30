@@ -18,8 +18,13 @@ def img_bar(slug, alt):
 
 def connect_terminal():
     c = DATA["contact"]
+    style = (
+        'background:#0D1117;padding:26px 22px 22px;'
+        'font-family:\'Fira Code\',\'Cascadia Code\',Consolas,monospace;'
+        'font-size:16px;line-height:23px;color:#E6EDF3'
+    )
     return (
-        '<div style="background:#0D1117;padding:26px 22px 22px;font-family:\'Courier New\',Consolas,monospace;font-size:16px;line-height:1.8;color:#E6EDF3">\n'
+        f'<div style="{style}">\n'
         '  <div><span style="font-weight:700;color:#E6EDF3">shanujans@github</span><span style="color:#A0B3BC;">~~~~~~~~~~~~~~~~~~~~~~~~</span></div>\n'
         '  <br/>\n'
         '  <div><span style="color:#A0B3BC;font-weight:700;">- Reach Me -</span><span style="color:#5C6773;">~~~~~~~~~~~~</span></div>\n'
@@ -66,14 +71,11 @@ parts.append(
     '</p>'
 )
 parts.append(
-    '<div style="background:#0D1117;padding:10px 22px;font-family:\'Courier New\',Consolas,monospace;font-size:16px;color:#E6EDF3">\n'
-    '  <span style="color:#CA7938;font-weight:700;">$</span>\n'
-    '  <span style="color:#5299D2;"> cat visitors.log</span>\n'
-    '  <span style="color:#5C6773;"> ................... # Profile Views</span>\n'
-    '</div>\n'
-    '<p align="center">\n'
-    '  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>\n'
-    '</p>'
+    '<div style="background:#0D1117;padding:26px 22px 22px;font-family:\'Fira Code\',\'Cascadia Code\',Consolas,monospace;font-size:16px;line-height:23px;color:#E6EDF3">\n'
+    '  <div style="color:#5C6773;font-style:italic;">// profile views</div>\n'
+    '  <div><span style="color:#CA7938;font-weight:700;">&gt;</span><span style="color:#5299D2;"> cat visitors.log</span><span style="color:#5C6773;"> .................... # Views</span></div>\n'
+    '  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views" style="margin:4px 0 0 0;vertical-align:top;display:block"/>\n'
+    '</div>'
 )
 parts.append('<hr/>')
 

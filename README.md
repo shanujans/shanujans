@@ -7,14 +7,11 @@
     </picture>
   </a>
 </p>
-<div style="background:#0D1117;padding:10px 22px;font-family:'Courier New',Consolas,monospace;font-size:16px;color:#E6EDF3">
-  <span style="color:#CA7938;font-weight:700;">$</span>
-  <span style="color:#5299D2;"> cat visitors.log</span>
-  <span style="color:#5C6773;"> ................... # Profile Views</span>
+<div style="background:#0D1117;padding:26px 22px 22px;font-family:'Fira Code','Cascadia Code',Consolas,monospace;font-size:16px;line-height:23px;color:#E6EDF3">
+  <div style="color:#5C6773;font-style:italic;">// profile views</div>
+  <div><span style="color:#CA7938;font-weight:700;">&gt;</span><span style="color:#5299D2;"> cat visitors.log</span><span style="color:#5C6773;"> .................... # Views</span></div>
+  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views" style="margin:4px 0 0 0;vertical-align:top;display:block"/>
 </div>
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>
-</p>
 <hr/>
 <div>
 <img src="assets/bar-projects.svg" alt="$ projects" width="100%" style="display:block"/>
@@ -53,7 +50,7 @@
 <hr/>
 <div>
 <img src="assets/bar-connect.svg" alt="$ connect" width="100%" style="display:block"/>
-<div style="background:#0D1117;padding:26px 22px 22px;font-family:'Courier New',Consolas,monospace;font-size:16px;line-height:1.8;color:#E6EDF3">
+<div style="background:#0D1117;padding:26px 22px 22px;font-family:'Fira Code','Cascadia Code',Consolas,monospace;font-size:16px;line-height:23px;color:#E6EDF3">
   <div><span style="font-weight:700;color:#E6EDF3">shanujans@github</span><span style="color:#A0B3BC;">~~~~~~~~~~~~~~~~~~~~~~~~</span></div>
   <br/>
   <div><span style="color:#A0B3BC;font-weight:700;">- Reach Me -</span><span style="color:#5C6773;">~~~~~~~~~~~~</span></div>
