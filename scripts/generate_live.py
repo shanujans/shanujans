@@ -26,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
-from terminal_card import build_card, build_line_svg, GREEN, BLUE, ORANGE, GREY, DIM, WHITE   # noqa: E402
+from terminal_card import build_card, build_line_svg, build_field_line_svg, GREEN, BLUE, ORANGE, GREY, DIM, WHITE   # noqa: E402
 
 ASSETS = Path("/tmp/repo/assets")
 ASSETS.mkdir(exist_ok=True)
@@ -354,10 +354,6 @@ c = DATA["contact"]
 connect_lines_dir = ASSETS / "connect-lines"
 connect_lines_dir.mkdir(exist_ok=True)
 
-# Compute target column for dot alignment (max label length + 3 for ". X:")
-field_labels = ["Email", "Portfolio", "GitHub", "LinkedIn"]
-target_col = max(len(f". {label}:") for label in field_labels) + 3
-
 lines = [
     ("header", "shanujans@github"),
     ("empty", None),
@@ -376,30 +372,26 @@ for idx, line in enumerate(lines):
     if kind == "header":
         text = line[1]
         build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-header.svg"),
-                       bold=True, color=WHITE, pad=2)
+                       bold=True, color=WHITE, pad_top=4, pad_bottom=4)
     elif kind == "empty":
         build_line_svg("", out_path=str(connect_lines_dir / f"line-{idx:02d}-empty.svg"),
-                       pad=2)
+                       pad_top=4, pad_bottom=4)
     elif kind == "section":
         text = line[1]
         build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-section.svg"),
-                       bold=True, color=GREY, pad=2)
+                       bold=True, color=GREY, pad_top=4, pad_bottom=4)
     elif kind == "linkfield":
         label, value, url = line[1], line[2], line[3]
-        # Build the line text with dots for alignment
-        prefix = f". {label}:"
-        dots_n = max(3, target_col - len(prefix))
-        dots = "." * dots_n
-        text = f"{prefix} {dots} {value}"
-        build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-field.svg"),
-                       color=BLUE, pad=2, link=url)
+        build_field_line_svg(label, value, url,
+                             out_path=str(connect_lines_dir / f"line-{idx:02d}-field.svg"),
+                             pad_top=4, pad_bottom=4)
     elif kind == "comment":
         text = line[1]
         build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-comment.svg"),
-                       color=DIM, italic=True, pad=2)
+                       color=DIM, italic=True, pad_top=4, pad_bottom=4)
     elif kind == "prompt":
         build_line_svg(">_", out_path=str(connect_lines_dir / f"line-{idx:02d}-prompt.svg"),
-                       bold=True, color=ORANGE, pad=2)
+                       bold=True, color=ORANGE, pad_top=4, pad_bottom=4)
 
 print(f"  wrote {len(lines)} connect line SVGs to {connect_lines_dir}")
 

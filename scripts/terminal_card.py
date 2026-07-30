@@ -58,9 +58,9 @@ SVG_OPEN = '''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3
 SVG_CLOSE = '</svg>'
 
 
-def build_line_svg(text, color=BLUE, bold=False, italic=False, width_chars=100, pad=2, link=None, out_path=None):
+def build_line_svg(text, color=BLUE, bold=False, italic=False, width_chars=100, pad=2, pad_top=4, pad_bottom=4, link=None, out_path=None):
     canvas_w = int(PAD_X * 2 + width_chars * CHAR_W)
-    canvas_h = int(PAD_TOP + PAD_BOTTOM + LINE_H)
+    canvas_h = int(pad_top + pad_bottom + LINE_H)
 
     svg_header = SVG_OPEN.format(
         w=canvas_w, h=canvas_h,
@@ -70,15 +70,50 @@ def build_line_svg(text, color=BLUE, bold=False, italic=False, width_chars=100, 
 
     weight = "700" if bold else "400"
     style = 'font-style="italic"' if italic else ""
+    y_pos = pad_top + LINE_H - 4
     if link:
         svg_line = (
-            f'<text x="{PAD_X}" y="{PAD_TOP + LINE_H - 4}" {style} font-weight="{weight}" fill="{color}" xml:space="preserve">'
+            f'<text x="{PAD_X}" y="{y_pos}" {style} font-weight="{weight}" fill="{color}" xml:space="preserve">'
             f'<tspan><a xlink:href="{esc(link)}" target="_blank">{esc(text)}</a></tspan></text>'
         )
     else:
         svg_line = (
-            f'<text x="{PAD_X}" y="{PAD_TOP + LINE_H - 4}" {style} font-weight="{weight}" fill="{color}" xml:space="preserve">{esc(text)}</text>'
+            f'<text x="{PAD_X}" y="{y_pos}" {style} font-weight="{weight}" fill="{color}" xml:space="preserve">{esc(text)}</text>'
         )
+
+    svg = svg_header + "\n  " + svg_line + "\n" + SVG_CLOSE
+    if out_path:
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(svg)
+    return svg
+
+
+def build_field_line_svg(label, value, url, width_chars=100, pad=2, pad_top=4, pad_bottom=4, out_path=None):
+    """Build a field line with: orange bold label, dim dots, blue linked value."""
+    canvas_w = int(PAD_X * 2 + width_chars * CHAR_W)
+    canvas_h = int(pad_top + pad_bottom + LINE_H)
+
+    svg_header = SVG_OPEN.format(
+        w=canvas_w, h=canvas_h,
+        REG=REG_B64, BOLD=BOLD_B64,
+        FS=FONT_SIZE, ORANGE=ORANGE, BG=BG,
+    )
+
+    # Compute dots for alignment
+    prefix = f". {label}:"
+    target_col = width_chars - len(value) - 3
+    dots_n = max(3, target_col - len(prefix))
+    dots = "." * dots_n
+
+    y_pos = pad_top + LINE_H - 4
+    svg_line = (
+        f'<text x="{PAD_X}" y="{y_pos}" xml:space="preserve">'
+        f'<tspan font-weight="700" fill="{ORANGE}">{esc(prefix)}</tspan>'
+        f'<tspan fill="{DIM}"> {esc(dots)} </tspan>'
+        f'<tspan fill="{BLUE}">'
+        f'<tspan><a xlink:href="{esc(url)}" target="_blank">{esc(value)}</a></tspan>'
+        f'</tspan></text>'
+    )
 
     svg = svg_header + "\n  " + svg_line + "\n" + SVG_CLOSE
     if out_path:
