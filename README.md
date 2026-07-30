@@ -7,13 +7,9 @@
     </picture>
   </a>
 </p>
-<div style="background:#0D1117;padding:0;line-height:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1028 111" width="100%" style="display:block">
-<rect width="100%" height="100%" fill="#0D1117"/>
-<text x="22" y="26" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" font-style="italic" fill="#5C6773">// profile views</text>
-<text x="22" y="49" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" fill="#CA7938" font-weight="700">&gt;</text>
-<text x="36" y="49" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" fill="#5299D2"> cat visitors.log</text>
-<text x="260" y="49" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" fill="#5C6773">.................... # Views</text>
-</svg><img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views" style="display:block;margin-top:4px"/></div>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>
+</p>
 <hr/>
 <div>
 <img src="assets/bar-projects.svg" alt="$ projects" width="100%" style="display:block"/>
@@ -52,16 +48,9 @@
 <hr/>
 <div>
 <img src="assets/bar-connect.svg" alt="$ connect" width="100%" style="display:block"/>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1028 256" width="100%" style="display:block">
-<rect width="100%" height="100%" fill="#0D1117"/>
-<text x="22" y="26" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" fill="#E6EDF3" font-weight="700">shanujans@github<tspan fill="#A0B3BC">~~~~~~~~~~~~~~~~~~~~~~~~</tspan></text>
-<text x="22" y="72" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" fill="#A0B3BC" font-weight="700">- Reach Me -<tspan fill="#5C6773">~~~~~~~~~~~~</tspan></text>
-<text x="22" y="118" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" xml:space="preserve"><tspan fill="#CA7938" font-weight="700">. Email:</tspan><tspan fill="#5C6773"> ....... </tspan><a href="mailto:shanujansh@gmail.com" target="_blank"><tspan fill="#5299D2">shanujansh@gmail.com</tspan></a></text>
-<text x="22" y="141" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" xml:space="preserve"><tspan fill="#CA7938" font-weight="700">. Portfolio:</tspan><tspan fill="#5C6773"> ... </tspan><a href="https://shanujan.is-a.dev" target="_blank"><tspan fill="#5299D2">shanujan.is-a.dev</tspan></a></text>
-<text x="22" y="164" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" xml:space="preserve"><tspan fill="#CA7938" font-weight="700">. GitHub:</tspan><tspan fill="#5C6773"> ...... </tspan><a href="https://github.com/shanujans" target="_blank"><tspan fill="#5299D2">github.com/shanujans</tspan></a></text>
-<text x="22" y="187" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" xml:space="preserve"><tspan fill="#CA7938" font-weight="700">. LinkedIn:</tspan><tspan fill="#5C6773"> .... </tspan><a href="https://www.linkedin.com/in/shanujansuresh/" target="_blank"><tspan fill="#5299D2">linkedin.com/in/shanujansuresh</tspan></a></text>
-<text x="22" y="210" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" font-style="italic" fill="#5C6773">// thanks for stopping by -- let's build something</text>
-<text x="22" y="233" font-family="'Fira Code','Cascadia Code',Consolas,monospace" font-size="16" fill="#CA7938" font-weight="700">&gt;<tspan fill="#A0B3BC">_</tspan></text>
-</svg>
+<img src="assets/terminal-connect.svg" alt="Let&#x27;s Connect" width="100%" style="display:block"/>
+<p align="center" style="margin-top:8px;">
+  <a href="mailto:shanujansh@gmail.com">Email</a> &bull;   <a href="https://shanujan.is-a.dev">Portfolio</a> &bull;   <a href="https://github.com/shanujans">GitHub</a> &bull;   <a href="https://www.linkedin.com/in/shanujansuresh/">LinkedIn</a>
+</p>
 </div>
 <hr/>
