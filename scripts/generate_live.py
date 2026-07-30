@@ -26,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
-from terminal_card import build_card, build_line_svg, build_field_line_svg, GREEN, BLUE, ORANGE, GREY, DIM, WHITE   # noqa: E402
+from terminal_card import build_card, build_line_svg, build_field_line_svg, build_neofetch_card, GREEN, BLUE, ORANGE, GREY, DIM, WHITE   # noqa: E402
 
 ASSETS = Path("/tmp/repo/assets")
 ASSETS.mkdir(exist_ok=True)
@@ -190,6 +190,51 @@ def card_hero():
     ]
 
 
+def card_neofetch():
+    """Neofetch-style card with ascii on left, all system info on right."""
+    name_art = pyfiglet.figlet_format(DATA["display_name_figlet"], font="small")
+    c = DATA["contact"]
+    return [
+        ("ascii", name_art, ORANGE),
+        ("header", "shanujans@github"),
+        ("field", "OS", DATA["os"]),
+        ("field2", "Uptime", LIVE["uptime"], GREEN),
+        ("field", "Host", DATA["host"]),
+        ("field", "Kernel", DATA["kernel"]),
+        ("field", "Shell", DATA["shell"]),
+        ("field", "IDE", DATA["ide"]),
+        ("field", "Terminal", "Windows Terminal"),
+        ("field2", "CPU", "AMD Ryzen 7 5800H", ORANGE),
+        ("field2", "GPU", "NVIDIA RTX 3060", ORANGE),
+        ("field2", "Memory", "16GB DDR4", ORANGE),
+        ("blank",),
+        ("section", "- Languages.Programming -"),
+        ("field", "Programming", DATA["languages_programming"]),
+        ("section", "- Languages.Markup -"),
+        ("field", "Markup", DATA["languages_markup"]),
+        ("section", "- Languages.Real -"),
+        ("field", "Real", DATA["languages_real"]),
+        ("blank",),
+        ("section", "- Focus.AI -"),
+        ("field", "AI", DATA["focus_ai"]),
+        ("section", "- Focus.Automation -"),
+        ("field", "Automation", DATA["focus_automation"]),
+        ("section", "- Focus.QA -"),
+        ("field2", "QA", DATA["focus_qa"], ORANGE),
+        ("section", "- Focus.Cloud -"),
+        ("field2", "Cloud", DATA["focus_cloud"], ORANGE),
+        ("blank",),
+        ("section", "- Contact -"),
+        ("linkfield", "Email", c["email"]["display"], c["email"]["url"]),
+        ("linkfield", "Portfolio", c["portfolio"]["display"], c["portfolio"]["url"]),
+        ("linkfield", "GitHub", c["github"]["display"], c["github"]["url"]),
+        ("linkfield", "LinkedIn", c["linkedin"]["display"], c["linkedin"]["url"]),
+        ("blank",),
+        ("comment", f"// last synced {LIVE['last_synced']}"),
+        ("prompt",),
+    ]
+
+
 def card_meta():
     return [
         ("field",     "OS",      DATA["os"]),
@@ -311,7 +356,7 @@ def card_connect():
 
 
 BARS = [
-    ("meta",           "uname -a",               "System Meta"),
+    ("neofetch",       "neofetch --stdout",      "System Info"),
     ("languages",      "which -a --languages",   "Languages"),
     ("focus",          "focus --areas",          "Focus Areas"),
     ("projects",       "ls ./projects --featured", "Featured Projects"),
@@ -327,8 +372,7 @@ BARS = [
 # ----------------------------------------------------------------- render --
 
 CARDS = [
-    ("hero",           card_hero,()),
-    ("meta",           card_meta, ()),
+    ("neofetch",       card_neofetch, ()),
     ("languages",      card_languages, ()),
     ("focus",          card_focus, ()),
     ("projects",       card_projects, ()),
@@ -341,7 +385,10 @@ CARDS = [
 print("== RENDERING ==")
 for slug, fn, _ in CARDS:
     out = ASSETS / f"terminal-{slug}.svg"
-    build_card(DATA["username"], fn(), str(out), min_width_chars=100)
+    if slug == "neofetch":
+        build_neofetch_card(DATA["username"], fn(), str(out), min_width_chars=120)
+    else:
+        build_card(DATA["username"], fn(), str(out), min_width_chars=100)
     print(f"  wrote {out}")
 
 for slug, cmd, label in BARS:

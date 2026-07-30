@@ -284,3 +284,134 @@ def build_card(username_title, items, out_path, min_width_chars=0, with_header=T
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(svg)
     return canvas_w, canvas_h
+
+
+def build_neofetch_card(username, items, out_path, min_width_chars=80):
+    """Build a neofetch-style card with ascii art on left, fields on right."""
+    # Separate ascii art from fields
+    ascii_lines = []
+    fields = []
+    for it in items:
+        if it[0] == "ascii":
+            ascii_lines = it[1].rstrip("\n").split("\n")
+        else:
+            fields.append(it)
+
+    # Build field lines
+    field_items = []
+    for it in fields:
+        kind = it[0]
+        if kind == "header":
+            field_items.append(("header", it[1]))
+        elif kind == "section":
+            field_items.append(("section", it[1]))
+        elif kind in ("field", "field2"):
+            label, value = it[1], it[2]
+            vcolor = it[3] if kind == "field2" else BLUE
+            field_items.append(("field", label, value, vcolor))
+        elif kind in ("linkfield", "linkfield2"):
+            label, value, url = it[1], it[2], it[3]
+            vcolor = it[4] if kind == "linkfield2" else BLUE
+            field_items.append(("linkfield", label, value, url, vcolor))
+        elif kind == "comment":
+            field_items.append(("comment", it[1]))
+        elif kind == "blank":
+            field_items.append(("blank",))
+        elif kind == "prompt":
+            field_items.append(("prompt",))
+
+    # ASCII column width (fixed for neofetch-style)
+    ascii_col_w = 50
+    # Total width = ascii_col_w + field_col_w + gap
+    field_col_w = max(min_width_chars, 60)
+    total_chars = ascii_col_w + field_col_w + 4
+
+    total_lines = max(len(ascii_lines), len(field_items))
+    canvas_w = int(PAD_X * 2 + total_chars * CHAR_W)
+    canvas_h = int(PAD_TOP + PAD_BOTTOM + LINE_H * total_lines)
+
+    svg_header = SVG_OPEN.format(
+        w=canvas_w, h=canvas_h,
+        REG=REG_B64, BOLD=BOLD_B64,
+        FS=FONT_SIZE, ORANGE=ORANGE, BG=BG,
+    )
+
+    x_ascii = PAD_X
+    x_fields = PAD_X + int((ascii_col_w + 2) * CHAR_W)
+
+    svg_lines = []
+    y = PAD_TOP + LINE_H - 4
+
+    for i in range(total_lines):
+        # Left side: ascii art (only for lines that have ascii)
+        left_text = ""
+        left_color = ORANGE
+        if i < len(ascii_lines):
+            left_text = ascii_lines[i]
+
+        # Right side: fields
+        right_svg = ""
+        if i < len(field_items):
+            f = field_items[i]
+            kind = f[0]
+            if kind == "header":
+                text = f[1]
+                tildes = "~" * max(0, field_col_w - len(text))
+                right_svg = (
+                    f'<tspan font-weight="700" fill="{WHITE}">{esc(text)}</tspan>'
+                    f'<tspan fill="{GREY}">{esc(tildes)}</tspan>'
+                )
+            elif kind == "section":
+                text = f[1]
+                tildes = "~" * max(0, field_col_w - len(text))
+                right_svg = (
+                    f'<tspan font-weight="700" fill="{GREY}">{esc(text)}</tspan>'
+                    f'<tspan fill="{DIM}">{esc(tildes)}</tspan>'
+                )
+            elif kind == "field":
+                label, value, vcolor = f[1], f[2], f[3]
+                prefix = f". {label}:"
+                dots_n = max(3, field_col_w - len(prefix) - len(value) - 3)
+                dots = "." * dots_n
+                right_svg = (
+                    f'<tspan font-weight="700" fill="{ORANGE}">{esc(prefix)}</tspan>'
+                    f'<tspan fill="{DIM}"> {esc(dots)} </tspan>'
+                    f'<tspan fill="{vcolor}">{esc(value)}</tspan>'
+                )
+            elif kind == "linkfield":
+                label, value, url, vcolor = f[1], f[2], f[3], f[4]
+                prefix = f". {label}:"
+                dots_n = max(3, field_col_w - len(prefix) - len(value) - 3)
+                dots = "." * dots_n
+                right_svg = (
+                    f'<tspan font-weight="700" fill="{ORANGE}">{esc(prefix)}</tspan>'
+                    f'<tspan fill="{DIM}"> {esc(dots)} </tspan>'
+                    f'<tspan fill="{vcolor}">'
+                    f'<tspan><a xlink:href="{esc(url)}" target="_blank">{esc(value)}</a></tspan>'
+                    f'</tspan>'
+                )
+            elif kind == "comment":
+                right_svg = f'<tspan font-style="italic" fill="{DIM}">{esc(f[1])}</tspan>'
+            elif kind == "blank":
+                right_svg = ""
+            elif kind == "prompt":
+                right_svg = f'<tspan font-weight="700" fill="{ORANGE}">></tspan><tspan fill="{GREY}">_</tspan>'
+
+        # Combine left and right in single text element per line
+        if left_text or right_svg:
+            parts = []
+            if left_text:
+                parts.append(f'<tspan fill="{left_color}">{esc(left_text)}</tspan>')
+            if right_svg:
+                # Add spacing between ascii and fields
+                parts.append(f'<tspan x="{x_fields}" xml:space="preserve">{right_svg}</tspan>')
+            svg_lines.append(
+                f'<text x="{x_ascii}" y="{y}" xml:space="preserve">{"".join(parts)}</text>'
+            )
+        y += LINE_H
+
+    body = "\n  ".join(svg_lines)
+    svg = svg_header + "\n  " + body + "\n" + SVG_CLOSE
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(svg)
+    return canvas_w, canvas_h
