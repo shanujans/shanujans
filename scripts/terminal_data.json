@@ -10,8 +10,8 @@
 
   "host": "Sri Lanka",
   "kernel": "IT Support Professional",
-  "shell": "BSc CS @ UOPEOPLE",
-  "ide": "VS Code, AI Studio, Git, OpenCode",
+  "shell": "BSc CS @ UOPeople",
+  "ide": "Visual Studio, Visual Studio Code, Android Studio, PyCharm",
   "os": "Windows, Linux (basic)",
   "uptime_seed_iso": "2024-09-08T00:00:00Z",
   "_uptime_note": "If you don't want GH-API-style live uptime, this seed date is used as fallback so the bar still renders something meaningful.",
@@ -20,7 +20,7 @@
   "languages_markup":     "HTML, CSS, JSON, YAML",
   "languages_real":       "English, Tamil",
 
-  "focus_ai":         "Gemini API, AI Studio",
+  "focus_ai": "Gemini API, AI Studio, AIML API, HuggingFace API, LM Studio",
   "focus_automation": "Cloudflare Workers, GitHub Actions",
   "focus_qa":         "Manual Testing (learning)",
   "focus_cloud":      "AWS (basic), OCI (basic)",

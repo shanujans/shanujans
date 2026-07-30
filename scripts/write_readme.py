@@ -19,10 +19,10 @@ with open(ROOT / "terminal_data.json", encoding="utf-8") as f:
 CARD_WIDTH = "100%"
 
 def img_card(slug, alt):
-    return f'<img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/>'
+    return f'<img src="assets/terminal-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}" style="display:block"/>'
 
 def img_bar(slug, alt):
-    return f'<img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}"/>'
+    return f'<img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}" style="display:block"/>'
 
 def widget_card(slug, alt):
     if slug == "stats":
@@ -81,11 +81,10 @@ sections = [
 ]
 
 for bar_slug, card_slug, alt, kind in sections:
-    parts.append(img_bar(bar_slug, f"$ {bar_slug}"))
     if kind == "widget":
-        parts.append(widget_card(card_slug, alt))
+        parts.append(f'<div>\n{img_bar(bar_slug, f"$ {bar_slug}")}\n{widget_card(card_slug, alt)}\n</div>')
     else:
-        parts.append(img_card(card_slug, alt))
+        parts.append(f'<div>\n{img_bar(bar_slug, f"$ {bar_slug}")}\n{img_card(card_slug, alt)}\n</div>')
     parts.append('<hr/>')
 
 # Footer
