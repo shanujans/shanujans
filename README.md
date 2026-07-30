@@ -48,15 +48,15 @@
 <hr/>
 <div>
 <img src="assets/bar-connect.svg" alt="$ connect" width="100%" style="display:block"/>
-<pre style="background-color:#0d1117;color:#e6edf3;font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,'Liberation Mono',monospace;font-size:15px;line-height:1.6;padding:22px;border-radius:6px;margin:0;overflow-x:auto;"><span style="color:#e6edf3;font-weight:bold;">shanujans@github</span> <span style="color:#a0b3bc;">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
-
-<span style="color:#a0b3bc;font-weight:bold;">- Reach Me -</span> <span style="color:#5c6773;">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
-<span style="color:#ca7938;font-weight:bold;">. Email:</span> <span style="color:#5c6773;">.......</span> <a href="mailto:shanujansh@gmail.com" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">shanujansh@gmail.com</span></a>
-<span style="color:#ca7938;font-weight:bold;">. Portfolio:</span> <span style="color:#5c6773;">...</span> <a href="https://shanujan.is-a.dev" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">shanujan.is-a.dev</span></a>
-<span style="color:#ca7938;font-weight:bold;">. GitHub:</span> <span style="color:#5c6773;">......</span> <a href="https://github.com/shanujans" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">github.com/shanujans</span></a>
-<span style="color:#ca7938;font-weight:bold;">. LinkedIn:</span> <span style="color:#5c6773;">....</span> <a href="https://www.linkedin.com/in/shanujansuresh/" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">linkedin.com/in/shanujansuresh</span></a>
-
-<span style="color:#5c6773;font-style:italic;">// thanks for stopping by -- let's build something</span>
-<span style="color:#ca7938;font-weight:bold;">&gt;</span><span style="color:#a0b3bc;">_</span></pre>
+<img src="assets/connect-lines/line-00-header.svg" alt="shanujans@github ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" width="100%" style="display:block"/>
+<img src="assets/connect-lines/line-01-empty.svg" alt="" width="100%" style="display:block"/>
+<img src="assets/connect-lines/line-02-section.svg" alt="- Reach Me - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" width="100%" style="display:block"/>
+<a href="mailto:shanujansh@gmail.com" target="_blank" style="text-decoration:none;display:block"><img src="assets/connect-lines/line-03-field.svg" alt=". Email: ....... shanujansh@gmail.com" width="100%" style="display:block"/></a>
+<a href="https://shanujan.is-a.dev" target="_blank" style="text-decoration:none;display:block"><img src="assets/connect-lines/line-04-field.svg" alt=". Portfolio: ... shanujan.is-a.dev" width="100%" style="display:block"/></a>
+<a href="https://github.com/shanujans" target="_blank" style="text-decoration:none;display:block"><img src="assets/connect-lines/line-05-field.svg" alt=". GitHub: ...... github.com/shanujans" width="100%" style="display:block"/></a>
+<a href="https://www.linkedin.com/in/shanujansuresh/" target="_blank" style="text-decoration:none;display:block"><img src="assets/connect-lines/line-06-field.svg" alt=". LinkedIn: .... linkedin.com/in/shanujansuresh" width="100%" style="display:block"/></a>
+<img src="assets/connect-lines/line-07-empty.svg" alt="" width="100%" style="display:block"/>
+<img src="assets/connect-lines/line-08-comment.svg" alt="// thanks for stopping by -- let&#x27;s build something" width="100%" style="display:block"/>
+<img src="assets/connect-lines/line-09-prompt.svg" alt="&gt;_" width="100%" style="display:block"/>
 </div>
 <hr/>

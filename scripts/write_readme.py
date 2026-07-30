@@ -8,6 +8,12 @@ ASSETS = REPO / "assets"
 with open(ROOT / "terminal_data.json", encoding="utf-8") as f:
     DATA = json.load(f)
 
+WHITE = "#E6EDF3"
+GREY = "#A0B3BC"
+BLUE = "#5299D2"
+DIM = "#5C6773"
+ORANGE = "#CA7938"
+
 CARD_WIDTH = "100%"
 
 def img_card(slug, alt):
@@ -36,18 +42,36 @@ def widget_card(slug, alt):
 
 def connect_html():
     c = DATA["contact"]
-    return (
-        '<pre style="background-color:#0d1117;color:#e6edf3;font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,\'Liberation Mono\',monospace;font-size:15px;line-height:1.6;padding:22px;border-radius:6px;margin:0;overflow-x:auto;">'
-        '<span style="color:#e6edf3;font-weight:bold;">shanujans@github</span> <span style="color:#a0b3bc;">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>\n\n'
-        '<span style="color:#a0b3bc;font-weight:bold;">- Reach Me -</span> <span style="color:#5c6773;">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>\n'
-        f'<span style="color:#ca7938;font-weight:bold;">. Email:</span> <span style="color:#5c6773;">.......</span> <a href="{c["email"]["url"]}" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">{c["email"]["display"]}</span></a>\n'
-        f'<span style="color:#ca7938;font-weight:bold;">. Portfolio:</span> <span style="color:#5c6773;">...</span> <a href="{c["portfolio"]["url"]}" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">{c["portfolio"]["display"]}</span></a>\n'
-        f'<span style="color:#ca7938;font-weight:bold;">. GitHub:</span> <span style="color:#5c6773;">......</span> <a href="{c["github"]["url"]}" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">{c["github"]["display"]}</span></a>\n'
-        f'<span style="color:#ca7938;font-weight:bold;">. LinkedIn:</span> <span style="color:#5c6773;">....</span> <a href="{c["linkedin"]["url"]}" target="_blank" style="color:#5299d2;text-decoration:none;"><span style="color:#5299d2;">{c["linkedin"]["display"]}</span></a>\n\n'
-        '<span style="color:#5c6773;font-style:italic;">// thanks for stopping by -- let\'s build something</span>\n'
-        '<span style="color:#ca7938;font-weight:bold;">&gt;</span><span style="color:#a0b3bc;">_</span>'
-        '</pre>'
-    )
+    lines = [
+        ('shanujans@github ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', WHITE, True, None, 'header'),
+        ('', None, False, None, 'empty'),
+        ('- Reach Me - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', GREY, True, None, 'section'),
+        ('. Email: ....... shanujansh@gmail.com', BLUE, False, c["email"]["url"], 'field'),
+        ('. Portfolio: ... shanujan.is-a.dev', BLUE, False, c["portfolio"]["url"], 'field'),
+        ('. GitHub: ...... github.com/shanujans', BLUE, False, c["github"]["url"], 'field'),
+        ('. LinkedIn: .... linkedin.com/in/shanujansuresh', BLUE, False, c["linkedin"]["url"], 'field'),
+        ('', None, False, None, 'empty'),
+        ('// thanks for stopping by -- let\'s build something', DIM, True, None, 'comment'),
+        ('>_', ORANGE, True, None, 'prompt'),
+    ]
+    html_lines = []
+    for i, line in enumerate(lines):
+        text, color, bold, link, suffix = line
+        filename = f"assets/connect-lines/line-{i:02d}-{suffix}.svg"
+        if text == '':
+            html_lines.append(f'<img src="{filename}" alt="" width="100%" style="display:block"/>')
+        else:
+            if link:
+                html_lines.append(
+                    f'<a href="{html.escape(link)}" target="_blank" style="text-decoration:none;display:block">'
+                    f'<img src="{filename}" alt="{html.escape(text)}" width="100%" style="display:block"/>'
+                    f'</a>'
+                )
+            else:
+                html_lines.append(
+                    f'<img src="{filename}" alt="{html.escape(text)}" width="100%" style="display:block"/>'
+                )
+    return "\n".join(html_lines)
 
 parts = []
 

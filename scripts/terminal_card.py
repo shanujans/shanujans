@@ -58,6 +58,35 @@ SVG_OPEN = '''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3
 SVG_CLOSE = '</svg>'
 
 
+def build_line_svg(text, color=BLUE, bold=False, italic=False, width_chars=100, pad=2, link=None, out_path=None):
+    canvas_w = int(PAD_X * 2 + width_chars * CHAR_W)
+    canvas_h = int(PAD_TOP + PAD_BOTTOM + LINE_H)
+
+    svg_header = SVG_OPEN.format(
+        w=canvas_w, h=canvas_h,
+        REG=REG_B64, BOLD=BOLD_B64,
+        FS=FONT_SIZE, ORANGE=ORANGE, BG=BG,
+    )
+
+    weight = "700" if bold else "400"
+    style = 'font-style="italic"' if italic else ""
+    if link:
+        svg_line = (
+            f'<text x="{PAD_X}" y="{PAD_TOP + LINE_H - 4}" {style} font-weight="{weight}" fill="{color}" xml:space="preserve">'
+            f'<tspan><a xlink:href="{esc(link)}" target="_blank">{esc(text)}</a></tspan></text>'
+        )
+    else:
+        svg_line = (
+            f'<text x="{PAD_X}" y="{PAD_TOP + LINE_H - 4}" {style} font-weight="{weight}" fill="{color}" xml:space="preserve">{esc(text)}</text>'
+        )
+
+    svg = svg_header + "\n  " + svg_line + "\n" + SVG_CLOSE
+    if out_path:
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(svg)
+    return svg
+
+
 def build_card(username_title, items, out_path, min_width_chars=0, with_header=True):
     pre = [("header", username_title + " -")] if with_header else []
     raw_items = pre + items

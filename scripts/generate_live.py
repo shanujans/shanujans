@@ -26,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
-from terminal_card import build_card, GREEN, BLUE, ORANGE, GREY, DIM   # noqa: E402
+from terminal_card import build_card, build_line_svg, GREEN, BLUE, ORANGE, GREY, DIM, WHITE   # noqa: E402
 
 ASSETS = Path("/tmp/repo/assets")
 ASSETS.mkdir(exist_ok=True)
@@ -347,6 +347,61 @@ for slug, cmd, label in BARS:
 
 print(f"\nDone. {len(CARDS)} cards + {len(BARS)} bars regenerated.")
 print(f"Last synced stamp on outputs: {LIVE['last_synced']}")
+
+# ------------------------------------------------------------ connect lines --
+print("\n== GENERATING CONNECT SECTION PER-LINE SVGs ==")
+c = DATA["contact"]
+connect_lines_dir = ASSETS / "connect-lines"
+connect_lines_dir.mkdir(exist_ok=True)
+
+# Compute target column for dot alignment (max label length + 3 for ". X:")
+field_labels = ["Email", "Portfolio", "GitHub", "LinkedIn"]
+target_col = max(len(f". {label}:") for label in field_labels) + 3
+
+lines = [
+    ("header", "shanujans@github"),
+    ("empty", None),
+    ("section", "- Reach Me -"),
+    ("linkfield", "Email",     c["email"]["display"],     c["email"]["url"]),
+    ("linkfield", "Portfolio", c["portfolio"]["display"], c["portfolio"]["url"]),
+    ("linkfield", "GitHub",    c["github"]["display"],    c["github"]["url"]),
+    ("linkfield", "LinkedIn",  c["linkedin"]["display"],  c["linkedin"]["url"]),
+    ("empty", None),
+    ("comment", "// thanks for stopping by -- let's build something"),
+    ("prompt", None),
+]
+
+for idx, line in enumerate(lines):
+    kind = line[0]
+    if kind == "header":
+        text = line[1]
+        build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-header.svg"),
+                       bold=True, color=WHITE, pad=2)
+    elif kind == "empty":
+        build_line_svg("", out_path=str(connect_lines_dir / f"line-{idx:02d}-empty.svg"),
+                       pad=2)
+    elif kind == "section":
+        text = line[1]
+        build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-section.svg"),
+                       bold=True, color=GREY, pad=2)
+    elif kind == "linkfield":
+        label, value, url = line[1], line[2], line[3]
+        # Build the line text with dots for alignment
+        prefix = f". {label}:"
+        dots_n = max(3, target_col - len(prefix))
+        dots = "." * dots_n
+        text = f"{prefix} {dots} {value}"
+        build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-field.svg"),
+                       color=BLUE, pad=2, link=url)
+    elif kind == "comment":
+        text = line[1]
+        build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-comment.svg"),
+                       color=DIM, italic=True, pad=2)
+    elif kind == "prompt":
+        build_line_svg(">_", out_path=str(connect_lines_dir / f"line-{idx:02d}-prompt.svg"),
+                       bold=True, color=ORANGE, pad=2)
+
+print(f"  wrote {len(lines)} connect line SVGs to {connect_lines_dir}")
 
 # ----------------------------------------------------------------- README --
 print("\n== WRITING README.md (using <img> tags for all cards) ==")
