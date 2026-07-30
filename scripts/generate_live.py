@@ -192,12 +192,16 @@ def card_hero():
 
 def card_meta():
     return [
-        ("field",     "OS",     DATA["os"]),
-        ("field2",    "Uptime", LIVE["uptime"], GREEN),
-        ("field",     "Host",   DATA["host"]),
-        ("field",     "Kernel", DATA["kernel"]),
-        ("field",     "Shell",  DATA["shell"]),
-        ("field",     "IDE",    DATA["ide"]),
+        ("field",     "OS",      DATA["os"]),
+        ("field2",    "Uptime",  LIVE["uptime"], GREEN),
+        ("field",     "Host",    DATA["host"]),
+        ("field",     "Kernel",  DATA["kernel"]),
+        ("field",     "Shell",   DATA["shell"]),
+        ("field",     "IDE",     DATA["ide"]),
+        ("field",     "Terminal", "Windows Terminal"),
+        ("field2",    "CPU",     "AMD Ryzen 7 5800H", ORANGE),
+        ("field2",    "GPU",     "NVIDIA RTX 3060", ORANGE),
+        ("field2",    "Memory",  "16GB DDR4", ORANGE),
         ("blank",),
         ("comment",   f"// uptime live from GitHub `created_at` ({LIVE['created_at']})"),
         ("prompt",),
