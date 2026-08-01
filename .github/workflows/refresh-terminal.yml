@@ -21,6 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: terminal
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -56,9 +57,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Ensure we're on terminal branch for commit
-          git fetch origin terminal:terminal
-          git checkout terminal
           cp /tmp/repo/assets/*.svg assets/
           cp /tmp/repo/README.md README.md
           git add assets/*.svg README.md
@@ -66,5 +64,5 @@ jobs:
             echo "no changes; skipping commit"
           else
             git commit -m "chore: refresh terminal SVGs and README [skip ci]"
-            git push origin terminal
+            git push origin HEAD:terminal
           fi
