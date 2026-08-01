@@ -415,3 +415,292 @@ def build_neofetch_card(username, items, out_path, min_width_chars=80):
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(svg)
     return canvas_w, canvas_h
+
+
+def build_neofetch_svg(username, items, out_path, is_dark=True, data=None, live=None):
+    """Build exact neofetch-style card matching the neofetch branch format.
+    Uses Consolas font, 1480x800, with clickable links, Contact & GitHub Stats sections."""
+    
+    if data is None:
+        data = {}
+    if live is None:
+        live = {}
+
+    # Colors
+    if is_dark:
+        bg = "#0d1117"
+        ascii_color = "#6e7681"
+        header_color = "#c9d1d9"
+        key_color = "#f0883e"
+        value_color = "#58a6ff"
+        cc_color = "#8b949e"
+        add_color = "#3fb950"
+        del_color = "#f85149"
+        section_color = "#d2a8ff"
+    else:
+        bg = "#f6f8fa"
+        ascii_color = "#8c959f"
+        header_color = "#24292f"
+        key_color = "#953800"
+        value_color = "#0969da"
+        cc_color = "#57606a"
+        add_color = "#3fb950"
+        del_color = "#f85149"
+        section_color = "#d2a8ff"
+
+    # Separate ascii art from fields
+    ascii_lines = []
+    fields = []
+    for it in items:
+        if it[0] == "ascii":
+            ascii_lines = it[1].rstrip("\n").split("\n")
+        else:
+            fields.append(it)
+
+    canvas_w = 1480
+    canvas_h = 800
+    ascii_font_size = 12
+    field_font_size = 16
+    line_height = 16
+    field_line_height = 25
+    ascii_y_start = 30
+    field_y_start = 30
+    
+    svg_header = f"""<svg width="{canvas_w}" height="{canvas_h}" font-family="ConsolasFallback,Consolas,monospace" font-size="{field_font_size}px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+@font-face {{
+  src: local('Consolas'), local('Consolas Bold');
+  font-family: 'ConsolasFallback';
+  font-display: swap;
+  -webkit-size-adjust: 109%;
+  size-adjust: 109%;
+}}
+.key {{fill: {key_color};}}
+.value {{fill: {value_color};}}
+.addColor {{fill: {add_color};}}
+.delColor {{fill: {del_color};}}
+.cc {{fill: {cc_color};}}
+.ascii {{fill: {ascii_color};}}
+.section {{fill: {section_color};}}
+text, tspan {{white-space: pre;}}
+a text {{cursor: pointer;}}
+a:hover .value {{fill: #79c0ff;}}
+.cursor {{animation: blink 1s step-end infinite;}}
+@keyframes blink {{ 0%, 49% {{ opacity: 1; }} 50%, 100% {{ opacity: 0; }} }}
+</style>
+<rect width="{canvas_w}" height="{canvas_h}" fill="{bg}" rx="15"/>"""
+
+    svg_lines = []
+    
+    # Left side: ASCII art
+    ascii_y = ascii_y_start
+    for i, line in enumerate(ascii_lines):
+        svg_lines.append(
+            f'<text x="15" y="{ascii_y}" class="ascii" font-size="{ascii_font_size}px">'
+            f'<tspan x="15" y="{ascii_y}">{html.escape(line)}</tspan>'
+            f'</text>'
+        )
+        ascii_y += line_height
+    
+    # Right side: Fields (neofetch style at x=783)
+    field_y = field_y_start
+    username_text = "shanujans@github"
+    tildes = "~" * 62
+    svg_lines.append(
+        f'<text x="783" y="{field_y}" fill="{header_color}">'
+        f'<tspan x="783" y="{field_y}">{html.escape(username_text)}</tspan> -{html.escape(tildes)}-'
+        f'</text>'
+    )
+    field_y += 25
+    
+    # OS, Uptime, Host, Kernel, Shell, IDE (no Terminal/CPU/GPU/Memory)
+    os_val = data.get("os", "Windows, Android, Linux (basic)")
+    uptime_val = live.get("uptime", "1y 3m 16d on GitHub")
+    host_val = data.get("host", "Sri Lanka")
+    kernel_val = data.get("kernel", "IT Support Professional (4+ yrs)")
+    shell_val = data.get("shell", "BSc CS @ Univ. of the People")
+    ide_val = data.get("ide", "VS Code, AI Studio, Git, OpenCode")
+    
+    fields_top = [
+        ("OS", os_val),
+        ("Uptime", uptime_val),
+        ("Host", host_val),
+        ("Kernel", kernel_val),
+        ("Shell", shell_val),
+        ("IDE", ide_val),
+    ]
+    
+    for label, value in fields_top:
+        dots = "." * (36 - len(label))
+        svg_lines.append(
+            f'<text x="783" y="{field_y}">'
+            f'<tspan class="cc">. </tspan><tspan class="key">{html.escape(label)}</tspan>:'
+            f'<tspan class="cc">{html.escape(dots)} </tspan>'
+            f'<tspan class="value">{html.escape(value)}</tspan>'
+            f'</text>'
+        )
+        field_y += 25
+    
+    # Blank line
+    field_y += 25
+    
+    # Languages section
+    lang_prog = data.get("languages_programming", "Python, TypeScript")
+    lang_markup = data.get("languages_markup", "HTML, CSS, JSON, YAML")
+    lang_real = data.get("languages_real", "English, Tamil")
+    
+    lang_fields = [
+        ("Languages.Programming", lang_prog),
+        ("Languages.Markup", lang_markup),
+        ("Languages.Real", lang_real),
+    ]
+    
+    for label, value in lang_fields:
+        dots = "." * (36 - len(label))
+        svg_lines.append(
+            f'<text x="783" y="{field_y}">'
+            f'<tspan class="cc">. </tspan><tspan class="key">{html.escape(label)}</tspan>:'
+            f'<tspan class="cc">{html.escape(dots)} </tspan>'
+            f'<tspan class="value">{html.escape(value)}</tspan>'
+            f'</text>'
+        )
+        field_y += 25
+    
+    # Blank line
+    field_y += 25
+    
+    # Focus section
+    focus_ai = data.get("focus_ai", "Gemini API, AI Studio")
+    focus_auto = data.get("focus_automation", "Cloudflare Workers, GitHub Actions")
+    focus_qa = data.get("focus_qa", "Manual Testing (learning)")
+    focus_cloud = data.get("focus_cloud", "AWS (basic), OCI (basic)")
+    
+    focus_fields = [
+        ("Focus.AI", focus_ai),
+        ("Focus.Automation", focus_auto),
+        ("Focus.QA", focus_qa),
+        ("Focus.Cloud", focus_cloud),
+    ]
+    
+    for label, value in focus_fields:
+        dots = "." * (36 - len(label))
+        svg_lines.append(
+            f'<text x="783" y="{field_y}">'
+            f'<tspan class="cc">. </tspan><tspan class="key">{html.escape(label)}</tspan>:'
+            f'<tspan class="cc">{html.escape(dots)} </tspan>'
+            f'<tspan class="value">{html.escape(value)}</tspan>'
+            f'</text>'
+        )
+        field_y += 25
+    
+    # Blank line
+    field_y += 25
+    
+    # Contact section header
+    svg_lines.append(
+        f'<text x="783" y="{field_y}" class="section">- Contact</text>'
+    )
+    # Add tildes manually
+    contact_tildes = "~" * 44
+    svg_lines.append(
+        f'<text x="783" y="{field_y}" fill="{header_color}">'
+        f'<tspan x="783" y="{field_y}" class="section">- Contact</tspan> -{html.escape(contact_tildes)}-'
+        f'</text>'
+    )
+    field_y += 25
+    
+    # Contact links (clickable with underline)
+    email_val = data["contact"]["email"]["display"]
+    email_url = data["contact"]["email"]["url"]
+    portfolio_val = data["contact"]["portfolio"]["display"]
+    portfolio_url = data["contact"]["portfolio"]["url"]
+    linkedin_val = data["contact"]["linkedin"]["display"]
+    linkedin_url = data["contact"]["linkedin"]["url"]
+    
+    contacts = [
+        ("Email", email_val, email_url),
+        ("Portfolio", portfolio_val, portfolio_url),
+        ("LinkedIn", linkedin_val, linkedin_url),
+    ]
+    
+    for label, value, url in contacts:
+        dots = "." * (36 - len(label))
+        svg_lines.append(
+            f'<a xlink:href="{html.escape(url)}" target="_blank">'
+            f'<text x="783" y="{field_y}" font-size="16px">'
+            f'<tspan class="cc">. </tspan><tspan class="key">{html.escape(label)}</tspan>:'
+            f'<tspan class="cc">{html.escape(dots)} </tspan>'
+            f'<tspan class="value" text-decoration="underline">{html.escape(value)}</tspan>'
+            f'</text>'
+            f'</a>'
+        )
+        field_y += 25
+    
+    # Blank line
+    field_y += 25
+    
+    # GitHub Stats section header
+    stats_tildes = "~" * 42
+    svg_lines.append(
+        f'<text x="783" y="{field_y}" fill="{header_color}">'
+        f'<tspan x="783" y="{field_y}" class="section">- GitHub Stats</tspan> -{html.escape(stats_tildes)}-'
+        f'</text>'
+    )
+    field_y += 25
+    
+    # GitHub Stats (from live data)
+    public_repos = live.get("public_repos", 58)
+    contributed_to = live.get("contributed_to", 32)
+    commits_total = live.get("commits_total", 580)
+    lines_loc = live.get("lines_loc", 338640)
+    additions_loc = live.get("additions_loc", 4184343)
+    deletions_loc = live.get("deletions_loc", 3845703)
+    
+    svg_lines.append(
+        f'<text x="783" y="{field_y}">'
+        f'<tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:'
+        f'<tspan class="cc"> .......... </tspan>'
+        f'<tspan class="value">{html.escape(str(public_repos))}</tspan>'
+        f' {{<tspan class="key">Contributed</tspan>: <tspan class="value">{html.escape(str(contributed_to))}</tspan>}}'
+        f'</text>'
+    )
+    field_y += 25
+    
+    svg_lines.append(
+        f'<text x="783" y="{field_y}">'
+        f'<tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:'
+        f'<tspan class="cc"> ........ </tspan>'
+        f'<tspan class="value">{html.escape(str(commits_total))}</tspan>'
+        f'</text>'
+    )
+    field_y += 25
+    
+    svg_lines.append(
+        f'<text x="783" y="{field_y}">'
+        f'<tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:'
+        f'<tspan class="cc">   </tspan>'
+        f'<tspan class="value">{html.escape(f"{lines_loc:,}")}</tspan>'
+        f' ( <tspan class="addColor">{html.escape(f"{additions_loc:,}")}++</tspan>, <tspan class="delColor">{html.escape(f"{deletions_loc:,}")}--</tspan> )'
+        f'</text>'
+    )
+    field_y += 25
+    
+    # Last synced comment
+    last_synced = live.get("last_synced", "2026-08-01 05:14 UTC")
+    svg_lines.append(
+        f'<text x="783" y="{field_y}" class="cc">// last synced {html.escape(last_synced)}</text>'
+    )
+    field_y += 25
+    
+    # Prompt with cursor
+    svg_lines.append(
+        f'<text x="783" y="{field_y}">'
+        f'<tspan class="key">&#10095;</tspan> <tspan class="cursor cc">&#9615;</tspan>'
+        f'</text>'
+    )
+    
+    body = "\n".join(svg_lines)
+    svg = svg_header + "\n" + body + "\n</svg>"
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(svg)
+    return canvas_w, canvas_h

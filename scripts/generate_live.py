@@ -26,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
-from terminal_card import build_card, build_line_svg, build_field_line_svg, build_neofetch_card, GREEN, BLUE, ORANGE, GREY, DIM, WHITE   # noqa: E402
+from terminal_card import build_card, build_line_svg, build_field_line_svg, build_neofetch_card, build_neofetch_svg, GREEN, BLUE, ORANGE, GREY, DIM, WHITE   # noqa: E402
 
 ASSETS = Path("/tmp/repo/assets")
 ASSETS.mkdir(exist_ok=True)
@@ -445,6 +445,14 @@ for idx, line in enumerate(lines):
                        bold=True, color=ORANGE, pad_top=4, pad_bottom=4)
 
 print(f"  wrote {len(lines)} connect line SVGs to {connect_lines_dir}")
+
+# ------------------------------------------------------------ neofetch cards (root) --
+print("\n== GENERATING NEOFETCH HERO CARDS (dark_mode.svg, light_mode.svg) ==")
+root = Path(__file__).resolve().parent.parent  # repo root
+card_data = card_neofetch()  # uses card_neofetch() which has ascii + all fields
+build_neofetch_svg(DATA["username"], card_data, str(root / "dark_mode.svg"), is_dark=True, data=DATA, live=LIVE)
+build_neofetch_svg(DATA["username"], card_data, str(root / "light_mode.svg"), is_dark=False, data=DATA, live=LIVE)
+print(f"  wrote dark_mode.svg and light_mode.svg to repo root")
 
 # ----------------------------------------------------------------- README --
 print("\n== WRITING README.md (using <img> tags for all cards) ==")
