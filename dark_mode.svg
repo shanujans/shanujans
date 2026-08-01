@@ -66,7 +66,7 @@ a:hover .value {fill: #79c0ff;}
 <text x="783" y="30" fill="#c9d1d9">
 <tspan x="783" y="30">shanujans@github</tspan> -~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-
 <tspan x="783" y="55" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ...................... </tspan><tspan class="value">Windows, Android, Linux (basic)</tspan>
-<tspan x="783" y="80" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">1y 3m 17d on GitHub</tspan>
+<tspan x="783" y="80" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">1y 107d on GitHub</tspan>
 <tspan x="783" y="105" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Sri Lanka</tspan>
 <tspan x="783" y="130" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">IT Support Professional (4+ yrs)</tspan>
 <tspan x="783" y="155" class="cc">. </tspan><tspan class="key">Shell</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">BSc CS @ Univ. of the People</tspan>
@@ -87,10 +87,10 @@ a:hover .value {fill: #79c0ff;}
 <a href="https://www.linkedin.com/in/shanujansuresh/" target="_blank"><text x="783" y="505" font-size="16px"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value" text-decoration="underline">shanujansuresh</tspan></text></a>
 <text x="783" y="535" fill="#c9d1d9">
 <tspan x="783" y="535" class="section">- GitHub Stats</tspan> -~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-
-<tspan x="783" y="560" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">58</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">32</tspan>}
-<tspan x="783" y="585" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value">538</tspan>
-<tspan x="783" y="610" class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc">   </tspan><tspan class="value">338,640</tspan> ( <tspan class="addColor">4,184,343++</tspan>, <tspan class="delColor">3,845,703--</tspan> )
-<tspan x="783" y="640" class="cc">// last synced 2026-08-01 20:12 UTC</tspan>
+<tspan x="783" y="560" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">30</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">35</tspan>}
+<tspan x="783" y="585" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value">720</tspan>
+<tspan x="783" y="610" class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc">   </tspan><tspan class="value">340,935</tspan> ( <tspan class="addColor">4,185,662++</tspan>, <tspan class="delColor">3,844,727--</tspan> )
+<tspan x="783" y="640" class="cc">// last synced 2026-08-01 20:13 UTC</tspan>
 <tspan x="783" y="665" class="key">&#10095;</tspan> <tspan class="cursor cc">&#9615;</tspan>
 </text>
 </svg>
