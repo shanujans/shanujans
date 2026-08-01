@@ -15,6 +15,7 @@ import os
 import sys
 import time
 import datetime
+import json
 from pathlib import Path
 
 import requests
@@ -163,6 +164,15 @@ def fmt(n):
     return f"{n:,}"
 
 
+def esc(text):
+    return (
+        str(text)
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
 def render(template_path, output_path, values):
     svg = template_path.read_text(encoding="utf-8")
     for key, val in values.items():
@@ -189,6 +199,9 @@ def main():
     repo_full_names = [r["nameWithOwner"] for r in repos]
     loc_add, loc_del = get_lines_of_code(repo_full_names)
 
+    data = json.loads((ROOT / "scripts" / "terminal_data.json").read_text(encoding="utf-8"))
+    contact = data["contact"]
+
     ascii_tspans = ascii_to_tspans(ASCII_ART)
 
     values = {
@@ -196,6 +209,24 @@ def main():
         "NAME": DISPLAY_NAME,
         "ROLE": ROLE,
         "AGE": human_age(user["createdAt"]),
+        "OS": data["os"],
+        "HOST": data["host"],
+        "KERNEL": data["kernel"],
+        "SHELL": data["shell"],
+        "IDE": data["ide"],
+        "LANG_PROG": data["languages_programming"],
+        "LANG_MARKUP": data["languages_markup"],
+        "LANG_REAL": data["languages_real"],
+        "FOCUS_AI": data["focus_ai"],
+        "FOCUS_AUTOMATION": data["focus_automation"],
+        "FOCUS_QA": data["focus_qa"],
+        "FOCUS_CLOUD": data["focus_cloud"],
+        "EMAIL_URL": contact["email"]["url"],
+        "EMAIL_DISP": contact["email"]["display"],
+        "PORTFOLIO_URL": contact["portfolio"]["url"],
+        "PORTFOLIO_DISP": contact["portfolio"]["display"],
+        "LINKEDIN_URL": contact["linkedin"]["url"],
+        "LINKEDIN_DISP": "shanujansuresh",
         "REPOS": fmt(repo_count),
         "CONTRIBUTED": fmt(contributed_to),
         "COMMITS": fmt(commits),
@@ -207,6 +238,7 @@ def main():
         "ASCII_ART": ascii_tspans,
         "GEN_DATE": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     }
+    values = {k: esc(v) if k != "ASCII_ART" else v for k, v in values.items()}
 
     render(TEMPLATES / "dark_mode.svg.template", ROOT / "dark_mode.svg", values)
     render(TEMPLATES / "light_mode.svg.template", ROOT / "light_mode.svg", values)
