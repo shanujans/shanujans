@@ -407,42 +407,41 @@ connect_lines_dir.mkdir(exist_ok=True)
 
 lines = [
     ("header", "shanujans@github"),
-    ("empty", None),
     ("section", "- Reach Me -"),
     ("linkfield", "Email",     c["email"]["display"],     c["email"]["url"]),
     ("linkfield", "Portfolio", c["portfolio"]["display"], c["portfolio"]["url"]),
     ("linkfield", "GitHub",    c["github"]["display"],    c["github"]["url"]),
     ("linkfield", "LinkedIn",  c["linkedin"]["display"],  c["linkedin"]["url"]),
-    ("empty", None),
     ("comment", "// thanks for stopping by -- let's build something"),
     ("prompt", None),
 ]
+
+# Tight, uniform line height for a clean terminal look (no empty spacers)
+PAD_T = 1
+PAD_B = 2
 
 for idx, line in enumerate(lines):
     kind = line[0]
     if kind == "header":
         text = line[1]
         build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-header.svg"),
-                       bold=True, color=WHITE, pad_top=4, pad_bottom=4)
-    elif kind == "empty":
-        build_line_svg("", out_path=str(connect_lines_dir / f"line-{idx:02d}-empty.svg"),
-                       pad_top=4, pad_bottom=4)
+                       bold=True, color=WHITE, pad_top=PAD_T, pad_bottom=PAD_B)
     elif kind == "section":
         text = line[1]
         build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-section.svg"),
-                       bold=True, color=GREY, pad_top=4, pad_bottom=4)
+                       bold=True, color=GREY, pad_top=PAD_T, pad_bottom=PAD_B)
     elif kind == "linkfield":
         label, value, url = line[1], line[2], line[3]
         build_field_line_svg(label, value, url,
                              out_path=str(connect_lines_dir / f"line-{idx:02d}-field.svg"),
-                             pad_top=4, pad_bottom=4)
+                             pad_top=PAD_T, pad_bottom=PAD_B)
     elif kind == "comment":
         text = line[1]
         build_line_svg(text, out_path=str(connect_lines_dir / f"line-{idx:02d}-comment.svg"),
-                       color=DIM, italic=True, pad_top=4, pad_bottom=4)
+                       color=DIM, italic=True, pad_top=PAD_T, pad_bottom=PAD_B)
     elif kind == "prompt":
         build_line_svg(">_", out_path=str(connect_lines_dir / f"line-{idx:02d}-prompt.svg"),
-                       bold=True, color=ORANGE, pad_top=4, pad_bottom=4)
+                       bold=True, color=ORANGE, pad_top=PAD_T, pad_bottom=PAD_B)
 
 print(f"  wrote {len(lines)} connect line SVGs to {connect_lines_dir}")
 

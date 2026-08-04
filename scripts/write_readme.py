@@ -27,9 +27,6 @@ def widget_card(slug, alt):
         return (
             '<a href="https://github.com/shanujans">\n'
             '  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shanujans&theme=react-dark&bg_color=0d1117&color=ca7938&line=5299d2&point=ffffff" alt="Shanujan\'s Contribution Graph" width="100%"/>\n'
-            '</a>\n'
-            '<a href="https://github.com/shanujans">\n'
-            '  <img src="https://streak-stats.demolab.com?user=shanujans&hide_border=true&background=0d1117&border=0d1117&ring=ca7938&fire=5299d2&currStreakNum=ffffff&currStreakLabel=ca7938&sideNums=a0b3bc&sideLabels=a0b3bc&dates=5c6773" alt="Streak Stats"/>\n'
             '</a>'
         )
     if slug == "snake":
@@ -43,14 +40,12 @@ def widget_card(slug, alt):
 def connect_html():
     c = DATA["contact"]
     lines = [
-        ('shanujans@github ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', WHITE, True, None, 'header'),
-        ('', None, False, None, 'empty'),
-        ('- Reach Me - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', GREY, True, None, 'section'),
+        ('shanujans@github', WHITE, True, None, 'header'),
+        ('- Reach Me -', GREY, True, None, 'section'),
         ('. Email: ....... shanujansh@gmail.com', BLUE, False, c["email"]["url"], 'field'),
         ('. Portfolio: ... shanujan.is-a.dev', BLUE, False, c["portfolio"]["url"], 'field'),
         ('. GitHub: ...... github.com/shanujans', BLUE, False, c["github"]["url"], 'field'),
         ('. LinkedIn: .... linkedin.com/in/shanujansuresh', BLUE, False, c["linkedin"]["url"], 'field'),
-        ('', None, False, None, 'empty'),
         ('// thanks for stopping by -- let\'s build something', DIM, True, None, 'comment'),
         ('>_', ORANGE, True, None, 'prompt'),
     ]
