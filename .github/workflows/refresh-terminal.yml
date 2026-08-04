@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: terminal
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -53,7 +53,7 @@ jobs:
           echo "==== last synced stamp ===="
           grep -o 'last synced [^<]*' /tmp/repo/assets/terminal-stats.svg
 
-      - name: Commit refreshed SVGs and README to 'terminal' branch
+      - name: Commit refreshed SVGs and README to 'main' branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -64,5 +64,5 @@ jobs:
             echo "no changes; skipping commit"
           else
             git commit -m "chore: refresh terminal SVGs and README [skip ci]"
-            git push origin HEAD:terminal
+            git push origin HEAD:main
           fi
