@@ -121,6 +121,8 @@
 
   "inline_cards": ["hero", "projects", "certifications", "connect"],
 
+  "profile_views_fallback": 967,
+
   "last_known_loc": {
     "lines":  338640,
     "additions": 4184343,

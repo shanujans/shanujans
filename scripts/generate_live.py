@@ -21,7 +21,7 @@ Refreshed by:
   .github/workflows/refresh-terminal.yml (every 6 hours, manual dispatch also).
 """
 
-import sys, os, json, datetime, pyfiglet, requests
+import sys, os, json, re, datetime, pyfiglet, requests
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -89,6 +89,26 @@ def fetch_repos_meta():
         return []
 
 
+def fetch_profile_views():
+    """Scrape the live profile-views count from the komarev badge SVG."""
+    try:
+        r = requests.get(
+            f"https://komarev.com/ghpvc/?username={GITHUB_USER}&style=flat-square",
+            headers={"User-Agent": "shanujans-terminal-refresh"}, timeout=30,
+        )
+        if r.status_code != 200:
+            print(f"  ghpvc -> HTTP {r.status_code}; fallback")
+            return None
+        m = re.findall(r'<text[^>]*>\s*([\d,]+)\s*</text>', r.text)
+        if not m:
+            print("  ghpvc -> count not found in SVG; fallback")
+            return None
+        return int(m[-1].replace(",", ""))
+    except requests.RequestException as e:
+        print(f"  ghpvc -> network error: {e}; fallback")
+        return None
+
+
 def fetch_contributed_to():
     """GraphQL: total unique repos user has contributed PRs/issues/etc to. Needs token."""
     if not GITHUB_TOKEN:
@@ -149,8 +169,10 @@ created_at = (user or {}).get("created_at")
 commits_total = fetch_total_commits()
 repos_meta = fetch_repos_meta()
 contributed_to = fetch_contributed_to()
+profile_views = fetch_profile_views()
 
 LIVE = {
+    "profile_views": profile_views if profile_views is not None else DATA.get("profile_views_fallback", 0),
     "public_repos": public_repos if public_repos is not None else DATA.get("public_repos_fallback", 28),
     "contributed_to": contributed_to if contributed_to is not None else DATA.get("contributed_to_fallback", 32),
     "commits_total": commits_total if commits_total is not None else DATA.get("commits_total_fallback", 580),
@@ -365,6 +387,7 @@ BARS = [
     ("stats",          "gh stats --user shanujans", "GitHub Stats"),
     ("activity",       "gh activity --graph",    "Contribution Activity"),
     ("snake",          "./snake --eat contributions", "Contribution Snake"),
+    ("views",          "gh views --user shanujans", "Profile Views"),
     ("connect",        "cat contact.md",          "Let's Connect"),
 ]
 
@@ -395,6 +418,13 @@ for slug, cmd, label in BARS:
     out = ASSETS / f"bar-{slug}.svg"
     build_card(None, [("cmdheader", cmd, label)], str(out), min_width_chars=100, with_header=False)
     print(f"  wrote {out}")
+
+# Profile views counter line (single terminal line, same style as connect lines)
+views_line_path = ASSETS / "views-line.svg"
+build_field_line_svg("Views", f"{LIVE['profile_views']:,}",
+                     f"https://github.com/{GITHUB_USER}",
+                     out_path=str(views_line_path), pad_top=1, pad_bottom=2)
+print(f"  wrote {views_line_path}")
 
 print(f"\nDone. {len(CARDS)} cards + {len(BARS)} bars regenerated.")
 print(f"Last synced stamp on outputs: {LIVE['last_synced']}")

@@ -8,9 +8,10 @@
   </a>
 </p>
 <hr/>
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>
-</p>
+<div>
+<img src="assets/bar-views.svg" alt="$ views" width="100%" style="display:block"/>
+<a href="https://github.com/shanujans" target="_blank" style="text-decoration:none;display:block"><img src="assets/views-line.svg" alt=". Views: ....... 967" width="100%" style="display:block"/></a>
+</div>
 <hr/>
 <div>
 <img src="assets/bar-projects.svg" alt="$ projects" width="100%" style="display:block"/>

@@ -86,11 +86,12 @@ parts.append(
 )
 parts.append('<hr/>')
 
-# Profile views badge
+# Profile views - terminal style bar + live counter line
 parts.append(
-    '<p align="center">\n'
-    '  <img src="https://komarev.com/ghpvc/?username=shanujans&style=flat-square&color=5299d2&label=PROFILE+VIEWS" alt="profile views"/>\n'
-    '</p>'
+    f'<div>\n{img_bar("views", "$ views")}\n'
+    f'<a href="https://github.com/shanujans" target="_blank" style="text-decoration:none;display:block">'
+    f'<img src="assets/views-line.svg" alt=". Views: ....... 967" width="{CARD_WIDTH}" style="display:block"/>'
+    f'</a>\n</div>'
 )
 parts.append('<hr/>')
 
