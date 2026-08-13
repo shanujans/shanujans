@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate stats SVGs
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
           GH_USERNAME: shanujans
           DISPLAY_NAME: "Shanujan Suresh"
           DISPLAY_ROLE: "IT Support Professional"

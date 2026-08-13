@@ -59,7 +59,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           cp /tmp/repo/assets/*.svg assets/
           cp /tmp/repo/README.md README.md
-          git add assets/*.svg README.md
+          git add -A assets README.md
           if git diff --staged --quiet; then
             echo "no changes; skipping commit"
           else
