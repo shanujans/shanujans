@@ -121,7 +121,6 @@ def get_user_overview():
         contributionsCollection {
           totalCommitContributions
           totalRepositoriesWithContributedCommits
-          restrictedContributionsCount
         }
       }
     }
@@ -193,7 +192,9 @@ def main():
     followers = user["followers"]["totalCount"]
 
     contrib = user["contributionsCollection"]
-    commits = contrib["totalCommitContributions"] + contrib["restrictedContributionsCount"]
+    # Public commits only: restrictedContributionsCount (private) requires a PAT and
+    # is unavailable to the built-in GITHUB_TOKEN, so it is omitted from the query.
+    commits = contrib["totalCommitContributions"]
     contributed_to = contrib["totalRepositoriesWithContributedCommits"]
 
     repo_full_names = [r["nameWithOwner"] for r in repos]
