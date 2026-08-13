@@ -429,6 +429,54 @@ print(f"  wrote {views_line_path}")
 print(f"\nDone. {len(CARDS)} cards + {len(BARS)} bars regenerated.")
 print(f"Last synced stamp on outputs: {LIVE['last_synced']}")
 
+# ------------------------------------------------------------ connect lines --
+# Per-line terminal SVGs referenced by README via <img>. The connect-lines dir is
+# fully cleared first so stale renumbered files never linger.
+print("\n== GENERATING CONNECT SECTION PER-LINE SVGs ==")
+c = DATA["contact"]
+connect_lines_dir = ASSETS / "connect-lines"
+if connect_lines_dir.exists():
+    for old in connect_lines_dir.glob("*.svg"):
+        old.unlink()
+connect_lines_dir.mkdir(exist_ok=True)
+
+lines = [
+    ("header", "shanujans@github"),
+    ("section", "- Reach Me -"),
+    ("linkfield", "Email",     c["email"]["display"],     c["email"]["url"]),
+    ("linkfield", "Portfolio", c["portfolio"]["display"], c["portfolio"]["url"]),
+    ("linkfield", "GitHub",    c["github"]["display"],    c["github"]["url"]),
+    ("linkfield", "LinkedIn",  c["linkedin"]["display"],  c["linkedin"]["url"]),
+    ("comment", "// thanks for stopping by -- let's build something"),
+    ("prompt", None),
+]
+
+# Tight, uniform line height for a clean terminal look (no empty spacers)
+PAD_T = 1
+PAD_B = 2
+
+for idx, line in enumerate(lines):
+    kind = line[0]
+    if kind == "header":
+        build_line_svg(line[1], out_path=str(connect_lines_dir / f"line-{idx:02d}-header.svg"),
+                       bold=True, color=WHITE, pad_top=PAD_T, pad_bottom=PAD_B)
+    elif kind == "section":
+        build_line_svg(line[1], out_path=str(connect_lines_dir / f"line-{idx:02d}-section.svg"),
+                       bold=True, color=GREY, pad_top=PAD_T, pad_bottom=PAD_B)
+    elif kind == "linkfield":
+        label, value, url = line[1], line[2], line[3]
+        build_field_line_svg(label, value, url,
+                             out_path=str(connect_lines_dir / f"line-{idx:02d}-field.svg"),
+                             pad_top=PAD_T, pad_bottom=PAD_B)
+    elif kind == "comment":
+        build_line_svg(line[1], out_path=str(connect_lines_dir / f"line-{idx:02d}-comment.svg"),
+                       color=DIM, italic=True, pad_top=PAD_T, pad_bottom=PAD_B)
+    elif kind == "prompt":
+        build_line_svg(">_", out_path=str(connect_lines_dir / f"line-{idx:02d}-prompt.svg"),
+                       bold=True, color=ORANGE, pad_top=PAD_T, pad_bottom=PAD_B)
+
+print(f"  wrote {len(lines)} connect line SVGs to {connect_lines_dir}")
+
 # ------------------------------------------------------------ neofetch cards (root) --
 print("\n== GENERATING NEOFETCH HERO CARDS (dark_mode.svg, light_mode.svg) ==")
 root = Path(__file__).resolve().parent.parent  # repo root

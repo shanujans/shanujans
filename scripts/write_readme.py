@@ -22,16 +22,6 @@ def img_card(slug, alt):
 def img_bar(slug, alt):
     return f'<img src="assets/bar-{slug}.svg" alt="{html.escape(alt)}" width="{CARD_WIDTH}" style="display:block"/>'
 
-def inline_card(slug):
-    """Inline a terminal SVG card so its <a xlink:href> hotspots are clickable.
-
-    Loaded as a raw DOM element (not <img>) so hyperlinks navigate on click.
-    Width is forced to 100% to fill the README column.
-    """
-    svg = (ASSETS / f"terminal-{slug}.svg").read_text(encoding="utf-8")
-    svg = svg.replace('width="1028"', f'width="{CARD_WIDTH}"', 1)
-    return svg
-
 def widget_card(slug, alt):
     if slug == "activity":
         return (
@@ -48,12 +38,34 @@ def widget_card(slug, alt):
     return img_card(slug, alt)
 
 def connect_html():
-    """Single terminal-connect.svg card inlined so its links are clickable.
+    """Per-line connect terminal SVGs as <img> tags (GitHub strips inlined SVG/CSS).
 
-    Replaces the old per-line connect-lines/*.svg split, which was fragile in CI
-    (renumbered filenames left stale files and broken image links).
+    Each clickable line is wrapped in an <a> so links work; plain lines are bare <img>.
+    The workflow clears assets/connect-lines/ before regenerating, so the sequential
+    filenames never go stale.
     """
-    return inline_card("connect")
+    c = DATA["contact"]
+    lines = [
+        ('shanujans@github', None, 'header'),
+        ('- Reach Me -', None, 'section'),
+        ('. Email: ....... shanujansh@gmail.com', c["email"]["url"], 'field'),
+        ('. Portfolio: ... shanujan.is-a.dev', c["portfolio"]["url"], 'field'),
+        ('. GitHub: ...... github.com/shanujans', c["github"]["url"], 'field'),
+        ('. LinkedIn: .... linkedin.com/in/shanujansuresh', c["linkedin"]["url"], 'field'),
+        ("// thanks for stopping by -- let's build something", None, 'comment'),
+        ('>_', None, 'prompt'),
+    ]
+    html_lines = []
+    for i, (text, link, suffix) in enumerate(lines):
+        filename = f"assets/connect-lines/line-{i:02d}-{suffix}.svg"
+        img = f'<img src="{filename}" alt="{html.escape(text)}" width="100%" style="display:block"/>'
+        if link:
+            html_lines.append(
+                f'<a href="{html.escape(link)}" target="_blank" style="text-decoration:none;display:block">{img}</a>'
+            )
+        else:
+            html_lines.append(img)
+    return "\n".join(html_lines)
 
 parts = []
 
