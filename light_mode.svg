@@ -66,7 +66,7 @@ a:hover .value {fill: #218bff;}
 <text x="783" y="30" fill="#24292f">
 <tspan x="783" y="30">shanujans@github</tspan> -~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-
 <tspan x="783" y="55" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ...................... </tspan><tspan class="value">Windows, Android, Linux (basic)</tspan>
-<tspan x="783" y="80" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">1y 124d on GitHub</tspan>
+<tspan x="783" y="80" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">1y 125d on GitHub</tspan>
 <tspan x="783" y="105" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Sri Lanka</tspan>
 <tspan x="783" y="130" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">IT Support Professional (4+ yrs)</tspan>
 <tspan x="783" y="155" class="cc">. </tspan><tspan class="key">Shell</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">BSc CS @ Univ. of the People</tspan>
@@ -90,7 +90,7 @@ a:hover .value {fill: #218bff;}
 <tspan x="783" y="560" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">31</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">31</tspan>}
 <tspan x="783" y="585" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value">682</tspan>
 <tspan x="783" y="610" class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc">   </tspan><tspan class="value">349,448</tspan> ( <tspan class="addColor">4,197,115++</tspan>, <tspan class="delColor">3,847,667--</tspan> )
-<tspan x="783" y="640" class="cc">// last synced 2026-08-19 12:24 UTC</tspan>
+<tspan x="783" y="640" class="cc">// last synced 2026-08-20 00:40 UTC</tspan>
 <tspan x="783" y="665" class="key">&#10095;</tspan> <tspan class="cursor cc">&#9615;</tspan>
 </text>
 </svg>
